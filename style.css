@@ -2,6 +2,9 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: Lato;
+    font-style: normal;
+    font-weight: normal;
 }
 
 .header {
@@ -23,4 +26,50 @@
 .header__right_account{
     margin-left: 34px;
     margin-right: 34px;
+}
+
+.promo {
+    display: flex;
+    justify-content: center;
+}
+
+.promo__left {
+    width: 50%;
+    display: block;
+}
+
+.promo__right {
+    background: #F1E4E6;
+    display: flex;
+    align-items: center;
+    width: 50%;
+}
+
+.promo__right__content {
+    display: flex;
+}
+
+.promo__right__content__rect {
+    width: 12px;
+    background-color: #F16D7F;
+    margin-left: 64px;
+    margin-right: 16px;
+}
+
+.promo__right__content__text h1 {
+    font-weight: 900;
+    font-size: 48px;
+    line-height: 58px;
+    color: #222222;
+}
+
+.promo__right__content__text p {
+    font-weight: 700;
+    font-size: 37px;
+    line-height: 44px;
+    color: #222222;
+}
+
+.promo__right__content__text__mark {
+    color: #F16D7F;
 }
