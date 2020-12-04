@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap');
 
 * {
     margin: 0;
@@ -343,4 +343,30 @@ a {
     font-size: 14px;
     line-height: 17px;
     color: #FBFBFB;
+}
+
+.footer__bot {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 24px;
+    padding-bottom: 24px;
+}
+
+.footer__bot__left {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 19px;
+    color: #FBFBFB;
+}
+
+.footer__bot__right {
+    margin-left: -2px;
+    margin-right:  -2px;
+}
+
+.footer__bot__right a {
+    margin-left: 2px;
+    margin-right:  2px;
 }
