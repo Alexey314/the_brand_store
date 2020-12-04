@@ -1,2 +1,2 @@
 # the_brand_store
-The Brand Online Store site
+The Brand online store site
