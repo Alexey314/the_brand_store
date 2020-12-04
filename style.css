@@ -9,6 +9,10 @@
     font-weight: normal;
 }
 
+a {
+    text-decoration: none;
+}
+
 .header {
     background: #222222;
     height: 75px;
@@ -78,11 +82,14 @@
 
 .offer__top {
     display: flex;
-    gap: 30px;
     margin-top: 63px;
     margin-bottom: 30px;
     justify-content: space-between;
 }
+
+.offer__top .offer__card:not(:last-child) {
+    margin-right: 30px;
+} 
 
 .offer__top div img {
     width: 100%;
@@ -124,4 +131,90 @@
     line-height: 29px;
     text-align: center;
     color: #F16D7F;
+}
+
+.products__header {
+    margin-top: 97px;
+    text-align: center;
+}
+
+.products__header h2 {  
+    font-style: normal;
+    font-weight: normal;
+    font-size: 30px;
+    line-height: 36px;
+    color: #222222;
+}
+
+.products__header p {
+    margin-top: 6px;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 17px;
+    color: #9F9F9F;
+}
+
+.products__cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 33px -15px -15px -15px;
+}
+
+.products__cards__item {
+    max-width: 360px;
+    background: #F8F8F8;
+    margin: 15px;
+}
+
+.products__cards__item img {
+    width: 100%;
+}
+
+.products__cards__item__text {
+    padding: 25px 16px 20px 16px;
+    text-align: left;
+}
+
+.products__cards__item__text h3 {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 13px;
+    line-height: 16px;
+    color: #000000;
+}
+
+.products__cards__item__text p:first-of-type {
+    padding-top: 12px;
+    padding-bottom: 18px;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 14px;
+    line-height: 17px;
+    color: #5D5D5D;
+}
+
+.products__cards__item__text p:last-of-type {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 19px;
+    color: #F16D7F;
+}
+
+.products__link2all {
+    margin-top: 48px;
+    text-align: center;
+}
+
+.products__link2all a {
+    border: 1px solid #FF6A6A;
+    padding: 14px 38px;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 19px;
+    color: #F26376;
+    display: inline-block;
 }
