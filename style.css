@@ -220,6 +220,7 @@ a {
 }
 
 .footer {
+    margin-top: 95px;
     background: #222224;
 }
 
@@ -310,4 +311,36 @@ a {
     background: #E05C6E;
     border: 0;
     border-radius: 0 25px 25px 0;
+}
+
+.features {
+    padding-top: 104px;
+    padding-bottom: 104px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.features__item {
+    text-align: center;
+    width: 360px;
+    padding-left: 16px;
+    padding-right: 16px;
+}
+
+.features__item h3 {
+    margin-top: 28px;
+    margin-bottom: 16px;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 19.96px;
+    line-height: 24px;
+    color: #FBFBFB;
+}
+
+.features__item p {
+    font-style: normal;
+    font-weight: 300;
+    font-size: 14px;
+    line-height: 17px;
+    color: #FBFBFB;
 }
