@@ -64,12 +64,12 @@ a {
     flex-basis: 50%;
     background: #F1E4E6;
     display: flex;
-    justify-content: flex-start;
     align-items: center;
 }
 
 .promo__right__content {
     display: flex;
+    max-width: 550px;
 }
 
 .promo__right__content__rect {
@@ -80,7 +80,7 @@ a {
 }
 
 .promo__right__content__text {
-    max-width: 500px;
+
 }
 
 .promo__right__content__text__hdr {
@@ -130,27 +130,22 @@ a {
 
 .offer__card__text {
     position: absolute;
-    top: 0;
-    left: 0;
-    height: 100%;
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    top: 50%;
+    left: 50%;
+    transform:translate(-50%, -50%);
+    text-align: center;
 }
 
-.offer__card__text p {
+.offer__card__text__l1 {
     font-size: 16px;
     line-height: 19px;
-    text-align: center;
     color: #FFFFFF;
 }
 
-.offer__card__text p span {
+.offer__card__text__l2 {
     font-weight: 700;
     font-size: 24px;
     line-height: 29px;
-    text-align: center;
     color: #F16D7F;
 }
 
