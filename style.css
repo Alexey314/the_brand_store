@@ -4,7 +4,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: Lato;
+    font-family: Lato, serif;
     font-style: normal;
     font-weight: normal;
 }
@@ -13,7 +13,7 @@ a {
     text-decoration: none;
 }
 
-.header {
+.header_top_bg {
     background: #222222;
     height: 75px;
     display: flex;
@@ -21,9 +21,18 @@ a {
     justify-content: space-between;
 }
 
+.header_top__inner {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
 .center {
-    padding-left: calc(50% - 570px);
-    padding-right: calc(50% - 570px);
+    max-width: 1140px;
+    margin-left: auto;
+    margin-right: auto;
+    box-sizing: border-box;
 }
 
 .header__left_search {
@@ -36,19 +45,27 @@ a {
 
 .promo {
     display: flex;
-    justify-content: center;
 }
 
 .promo__left {
-    width: 50%;
-    display: block;
+    flex-basis: 50%;
+    background: rgba(113, 103, 105, 0.08);
+    display: flex;
+    justify-content: flex-end;
+}
+
+.promo__left__img {
+    width: 100%;
+    flex-basis:  800px;
+    /*max-width: 800px;*/
 }
 
 .promo__right {
+    flex-basis: 50%;
     background: #F1E4E6;
     display: flex;
+    justify-content: flex-start;
     align-items: center;
-    width: 50%;
 }
 
 .promo__right__content {
@@ -62,21 +79,25 @@ a {
     margin-right: 16px;
 }
 
-.promo__right__content__text h1 {
+.promo__right__content__text {
+    max-width: 500px;
+}
+
+.promo__right__content__text__hdr {
     font-weight: 900;
     font-size: 48px;
     line-height: 58px;
     color: #222222;
 }
 
-.promo__right__content__text p {
+.promo__right__content__text__p {
     font-weight: 700;
     font-size: 37px;
     line-height: 44px;
     color: #222222;
 }
 
-.promo__right__content__text__mark {
+.promo__right__content__text__p__mark {
     color: #F16D7F;
 }
 
@@ -133,12 +154,17 @@ a {
     color: #F16D7F;
 }
 
+.products {
+    margin-top: 97px;
+    text-align: center;
+}
+
 .products__header {
     margin-top: 97px;
     text-align: center;
 }
 
-.products__header h2 {  
+.products__hdr {  
     font-style: normal;
     font-weight: normal;
     font-size: 30px;
@@ -146,7 +172,7 @@ a {
     color: #222222;
 }
 
-.products__header p {
+.products__text {
     margin-top: 6px;
     font-style: normal;
     font-weight: normal;
