@@ -183,9 +183,11 @@ a {
     max-width: 360px;
     background: #F8F8F8;
 }
-.product__img{
+
+.product__img {
     position: relative;
 }
+
 .product__img__hover_ovl {
     position: absolute;
     top: 0;
@@ -198,18 +200,18 @@ a {
     align-items: center;
 }
 
-.product__img__hover_ovl__btn{
+.product__img__hover_ovl__btn {
     border: 1px solid #FFFFFF;
     padding: 8px 13px;
     display: flex;
     align-items: center;
 }
 
-.product__img:hover .product__img__hover_ovl{
+.product__img:hover .product__img__hover_ovl {
     display: flex;
 }
 
-.product__img__hover_ovl__btn__text{
+.product__img__hover_ovl__btn__text {
     padding-left: 11px;
     font-style: normal;
     font-weight: normal;
@@ -269,10 +271,12 @@ a {
     line-height: 19px;
     color: #F26376;
 }
+
 .products__bot__browse:hover {
     background: #F16D7F;
     color: #FFFFFF;
 }
+
 .footer {
     margin-top: 96px;
     background: #222224;
