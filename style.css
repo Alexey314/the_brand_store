@@ -446,3 +446,38 @@ a {
 .footer__bot__sm__links__item:hover .footer__bot__sm__links__item__logo {
     filter: invert(1);
 }
+
+.catalog__top {
+    padding-top: 30px;
+    padding-bottom: 30px;
+    background: #bbb;
+}
+
+.catalog__top__inner{
+    padding: 0 10px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.catalog__top__breadcrumbs__link {
+    color: #222;
+}
+
+.catalog__top__section,
+.catalog__top__breadcrumbs__link:last-child {
+    color: salmon;
+}
+
+.catalog__products {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.catalog__bot{
+    display: flex;
+    justify-content: center;
+}
+
+.catalog__page_sel{
+
+}
