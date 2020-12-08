@@ -38,21 +38,87 @@
         <div class="catalog__filters__left">
             <div class="catalog__filter__tree">
                 <span>FILTER</span>
-                <svg class="catalog__filter__tree__icon" width="15" height="10" viewBox="0 0 15 10" xmlns="http://www.w3.org/2000/svg">
-                    <path class="catalog__filter__tree__icon__path" d="M0.833333 10H4.16667C4.625 10 5 9.625 5 9.16667C5 8.70833 4.625 8.33333 4.16667 8.33333H0.833333C0.375 8.33333 0 8.70833 0 9.16667C0 9.625 0.375 10 0.833333 10ZM0 0.833333C0 1.29167 0.375 1.66667 0.833333 1.66667H14.1667C14.625 1.66667 15 1.29167 15 0.833333C15 0.375 14.625 0 14.1667 0H0.833333C0.375 0 0 0.375 0 0.833333ZM0.833333 5.83333H9.16667C9.625 5.83333 10 5.45833 10 5C10 4.54167 9.625 4.16667 9.16667 4.16667H0.833333C0.375 4.16667 0 4.54167 0 5C0 5.45833 0.375 5.83333 0.833333 5.83333Z" fill="black"/>
+                <svg class="catalog__filter__tree__icon" width="15" height="10" viewBox="0 0 15 10"
+                     xmlns="http://www.w3.org/2000/svg">
+                    <path class="catalog__filter__tree__icon__path"
+                          d="M0.833333 10H4.16667C4.625 10 5 9.625 5 9.16667C5 8.70833 4.625 8.33333 4.16667 8.33333H0.833333C0.375 8.33333 0 8.70833 0 9.16667C0 9.625 0.375 10 0.833333 10ZM0 0.833333C0 1.29167 0.375 1.66667 0.833333 1.66667H14.1667C14.625 1.66667 15 1.29167 15 0.833333C15 0.375 14.625 0 14.1667 0H0.833333C0.375 0 0 0.375 0 0.833333ZM0.833333 5.83333H9.16667C9.625 5.83333 10 5.45833 10 5C10 4.54167 9.625 4.16667 9.16667 4.16667H0.833333C0.375 4.16667 0 4.54167 0 5C0 5.45833 0.375 5.83333 0.833333 5.83333Z"
+                          fill="black"/>
                 </svg>
-                <div class="catalog__filters__menu__popup">
-                    <;sfjvnlvml;
+                <div class="accordion catalog__filter__tree__popup">
+                    <details class="accordion__section">
+                        <summary class="accordion__section__title catalog__filter__tree__section_title">
+                            CATEGORY
+                        </summary>
+                        <a href="#" class="catalog__filter__tree__section_link">Accessories</a>
+                        <a href="#" class="catalog__filter__tree__section_link">Bags</a>
+                        <a href="#" class="catalog__filter__tree__section_link">Denim</a>
+                        <a href="#" class="catalog__filter__tree__section_link">Hoodies & Sweatshirts</a>
+                        <a href="#" class="catalog__filter__tree__section_link">Jackets & Coats</a>
+                        <a href="#" class="catalog__filter__tree__section_link">Polos</a>
+                        <a href="#" class="catalog__filter__tree__section_link">Shirts</a>
+                        <a href="#" class="catalog__filter__tree__section_link">Shoes</a>
+                        <a href="#" class="catalog__filter__tree__section_link">Sweaters & Knits</a>
+                        <a href="#" class="catalog__filter__tree__section_link">T-Shirts</a>
+                        <a href="#" class="catalog__filter__tree__section_link">Tanks</a>
+                    </details>
+                    <details class="accordion__section catalog__filter__tree__section">
+                        <summary class="accordion__section__title catalog__filter__tree__section_title">
+                            BRAND
+                        </summary>
+                        <a href="#" class="catalog__filter__tree__section_link">Alpha</a>
+                        <a href="#" class="catalog__filter__tree__section_link">Gamma</a>
+                        <a href="#" class="catalog__filter__tree__section_link">Omega</a>
+                    </details>
+                    <details class="accordion__section catalog__filter__tree__section">
+                        <summary class="accordion__section__title catalog__filter__tree__section_title">
+                            DESIGNER
+                        </summary>
+                        <a href="#" class="catalog__filter__tree__section_link">Ivanoff</a>
+                        <a href="#" class="catalog__filter__tree__section_link">Petroff</a>
+                        <a href="#" class="catalog__filter__tree__section_link">Sidoroff</a>
+                    </details>
                 </div>
             </div>
         </div>
-
-        <details class="catalog__filter__tree">
-            <summary class="catalog__filter__tree__title">FILTER</summary>
-        </details>
-        <details class="catalog__filter__tree">
-            <summary class="catalog__filter__tree__title">FILTER</summary>
-        </details>
+        <div class="catalog__filters__right">
+            <div class="popup_menu">
+                TRENDING NOW V
+                <div class="popup_menu__content">
+                    <input class="catalog__filters__checkbox" id="trend_1_checker" type="checkbox">
+                    <label for="trend_1_checker">First</label><br>
+                    <input class="catalog__filters__checkbox" id="trend_2_checker" type="checkbox">
+                    <label for="trend_2_checker">Second</label><br>
+                    <input class="catalog__filters__checkbox" id="trend_3_checker" type="checkbox">
+                    <label for="trend_3_checker">Third</label><br>
+                </div>
+            </div>
+            <div class="popup_menu">
+                SIZE V
+                <div class="popup_menu__content">
+                    <input class="catalog__filters__checkbox" id="size_xs_checker" type="checkbox">
+                    <label for="size_xs_checker">XS</label><br>
+                    <input class="catalog__filters__checkbox" id="size_s_checker" type="checkbox">
+                    <label for="size_s_checker">S</label><br>
+                    <input class="catalog__filters__checkbox" id="size_m_checker" type="checkbox">
+                    <label for="size_m_checker">M</label><br>
+                    <input class="catalog__filters__checkbox" id="size_l_checker" type="checkbox">
+                    <label for="size_l_checker">L</label><br>
+                </div>
+            </div>
+            <div class="popup_menu">
+                PRICE V
+                <div class="popup_menu__content">
+                    <input class="catalog__filters__checkbox" id="price_0_10_checker" type="checkbox">
+                    <label for="price_0_10_checker">0-10$</label><br>
+                    <input class="catalog__filters__checkbox" id="price_10_30_checker" type="checkbox">
+                    <label for="price_10_30_checker">10-30$</label><br>
+                    <input class="catalog__filters__checkbox" id="price_30_100_checker" type="checkbox">
+                    <label for="price_30_100_checker">30-100$</label><br>
+                    <input class="catalog__filters__checkbox" id="price_100_1k_checker" type="checkbox">
+                    <label for="price_100_1k_checker">100-1k$</label><br>
+                </div>
+            </div>
+        </div>
     </div>
     <div class="catalog__products center">
         <div class="product product_mb">
@@ -254,19 +320,17 @@
             </div>
         </div>
     </div>
-    <div class="catalog__bot center">
-        <nav class="catalog__page_sel">
-            <a href="#"><</a>
-            <a href="#">1</a>
-            <a href="#">2</a>
-            <a href="#">3</a>
-            <a href="#">4</a>
-            <a href="#">5</a>
-            <a href="#">6</a>
-            <a href="#">...</a>
-            <a href="#">10</a>
-            <a href="#">></a>
-        </nav>
+    <div class="paginator catalog__paginator center">
+        <a class="paginator__prev" href="#"><</a>
+        <a class="paginator__num" href="#">1</a>
+        <a class="paginator__num" href="#">2</a>
+        <a class="paginator__num" href="#">3</a>
+        <a class="paginator__num" href="#">4</a>
+        <a class="paginator__num" href="#">5</a>
+        <a class="paginator__num" href="#">6</a>
+        <span class="paginator__hellip">&hellip;</span>
+        <a class="paginator__num" href="#">10</a>
+        <a class="paginator__next" href="#">></a>
     </div>
 </section>
 <footer class="footer">
