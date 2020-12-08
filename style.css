@@ -521,7 +521,7 @@ a {
 
 .catalog__filter__tree:hover {
     box-shadow: 6px 4px 35px rgba(0, 0, 0, 0.21);
-    padding: 13px 16px;
+    padding: 13px 16px 16px 16px;
     font-style: normal;
     font-weight: 600;
     font-size: 14px;
@@ -537,6 +537,10 @@ a {
     display: block;
 }
 
+.catalog__filter__tree__section {
+    margin-top: 16px;
+}
+
 .catalog__filter__tree:hover .catalog__filter__tree__icon__path {
     fill: #EF5B70;
 }
@@ -550,8 +554,6 @@ a {
     border-left: 5px solid #EF5B70;
     border-bottom: 1px solid #EBEBEB;;
     padding: 11px;
-    margin-top: 10px;
-    margin-bottom: 10px;
 }
 
 .catalog__filter__tree__section_title::-webkit-details-marker {
@@ -562,8 +564,12 @@ a {
     list-style: none;
 }
 
-.catalog__filter__tree__section_link {
-    padding: 5px 17px;
+.catalog__filter__tree__section_content {
+    padding: 13px 17px 8px;
+}
+
+.catalog__filter__tree__section_content__link {
+    padding-top: 11px;
     font-style: normal;
     font-weight: normal;
     font-size: 14px;
