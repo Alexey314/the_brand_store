@@ -696,7 +696,8 @@ a {
 }
 
 details[open] summary + .accordion__section__content,
-details[open] summary + .accordion
+details[open] summary + .accordion,
+details[open] summary + .details_popup_menu__content
 {
     animation: sweep .5s ease-in-out;
 }
