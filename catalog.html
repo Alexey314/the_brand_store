@@ -10,7 +10,7 @@
 
 <body>
 <header class="header_top_bg">
-    <nav class="header_top__inner center">
+    <nav class="header_top__inner g-container">
         <div class="header__left">
             <a href="index.html"><img src="img/logo.svg" alt="logo"></a>
             <a href="#"><img class="header__left_search" src="img/search.svg" alt="search"></a>
@@ -23,18 +23,18 @@
         </div>
     </nav>
 </header>
-<section class="catalog ">
-    <div class="catalog__top">
-        <div class="catalog__top__inner center">
-            <p class="catalog__top__section_name">NEW ARRIVALS</p>
-            <div class="catalog__top__breadcrumbs">
-                <a class="catalog__top__breadcrumbs__link" href="index.html">HOME /</a>
-                <a class="catalog__top__breadcrumbs__link" href="#">MEN /</a>
-                <a class="catalog__top__breadcrumbs__link" href="#">NEW ARRIVALS</a>
-            </div>
+<div class="b-breadcrumbs-bar">
+    <div class="b-breadcrumbs-bar__content-box g-container">
+        <p class="b-breadcrumbs-bar__current-subsection">NEW ARRIVALS</p>
+        <div class="b-breadcrumbs-bar__full-path">
+            <a class="b-breadcrumbs-bar__subsection" href="index.html">HOME /</a>
+            <a class="b-breadcrumbs-bar__subsection" href="#">MEN /</a>
+            <a class="b-breadcrumbs-bar__subsection" href="#">NEW ARRIVALS</a>
         </div>
     </div>
-    <div class="catalog__filters center">
+</div>
+<section class="b-product-catalog">
+    <div class="catalog__filters g-container">
         <div class="catalog__filters__left">
             <details class="catalog__filter__tree">
                 <summary class="b-dropdown-menu_no-default-marker g-hide-focus g-cursor-default">
@@ -160,7 +160,7 @@
             </details>
         </div>
     </div>
-    <div class="catalog__products center">
+    <div class="catalog__products g-container">
         <div class="product product_mb">
             <div class="product__img">
                 <a href="product.html">
@@ -360,21 +360,27 @@
             </div>
         </div>
     </div>
-    <div class="paginator catalog__paginator center">
-        <a class="paginator__prev" href="#"><</a>
-        <a class="paginator__num" href="#">1</a>
-        <a class="paginator__num" href="#">2</a>
-        <a class="paginator__num" href="#">3</a>
-        <a class="paginator__num" href="#">4</a>
-        <a class="paginator__num" href="#">5</a>
-        <a class="paginator__num" href="#">6</a>
-        <span class="paginator__hellip">&hellip;</span>
-        <a class="paginator__num" href="#">10</a>
-        <a class="paginator__next" href="#">></a>
+    <div class="b-paginator g-container">
+        <a class="b-paginator__prev" href="#">
+            <svg width="9" height="14" viewBox="0 0 9 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M8.99512 2L3.99512 7L8.99512 12L7.99512 14L0.995117 7L7.99512 0L8.99512 2Z" fill="black"/>
+            </svg>
+        </a>
+        <a class="b-paginator__item b-paginator__item_current" href="#">1</a>
+        <a class="b-paginator__item" href="#">2</a>
+        <a class="b-paginator__item" href="#">3</a>
+        <a class="b-paginator__item" href="#">4</a>
+        <a class="b-paginator__item" href="#">5</a>
+        <a class="b-paginator__item" href="#">6.....20</a>
+        <a class="paginator__next" href="#">
+            <svg width="9" height="14" viewBox="0 0 9 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M0.994995 12L5.995 7L0.994995 2L1.995 0L8.995 7L1.995 14L0.994995 12Z" fill="black"/>
+            </svg>
+        </a>
     </div>
 </section>
 <footer class="footer">
-    <div class="features center">
+    <div class="features g-container">
         <figure class="feature">
             <img src="img/features/delivery.svg" alt="delivery">
             <figcaption class="feature__caption">
@@ -404,7 +410,7 @@
         </figure>
     </div>
     <div class="footer__subscribe">
-        <div class="footer__subscribe__inner center">
+        <div class="footer__subscribe__inner g-container">
             <figure class="footer__subscribe__inner__citation">
                 <img src="img/subscribe_face.png" alt="face photo">
                 <figcaption>
@@ -427,7 +433,7 @@
             </form>
         </div>
     </div>
-    <div class="footer__bot center">
+    <div class="footer__bot g-container">
         <p class="footer__bot__copyright">&copy;&nbsp;2021 Brand All Rights Reserved.</p>
         <nav class="footer__bot__sm__links">
             <a href="">
