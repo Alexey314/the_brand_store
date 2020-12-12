@@ -96,7 +96,7 @@ a {
     color: #F16D7F;
 }
 
-.promo .menu {
+.b-menu-flat {
     position: absolute;
     top: 0;
     right: 0;
@@ -104,13 +104,13 @@ a {
     max-width: 100vh;
     min-height: 100%;
     background: white;
-    padding: 10px;
+    padding: 16px 16px 34px 34px;
     z-index: 1;
     box-shadow: 6px 4px 35px rgba(0, 0, 0, 0.21);
     display: none;
 }
 
-.promo:hover .menu {
+.promo:hover .b-menu-flat {
     display: block;
 }
 
@@ -120,25 +120,38 @@ a {
 }
 
 
-.promo .menu__control {
+.b-menu-flat__close {
     text-align: right;
 }
 
-.promo .menu__title {
-    padding: 10px 10px 0 10px;
+.b-menu-flat__title {
+    /*padding: 10px 10px 0 10px;*/
+    padding-bottom: 4px;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 17px;
+    color: #000000;
 }
 
-.promo .menu__section {
-    padding: 10px 10px;
+.b-menu-flat__section-title {
+    margin-top: 20px;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 17px;
+    color: #F16D7F;
+
 }
 
-.promo .menu__section__title {
-    color: deeppink;
-}
-
-.promo .menu__section__link {
+.b-menu-flat__item {
     display: block;
-    padding: 5px 10px;
+    padding: 5px 63px 5px 21px;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 17px;
+    color: #6F6E6E;
 }
 
 .offer__top {
