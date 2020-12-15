@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@300400700900&display=swap");
 * {
   margin: 0;
   padding: 0;
@@ -58,9 +58,9 @@ a {
 .promo__left__img {
   width: 100%;
   flex-basis: 800px;
-  /*max-width: 800px;*/
 }
 
+/*max-width: 800px*/
 .promo__right {
   flex-basis: 50%;
   background: #F1E4E6;
@@ -121,7 +121,7 @@ a {
 }
 
 .b-menu-flat__title {
-  /*padding: 10px 10px 0 10px;*/
+  /*padding: 10px 10px 0 10px*/
   padding-bottom: 4px;
   font-style: normal;
   font-weight: bold;
@@ -405,15 +405,15 @@ a {
 }
 
 .footer__subscribe__inner__form__inputs__submit {
-  /*display: inline-block;*/
+  /*display: inline-block*/
   flex-shrink: 1;
-  /*flex-grow: 1;*/
+  /*flex-grow: 1*/
   font-style: normal;
   font-weight: normal;
   font-size: 14px;
   line-height: 17px;
   color: #FFFFFF;
-  /*width: 100px;*/
+  /*width: 100px*/
   padding-left: 20px;
   padding-right: 20px;
   height: 50px;
@@ -650,7 +650,7 @@ a {
   font-style: normal;
   font-weight: 300;
   font-size: 16px;
-  /*line-height: 19px;*/
+  /*line-height: 19px*/
   color: #636363;
 }
 
@@ -785,7 +785,7 @@ details[open] summary + .b-dropdown-menu__dropdown-content {
   }
 }
 .b-product-view {
-  /*position: relative;*/
+  /*position: relative*/
 }
 
 .b-product-view__img-listing {
@@ -801,7 +801,7 @@ details[open] summary + .b-dropdown-menu__dropdown-content {
   display: block;
   max-width: 100%;
   margin: auto;
-  /*width: 100%;*/
+  /*width: 100%*/
 }
 
 /********************************************************************/
