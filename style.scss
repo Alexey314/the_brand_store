@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap');
 
-@import url('b-product-view.css');
+
 
 * {
     margin: 0;
@@ -792,3 +792,5 @@ details[open] summary + .b-dropdown-menu__dropdown-content {
         margin-left: 0
     }
 }
+
+@import url('_b-product-view.scss');
