@@ -15,6 +15,7 @@ $hoverColor: #F16D7F
     padding-bottom: 128px - 96px
     display: flex
     justify-content: space-between
+    flex-wrap: wrap
 
 .b-shopping-cart-products
   &__buttons
@@ -123,3 +124,48 @@ $hoverColor: #F16D7F
     &:hover
       border-color: $hoverColor
       color: $hoverColor
+
+.b-shopping-cart-goto-checkout
+  margin-top: 58px
+  width: 360px
+  padding: 40px 43px
+  background: #F5F3F3
+  text-align: right
+  &__sub-total
+    font-style: normal
+    font-weight: normal
+    font-size: 11px
+    line-height: 13px
+    color: #4A4A4A
+    &-val
+      margin-left: 50px
+  &__grand-total
+    font-style: normal
+    font-weight: 300
+    font-size: 16px
+    line-height: 19px
+    color: #222222
+    margin-top: 12px
+    margin-bottom: 21px
+    &-val
+      margin-left: 50px
+      font-weight: 700
+      color: $hoverColor
+  hr
+    border: none
+    color: #E2E2E2
+    background-color: #E2E2E2
+    height: 1px
+  &__proceed
+    display: block
+    margin-top: 17px
+    text-align: center
+    font-style: normal
+    font-weight: 300
+    font-size: 16px
+    line-height: 50px
+    color: #FFFFFF
+    background: #F16D7F
+    &:hover
+      background: #E05C6E
+      cursor: pointer
