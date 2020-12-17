@@ -1,6 +1,6 @@
 $hoverColor: #F16D7F
 
-.b-shopping-cart
+.b-cart
   &__title
     background: #F8F3F4
     font-style: normal
@@ -17,7 +17,7 @@ $hoverColor: #F16D7F
     justify-content: space-between
     flex-wrap: wrap
 
-.b-shopping-cart-products
+.b-cart-products
   &__buttons
     display: flex
     justify-content: space-between
@@ -35,7 +35,7 @@ $hoverColor: #F16D7F
       border-color: $hoverColor
       color: $hoverColor
 
-.b-shopping-cart-products-item
+.b-cart-products-item
   display: flex
   width: 652px
   height: 306px
@@ -45,6 +45,7 @@ $hoverColor: #F16D7F
   background: #FFFFFF
   filter: drop-shadow(17px 19px 24px rgba(0, 0, 0, 0.13))
   &__img
+    display: block
   &__details
     padding: 22px 97px 0 31px
     position: relative
@@ -83,10 +84,10 @@ $hoverColor: #F16D7F
         path
           fill: $hoverColor
 
-.b-shopping-cart-buying
+.b-cart-buying
   display: block
 
-.b-shopping-cart-shipping
+.b-cart-shipping
   display: flex
   flex-direction: column
   &__title
@@ -125,7 +126,7 @@ $hoverColor: #F16D7F
       border-color: $hoverColor
       color: $hoverColor
 
-.b-shopping-cart-goto-checkout
+.b-cart-goto-checkout
   margin-top: 58px
   width: 360px
   padding: 40px 43px
