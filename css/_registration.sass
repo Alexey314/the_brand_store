@@ -1,0 +1,19 @@
+$g-container-width: 1140px
+$hoverColor: #F16D7F
+
+@mixin g-container
+  max-width: $g-container-width
+  margin-left: auto
+  margin-right: auto
+
+.b-site-location-band
+  background: #F8F3F4
+  padding-top: 60px
+  padding-bottom: 60px
+  &__section-name
+    @include g-container
+    font-style: normal
+    font-weight: normal
+    font-size: 24px
+    line-height: 29px
+    color: $hoverColor
