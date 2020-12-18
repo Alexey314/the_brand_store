@@ -15,12 +15,12 @@ a {
   text-decoration: none;
 }
 
-.b-checkbox {
+.input-checkbox {
   display: block;
   position: relative;
 }
 
-.b-checkbox__input {
+.input-checkbox__input {
   position: absolute;
   z-index: -1;
   opacity: 0;
@@ -30,11 +30,16 @@ a {
   width: 50%;
 }
 
-.b-checkbox__text {
+.input-checkbox__text {
   padding-left: 22px;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 16px;
+  color: #6F6E6E;
 }
 
-.b-checkbox__text:before {
+.input-checkbox__text:before {
   content: "";
   position: absolute;
   top: 0;
@@ -45,12 +50,51 @@ a {
   background: #FFF;
 }
 
-.b-checkbox_radio:before {
-  border-radius: 50%;
+.input-checkbox__input:checked + .input-checkbox__text:before {
+  background: #EF5B70;
 }
 
-.b-checkbox__input:checked + .b-checkbox__text:before {
+.input-radio {
+  display: block;
+  position: relative;
+}
+
+.input-radio__input {
+  position: absolute;
+  z-index: -1;
+  opacity: 0;
+  margin-left: 50%;
+  margin-top: 50%;
+  height: 50%;
+  width: 50%;
+}
+
+.input-radio__text {
+  padding-left: 27px;
+}
+
+.input-radio__text:before {
+  content: "";
+  position: absolute;
+  box-sizing: border-box;
+  top: calc(50% - 8.5px );
+  left: 0;
+  width: 17px;
+  height: 17px;
+  border: 1px solid #A4A4A4;
+  border-radius: 50%;
+  background: #FFF;
+}
+
+.input-radio__input:checked + .input-radio__text:before {
   background: #EF5B70;
+}
+
+.input-radio_text_size_s .input-radio__text {
+  font-weight: 300;
+  font-size: 11px;
+  line-height: 22px;
+  color: #000000;
 }
 
 .header_top_bg {
@@ -724,6 +768,11 @@ a {
   text-align: left;
 }
 
+.b-dropdown-menu__dropdown-content > .input-checkbox:not(:last-child),
+.b-dropdown-menu__dropdown-content > .input-radio:not(:last-child) {
+  margin-bottom: 10px;
+}
+
 .b-dropdown-menu[open] .b-dropdown-menu__dropdown-content {
   display: block;
 }
@@ -743,50 +792,6 @@ a {
 
 .b-dropdown-menu__dropdown-content:hover {
   display: block;
-}
-
-.b-dropdown-menu__checkbox-menu-item {
-  display: block;
-  margin-right: 10px;
-  position: relative;
-}
-
-.b-dropdown-menu__checkbox-menu-item-input {
-  position: absolute;
-  z-index: -1;
-  opacity: 0;
-  margin-left: 50%;
-  margin-top: 50%;
-  height: 50%;
-  width: 50%;
-}
-
-.b-dropdown-menu__checkbox-menu-item-text {
-  padding-left: 22px;
-}
-
-.b-dropdown-menu__checkbox-menu-item-text:before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 12px;
-  height: 12px;
-  border: 1px solid #EBEBEB;
-  background: #FFF;
-}
-
-.b-dropdown-menu__checkbox-menu-item-text_radio:before {
-  border-radius: 6px;
-}
-
-.b-dropdown-menu__checkbox-menu-item-input:checked + .b-dropdown-menu__checkbox-menu-item-text:before {
-  background: #EF5B70;
-  transition: 0.2s;
-}
-
-.b-dropdown-menu__checkbox-menu-item:not(:last-child) {
-  margin-bottom: 10px;
 }
 
 .b-dropdown-menu_no-default-marker::-webkit-details-marker {
@@ -1200,13 +1205,17 @@ details[open] summary + .b-dropdown-menu__dropdown-content {
   color: #F16D7F;
 }
 
-.b-registration-content {
+.reg-content {
   max-width: 1140px;
   margin-left: auto;
   margin-right: auto;
 }
 
-.b-registration-form__label-text {
+.registration-form {
+  width: 360px;
+}
+
+.registration-form__label-text {
   display: block;
   font-style: normal;
   font-weight: 300;
@@ -1214,7 +1223,8 @@ details[open] summary + .b-dropdown-menu__dropdown-content {
   line-height: 19px;
   color: #222222;
 }
-.b-registration-form__label-radio {
+
+.registration-form__label-radio {
   height: 170px;
   font-style: normal;
   font-weight: 300;
@@ -1222,13 +1232,22 @@ details[open] summary + .b-dropdown-menu__dropdown-content {
   line-height: 17px;
   color: #000000;
 }
-.b-registration-form__input-text {
+
+.registration-form__input-text {
   display: block;
   font-style: normal;
   font-weight: 300;
   font-size: 13px;
   line-height: 16px;
   color: #B1B1B1;
+}
+
+.registration-form__gender-selector {
+  display: flex;
+}
+
+.registration-form__gender-selector > .input-radio:not(:last-child) {
+  margin-right: 20px;
 }
 
 /*# sourceMappingURL=style.css.map */

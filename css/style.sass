@@ -13,7 +13,9 @@ body
 a
   text-decoration: none
 
-@import 'b-checkbox'
+@import "../common/input-checkbox"
+@import "../common/input-radio"
+@import "../common/input-radio_text_size_s"
 
 .header_top_bg
   background: #222222
@@ -588,6 +590,10 @@ a
   box-shadow: 6px 4px 35px rgba(0, 0, 0, 0.21)
   text-align: left
 
+.b-dropdown-menu__dropdown-content > .input-checkbox:not(:last-child),
+.b-dropdown-menu__dropdown-content > .input-radio:not(:last-child)
+  margin-bottom: 10px
+
 .b-dropdown-menu[open] .b-dropdown-menu__dropdown-content
   display: block
 
@@ -604,43 +610,6 @@ a
 
 .b-dropdown-menu__dropdown-content:hover
   display: block
-
-.b-dropdown-menu__checkbox-menu-item
-  display: block
-  margin-right: 10px
-  position: relative
-
-.b-dropdown-menu__checkbox-menu-item-input
-  position: absolute
-  z-index: -1
-  opacity: 0
-  margin-left: 50%
-  margin-top: 50%
-  height: 50%
-  width: 50%
-
-.b-dropdown-menu__checkbox-menu-item-text
-  padding-left: 22px
-
-.b-dropdown-menu__checkbox-menu-item-text:before
-  content: ''
-  position: absolute
-  top: 0
-  left: 0
-  width: 12px
-  height: 12px
-  border: 1px solid #EBEBEB
-  background: #FFF
-
-.b-dropdown-menu__checkbox-menu-item-text_radio:before
-  border-radius: 6px
-
-.b-dropdown-menu__checkbox-menu-item-input:checked + .b-dropdown-menu__checkbox-menu-item-text:before
-  background: #EF5B70
-  transition: 0.2s
-
-.b-dropdown-menu__checkbox-menu-item:not(:last-child)
-  margin-bottom: 10px
 
 .b-dropdown-menu_no-default-marker::-webkit-details-marker
   display: none

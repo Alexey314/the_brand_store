@@ -10,6 +10,7 @@ $hoverColor: #F16D7F
   background: #F8F3F4
   padding-top: 60px
   padding-bottom: 60px
+
   &__section-name
     @include g-container
     font-style: normal
@@ -18,29 +19,39 @@ $hoverColor: #F16D7F
     line-height: 29px
     color: $hoverColor
 
-.b-registration-content
+.reg-content
   @include g-container
 
-.b-registration-form
-  &__label-text
-    display: block
-    font-style: normal
-    font-weight: 300
-    font-size: 16px
-    line-height: 19px
-    color: #222222
-  &__label-radio
-    //display: block
-    height: 170px
-    font-style: normal
-    font-weight: 300
-    font-size: 11px
-    line-height: 17px
-    color: #000000
-  &__input-text
-    display: block
-    font-style: normal
-    font-weight: 300
-    font-size: 13px
-    line-height: 16px
-    color: #B1B1B1
+.registration-form
+  width: 360px
+
+.registration-form__label-text
+  display: block
+  font-style: normal
+  font-weight: 300
+  font-size: 16px
+  line-height: 19px
+  color: #222222
+
+.registration-form__label-radio
+  //display: block
+  height: 170px
+  font-style: normal
+  font-weight: 300
+  font-size: 11px
+  line-height: 17px
+  color: #000000
+
+.registration-form__input-text
+  display: block
+  font-style: normal
+  font-weight: 300
+  font-size: 13px
+  line-height: 16px
+  color: #B1B1B1
+
+.registration-form__gender-selector
+  display: flex
+
+.registration-form__gender-selector > .input-radio:not(:last-child)
+  margin-right: 20px
