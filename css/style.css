@@ -3,13 +3,54 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: Lato, serif;
   font-style: normal;
   font-weight: normal;
 }
 
+body {
+  font-family: Lato, serif;
+}
+
 a {
   text-decoration: none;
+}
+
+.b-checkbox {
+  display: block;
+  position: relative;
+}
+
+.b-checkbox__input {
+  position: absolute;
+  z-index: -1;
+  opacity: 0;
+  margin-left: 50%;
+  margin-top: 50%;
+  height: 50%;
+  width: 50%;
+}
+
+.b-checkbox__text {
+  padding-left: 22px;
+}
+
+.b-checkbox__text:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 12px;
+  height: 12px;
+  border: 1px solid #EBEBEB;
+  background: #FFF;
+}
+
+.b-checkbox_radio:before {
+  border-radius: 50%;
+}
+
+.b-checkbox__input:checked + .b-checkbox__text:before {
+  background: #EF5B70;
 }
 
 .header_top_bg {
@@ -1157,6 +1198,37 @@ details[open] summary + .b-dropdown-menu__dropdown-content {
   font-size: 24px;
   line-height: 29px;
   color: #F16D7F;
+}
+
+.b-registration-content {
+  max-width: 1140px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.b-registration-form__label-text {
+  display: block;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 19px;
+  color: #222222;
+}
+.b-registration-form__label-radio {
+  height: 170px;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 11px;
+  line-height: 17px;
+  color: #000000;
+}
+.b-registration-form__input-text {
+  display: block;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 13px;
+  line-height: 16px;
+  color: #B1B1B1;
 }
 
 /*# sourceMappingURL=style.css.map */

@@ -1,0 +1,34 @@
+.b-checkbox
+  display: block
+  position: relative
+
+.b-checkbox__input
+  position: absolute
+  z-index: -1
+  opacity: 0
+  margin-left: 50%
+  margin-top: 50%
+  height: 50%
+  width: 50%
+
+.b-checkbox__text
+  padding-left: 22px
+
+//how unchecked checkbox icon looks
+.b-checkbox__text:before
+  content: ""
+  position: absolute
+  top: 0
+  left: 0
+  width: 12px
+  height: 12px
+  border: 1px solid #EBEBEB
+  background: #FFF
+
+//how unchecked radio icon looks
+.b-checkbox_radio:before
+  border-radius: 50%
+
+//how checked checkbox/radio icon looks
+.b-checkbox__input:checked + .b-checkbox__text:before
+  background: #EF5B70
