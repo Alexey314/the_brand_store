@@ -97,6 +97,82 @@ a {
   color: #000000;
 }
 
+.registration-form {
+  width: 360px;
+}
+
+.registration-form__label-text {
+  display: block;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 19px;
+  color: #222222;
+}
+
+.registration-form__label-radio {
+  height: 170px;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 11px;
+  line-height: 17px;
+  color: #000000;
+}
+
+.registration-form__input-text {
+  display: block;
+  width: 100%;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 13px;
+  line-height: 16px;
+  color: #222222;
+  border: 1px solid #A4A4A4;
+  padding: 14px 16px;
+  margin-top: 20px;
+}
+
+.registration-form__gender-selector {
+  display: flex;
+  margin: 32px 0;
+}
+
+.registration-form__gender-selector > .input-radio:not(:last-child) {
+  margin-right: 20px;
+}
+
+.registration-form__password-requirements {
+  font-style: normal;
+  font-weight: 300;
+  font-size: 13px;
+  line-height: 16px;
+  color: #B1B1B1;
+  margin-top: 15px;
+  margin-bottom: 39px;
+}
+
+.registration-form__submit {
+  background-color: #F16D7F;
+  height: 50px;
+  border: none;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 17px;
+  color: #FFFFFF;
+  padding-left: 29px;
+  padding-right: 29px;
+}
+
+.registration-form__submit:hover {
+  cursor: pointer;
+  background: #E05C6E;
+}
+
+.registration-form__submit > img {
+  margin-left: 20px;
+}
+
 .header_top_bg {
   background: #222222;
   height: 75px;
@@ -112,7 +188,7 @@ a {
   justify-content: space-between;
 }
 
-.g-container {
+.container {
   max-width: 1140px;
   margin-left: auto;
   margin-right: auto;
@@ -508,6 +584,7 @@ a {
 }
 
 .footer__subscribe__inner__form__inputs__submit:hover {
+  cursor: pointer;
   background: #E05C6E;
 }
 
@@ -1194,10 +1271,8 @@ details[open] summary + .b-dropdown-menu__dropdown-content {
   padding-top: 60px;
   padding-bottom: 60px;
 }
+
 .b-site-location-band__section-name {
-  max-width: 1140px;
-  margin-left: auto;
-  margin-right: auto;
   font-style: normal;
   font-weight: normal;
   font-size: 24px;
@@ -1206,48 +1281,35 @@ details[open] summary + .b-dropdown-menu__dropdown-content {
 }
 
 .reg-content {
-  max-width: 1140px;
-  margin-left: auto;
-  margin-right: auto;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 64px;
 }
 
-.registration-form {
-  width: 360px;
+.reg-content__promo {
+  width: 652px;
 }
 
-.registration-form__label-text {
-  display: block;
+.reg-content__promo-heading {
   font-style: normal;
   font-weight: 300;
-  font-size: 16px;
-  line-height: 19px;
-  color: #222222;
+  font-size: 24px;
+  line-height: 29px;
+  color: #000000;
+  margin-bottom: 22px;
 }
 
-.registration-form__label-radio {
-  height: 170px;
+.reg-content__promo-text {
   font-style: normal;
   font-weight: 300;
-  font-size: 11px;
-  line-height: 17px;
+  font-size: 24px;
+  line-height: 29px;
   color: #000000;
 }
 
-.registration-form__input-text {
-  display: block;
-  font-style: normal;
-  font-weight: 300;
-  font-size: 13px;
-  line-height: 16px;
-  color: #B1B1B1;
-}
-
-.registration-form__gender-selector {
-  display: flex;
-}
-
-.registration-form__gender-selector > .input-radio:not(:last-child) {
-  margin-right: 20px;
+.reg-content__promo-text > img {
+  margin-right: 22px;
+  padding-top: 16px;
 }
 
 /*# sourceMappingURL=style.css.map */

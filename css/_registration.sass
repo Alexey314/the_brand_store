@@ -1,18 +1,11 @@
-$g-container-width: 1140px
 $hoverColor: #F16D7F
-
-@mixin g-container
-  max-width: $g-container-width
-  margin-left: auto
-  margin-right: auto
 
 .b-site-location-band
   background: #F8F3F4
   padding-top: 60px
   padding-bottom: 60px
 
-  &__section-name
-    @include g-container
+.b-site-location-band__section-name
     font-style: normal
     font-weight: normal
     font-size: 24px
@@ -20,38 +13,29 @@ $hoverColor: #F16D7F
     color: $hoverColor
 
 .reg-content
-  @include g-container
+  display: flex
+  justify-content: space-between
+  margin-top: 64px
 
-.registration-form
-  width: 360px
+.reg-content__promo
+  width: 652px
 
-.registration-form__label-text
-  display: block
+.reg-content__promo-heading
   font-style: normal
   font-weight: 300
-  font-size: 16px
-  line-height: 19px
-  color: #222222
+  font-size: 24px
+  line-height: 29px
+  color: #000000
+  margin-bottom: 22px
 
-.registration-form__label-radio
-  //display: block
-  height: 170px
+.reg-content__promo-text
   font-style: normal
   font-weight: 300
-  font-size: 11px
-  line-height: 17px
+  font-size: 24px
+  line-height: 29px
   color: #000000
 
-.registration-form__input-text
-  display: block
-  font-style: normal
-  font-weight: 300
-  font-size: 13px
-  line-height: 16px
-  color: #B1B1B1
+.reg-content__promo-text > img
+  margin-right: 22px
+  padding-top: 16px
 
-.registration-form__gender-selector
-  display: flex
-
-.registration-form__gender-selector > .input-radio:not(:last-child)
-  margin-right: 20px

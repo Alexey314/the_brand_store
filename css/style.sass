@@ -13,9 +13,12 @@ body
 a
   text-decoration: none
 
-@import "../common/input-checkbox"
-@import "../common/input-radio"
-@import "../common/input-radio_text_size_s"
+
+
+@import "../common/input-checkbox.sass"
+@import "../common/input-radio.sass"
+@import "../common/input-radio_text_size_s.sass"
+@import "../common/registration-form.sass"
 
 .header_top_bg
   background: #222222
@@ -30,7 +33,7 @@ a
   align-items: center
   justify-content: space-between
 
-.g-container
+.container
   max-width: 1140px
   margin-left: auto
   margin-right: auto
@@ -369,6 +372,7 @@ a
   border-radius: 0 25px 25px 0
 
 .footer__subscribe__inner__form__inputs__submit:hover
+  cursor: pointer
   background: #E05C6E
 
 .features
