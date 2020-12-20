@@ -29,7 +29,7 @@ a {
 }
 
 .header__link:hover {
-  transform: scale(1.1);
+  transform: scale(1.3) rotate(360deg);
 }
 
 .header__link-img {
@@ -203,11 +203,13 @@ a {
   color: #FFFFFF;
   padding-left: 29px;
   padding-right: 29px;
+  transition: transform 0.2s;
 }
 
 .registration-form__submit:hover {
   cursor: pointer;
   background: #E05C6E;
+  transform: scale(1.05);
 }
 
 .registration-form__submit > img {
