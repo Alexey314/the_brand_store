@@ -15,6 +15,47 @@ a {
   text-decoration: none;
 }
 
+.header {
+  background: #222222;
+  height: 75px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.header__link {
+  display: block;
+  transition: transform 0.2s;
+}
+
+.header__link:hover {
+  transform: scale(1.1);
+}
+
+.header__link-img {
+  display: block;
+}
+
+.header__content {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.header__link-to-search {
+  margin-left: 41px;
+}
+
+.header__spacer {
+  flex-grow: 1;
+}
+
+.header__link-to-account {
+  margin-left: 34px;
+  margin-right: 34px;
+}
+
 .input-checkbox {
   display: block;
   position: relative;
@@ -173,35 +214,11 @@ a {
   margin-left: 20px;
 }
 
-.header_top_bg {
-  background: #222222;
-  height: 75px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.header_top__inner {
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
 .container {
   max-width: 1140px;
   margin-left: auto;
   margin-right: auto;
   box-sizing: border-box;
-}
-
-.header__left_search {
-  margin-left: 41px;
-}
-
-.header__right_account {
-  margin-left: 34px;
-  margin-right: 34px;
 }
 
 .promo {
