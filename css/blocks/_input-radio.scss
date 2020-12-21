@@ -1,0 +1,40 @@
+$diam: 17px;
+
+.input-radio {
+  display: block;
+  position: relative;
+}
+
+//hiding default icon
+.input-radio__input {
+  position: absolute;
+  z-index: -1;
+  opacity: 0;
+  margin-left: 50%;
+  margin-top: 50%;
+  height: 50%;
+  width: 50%;
+}
+
+.input-radio__text {
+  padding-left: $diam + 10px;
+}
+
+//how unchecked radio icon looks
+.input-radio__text:before {
+  content: "";
+  position: absolute;
+  box-sizing: border-box;
+  top: calc(50% - #{$diam / 2} );
+  left: 0;
+  width: $diam;
+  height: $diam;
+  border: 1px solid #A4A4A4;
+  border-radius: 50%;
+  background: #FFF;
+}
+
+//how checked radio icon looks
+.input-radio__input:checked + .input-radio__text:before {
+  background: #EF5B70;
+}

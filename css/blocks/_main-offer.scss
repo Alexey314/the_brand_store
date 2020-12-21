@@ -1,0 +1,13 @@
+.main-offer {
+  margin-top: 63px;
+}
+
+.main-offer__grid {
+  display: flex;
+  margin-bottom: 30px;
+  justify-content: space-between;
+}
+
+.main-offer__grid .offer-card:not(:last-child) {
+  margin-right: 30px;
+}

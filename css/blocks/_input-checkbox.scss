@@ -1,0 +1,41 @@
+.input-checkbox {
+  display: block;
+  position: relative;
+}
+
+//hiding default icon
+.input-checkbox__input {
+  position: absolute;
+  z-index: -1;
+  opacity: 0;
+  margin-left: 50%;
+  margin-top: 50%;
+  height: 50%;
+  width: 50%;
+}
+
+.input-checkbox__text {
+  padding-left: 22px;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 16px;
+  color: #6F6E6E;
+}
+
+//how unchecked checkbox icon looks
+.input-checkbox__text:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 12px;
+  height: 12px;
+  border: 1px solid #EBEBEB;
+  background: #FFF;
+}
+
+//how checked checkbox/radio icon looks
+.input-checkbox__input:checked + .input-checkbox__text:before {
+  background: #EF5B70;
+}
