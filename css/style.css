@@ -63,7 +63,7 @@ a {
 
 .main-promo__img-box {
   flex-basis: 50%;
-  background: rgba(113, 103, 105, 0.08);
+  background: #f4f3f3;
   display: flex;
   justify-content: flex-end;
 }
@@ -104,6 +104,11 @@ a {
 
 .main-promo__text-box-inner-text-highlighted {
   color: #F16D7F;
+}
+
+.main-promo_dim .main-promo__img-box,
+.main-promo_dim .main-promo__text-box {
+  filter: brightness(50%);
 }
 
 .footer {
