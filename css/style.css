@@ -56,6 +56,56 @@ a {
   margin-right: 34px;
 }
 
+.main-promo {
+  display: flex;
+  position: relative;
+}
+
+.main-promo__img-box {
+  flex-basis: 50%;
+  background: rgba(113, 103, 105, 0.08);
+  display: flex;
+  justify-content: flex-end;
+}
+
+.main-promo__img {
+  width: 100%;
+  flex-basis: 800px;
+}
+
+/*max-width: 800px */
+.main-promo__text-box {
+  flex-basis: 50%;
+  background: #F1E4E6;
+  display: flex;
+  align-items: center;
+}
+
+.main-promo__text-box-inner {
+  max-width: 550px;
+  border-left: 12px solid #F16D7F;
+  margin-left: 64px;
+  padding-left: 16px;
+}
+
+.main-promo__text-box-inner-heading {
+  font-weight: 900;
+  font-size: 48px;
+  line-height: 58px;
+  color: #222222;
+}
+
+.main-promo__text-box-inner-text {
+  font-weight: 700;
+  font-size: 37px;
+  line-height: 44px;
+  color: #222222;
+}
+
+.main-promo__text-box-inner-text-highlighted {
+  color: #F16D7F;
+}
+
 .footer {
   background: #222224;
 }
@@ -471,56 +521,6 @@ a {
   box-sizing: border-box;
 }
 
-.promo {
-  display: flex;
-  position: relative;
-}
-
-.promo__left {
-  flex-basis: 50%;
-  background: rgba(113, 103, 105, 0.08);
-  display: flex;
-  justify-content: flex-end;
-}
-
-.promo__left__img {
-  width: 100%;
-  flex-basis: 800px;
-}
-
-/*max-width: 800px */
-.promo__right {
-  flex-basis: 50%;
-  background: #F1E4E6;
-  display: flex;
-  align-items: center;
-}
-
-.promo__right__content {
-  max-width: 550px;
-  border-left: 12px solid #F16D7F;
-  margin-left: 64px;
-  padding-left: 16px;
-}
-
-.promo__right__content__title {
-  font-weight: 900;
-  font-size: 48px;
-  line-height: 58px;
-  color: #222222;
-}
-
-.promo__right__content__text {
-  font-weight: 700;
-  font-size: 37px;
-  line-height: 44px;
-  color: #222222;
-}
-
-.promo__right__content__text__highlight {
-  color: #F16D7F;
-}
-
 .b-menu-flat {
   position: absolute;
   top: 0;
@@ -535,12 +535,12 @@ a {
   display: none;
 }
 
-.promo:hover .b-menu-flat {
+.main-promo:hover .b-menu-flat {
   display: block;
 }
 
-.promo:hover .promo__left,
-.promo:hover .promo__right {
+.main-promo:hover .main-promo__img-box,
+.main-promo:hover .main-promo__text-box {
   filter: brightness(50%);
 }
 
