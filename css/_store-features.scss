@@ -1,0 +1,38 @@
+.store-features {
+  padding-top: 104px;
+  padding-bottom: 104px;
+  background: #222224;
+}
+
+.store-features_mt {
+  margin-top: 96px;
+}
+
+.store-features__box {
+  display: flex;
+  justify-content: space-between;
+}
+
+.footer__feature {
+  text-align: center;
+  padding-left: 16px;
+  padding-right: 16px;
+}
+
+.footer__feature-heading {
+  margin-top: 28px;
+  margin-bottom: 16px;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 20px;
+  line-height: 24px;
+  color: #FBFBFB;
+}
+
+.footer__feature-text {
+  font-style: normal;
+  font-weight: 300;
+  font-size: 14px;
+  line-height: 17px;
+  color: #FBFBFB;
+}

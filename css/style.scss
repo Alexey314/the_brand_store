@@ -14,12 +14,15 @@ a {
   text-decoration: none;
 }
 
+//blocks
+
 @import "header";
 @import "main-promo";
 @import "main-menu";
 @import "catalog-product";
 @import "catalog-view";
 @import "featured-products";
+@import "store-features";
 @import "footer";
 @import "main-offer";
 @import "offer-card";
@@ -27,6 +30,9 @@ a {
 @import "input-radio";
 @import "input-radio_text_size_s";
 @import "registration-form";
+
+//pages
+@import "page-main";
 
 .container {
   max-width: 1140px;
@@ -41,38 +47,6 @@ a {
   .main-menu {
     @include main-menu_visible
   }
-}
-
-
-.features {
-  padding-top: 104px;
-  padding-bottom: 104px;
-  display: flex;
-  justify-content: space-between;
-}
-
-.feature {
-  text-align: center;
-  padding-left: 16px;
-  padding-right: 16px;
-}
-
-.feature__caption {
-  margin-top: 28px;
-  margin-bottom: 16px;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 20px;
-  line-height: 24px;
-  color: #FBFBFB;
-}
-
-.feature__text {
-  font-style: normal;
-  font-weight: 300;
-  font-size: 14px;
-  line-height: 17px;
-  color: #FBFBFB;
 }
 
 .b-breadcrumbs-bar {
