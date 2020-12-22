@@ -23,7 +23,7 @@ a {
 
 .header__link {
   display: block;
-  transition: transform 0.2s;
+  transition: transform 0.2s ease-in-out;
 }
 
 .header__link:hover {
@@ -163,7 +163,7 @@ a {
 .catalog-product {
   max-width: 360px;
   background: #F8F8F8;
-  transition: transform 0.3s;
+  transition: transform 0.2s;
 }
 
 .catalog-product__img-box {
@@ -280,7 +280,7 @@ a {
   font-size: 16px;
   line-height: 19px;
   color: #F26376;
-  transition: transform 0.3s;
+  transition: transform 0.2s;
 }
 
 .featured-products__catalog-btn:hover {
@@ -534,7 +534,7 @@ a {
   position: relative;
   flex-basis: 360px;
   flex-grow: 1;
-  transition: transform 0.2s;
+  transition: transform 0.2s ease-in-out;
 }
 
 .offer-card:hover {

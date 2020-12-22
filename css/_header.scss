@@ -8,7 +8,7 @@
 
 .header__link {
   display: block;
-  transition: transform 0.2s;
+  transition: transform 0.2s ease-in-out;
 }
 
 .header__link:hover {

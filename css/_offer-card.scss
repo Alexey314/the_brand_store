@@ -92,7 +92,7 @@
   position: relative;
   flex-basis: 360px;
   flex-grow: 1;
-  transition: transform 0.2s;
+  transition: transform 0.2s ease-in-out;
 }
 
 .offer-card:hover {
