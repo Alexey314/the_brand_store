@@ -304,13 +304,13 @@ a {
   justify-content: space-between;
 }
 
-.footer__feature {
+.store-features__feature {
   text-align: center;
   padding-left: 16px;
   padding-right: 16px;
 }
 
-.footer__feature-heading {
+.store-features__feature-heading {
   margin-top: 28px;
   margin-bottom: 16px;
   font-style: normal;
@@ -320,7 +320,7 @@ a {
   color: #FBFBFB;
 }
 
-.footer__feature-text {
+.store-features__feature-text {
   font-style: normal;
   font-weight: 300;
   font-size: 14px;
