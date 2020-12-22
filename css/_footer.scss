@@ -133,10 +133,12 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  transition: transform 0.2s ease-in-out;
 }
 
 .footer__social-link:hover {
   background: #F16D7F;
+  transform: scale(1.1);
 }
 
 .footer__social-link:hover .footer__social-link-img {
