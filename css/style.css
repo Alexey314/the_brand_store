@@ -879,12 +879,6 @@ a {
   color: #EF5B70;
 }
 
-.catalog__products {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-}
-
 .b-paginator {
   width: fit-content;
   margin-top: 13px;
@@ -1165,13 +1159,15 @@ details[open] summary + .b-dropdown-menu__dropdown-content {
 
 .b-cart__title {
   background: #F8F3F4;
+  color: #F16D7F;
+  padding-top: 60px;
+  padding-bottom: 60px;
+}
+.b-cart h1 {
   font-style: normal;
   font-weight: normal;
   font-size: 24px;
   line-height: 29px;
-  color: #F16D7F;
-  padding-top: 60px;
-  padding-bottom: 60px;
 }
 .b-cart__content {
   padding-top: 96px;
