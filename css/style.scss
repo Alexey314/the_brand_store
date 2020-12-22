@@ -34,13 +34,6 @@ a {
 //pages
 @import "page-main";
 
-.container {
-  max-width: 1140px;
-  margin-left: auto;
-  margin-right: auto;
-  box-sizing: border-box;
-}
-
 .main-promo:hover {
   @include main-promo_dim(50%);
 
@@ -306,3 +299,47 @@ details[open] summary + .b-dropdown-menu__dropdown-content {
 @import "b-product-view";
 @import "b-cart";
 @import "page-registration";
+
+
+// media
+@mixin container($width) {
+  .container {
+    max-width: $width;
+    margin-left: auto;
+    margin-right: auto;
+    box-sizing: border-box;
+  }
+}
+
+$fields: 16px;
+
+//laptop L
+@include container(1140px);
+
+@media (max-width: 1140px+$fields*2-0.02px) {
+  @include container(960px)
+}
+
+//tablet
+@media (max-width: 960px+$fields*2-0.02px) {
+  @include container(736px);
+  @include header_size_tablet;
+  @include main-promo_size_tablet;
+  @include main-offer_size_tablet;
+  @include featured-products_size_tablet;
+  @include catalog-view_size_tablet;
+  @include store-features_size_tablet;
+  @include footer_size_tablet;
+}
+
+@media (max-width: 736px+$fields*2-0.02px) {
+  @include container(540px)
+}
+
+@media (max-width: 540px+$fields*2-0.02px) {
+  @include container(375px)
+}
+
+
+
+

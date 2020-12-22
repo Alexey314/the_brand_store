@@ -16,7 +16,7 @@
   margin-top: 6px;
   margin-bottom: 48px;
   font-style: normal;
-  font-weight: normal;
+  font-weight: 400;
   font-size: 14px;
   line-height: 17px;
   color: #9F9F9F;
@@ -40,4 +40,14 @@
   background: #F16D7F;
   color: #FFFFFF;
   transform: scale(1.05);
+}
+
+@mixin featured-products_size_tablet {
+  .featured-products {
+    margin-top: 155px;
+  }
+  .featured-products__text {
+    margin-bottom: 72px;
+  }
+
 }

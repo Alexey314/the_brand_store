@@ -26,7 +26,7 @@
 .footer__subscribe-citation-box {
   width: 360px;
   text-align: center;
-  margin-top: 30px;
+  //margin-top: 30px;
   font-style: normal;
   font-weight: normal;
   font-size: 20px;
@@ -144,3 +144,21 @@
 .footer__social-link:hover .footer__social-link-img {
   filter: invert(1);
 }
+
+@mixin footer_size_tablet{
+  .footer__subscribe-inner {
+    flex-direction: column;
+    //align-items: center;
+    padding-top: 64px;
+    padding-bottom: 140px;
+  }
+  .footer__subscribe-citation-box {
+    margin-bottom: 48px;
+  }
+  .footer__social {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+}
+
+

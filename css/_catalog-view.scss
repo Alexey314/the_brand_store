@@ -1,5 +1,23 @@
+
 .catalog-view {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: center;
+}
+
+@mixin catalog-view_products-gap($gap){
+  .catalog-view {
+    margin-left: -$gap/2;
+    margin-right: -$gap/2;
+  }
+  .catalog-view .catalog-product{
+    margin: 0 $gap/2 $gap $gap/2;
+  }
+}
+
+@include catalog-view_products-gap(30px);
+
+
+@mixin catalog-view_size_tablet{
+  @include catalog-view_products-gap(16px);
 }
