@@ -24,6 +24,18 @@
   }
 }
 
+@mixin header_size_mobile{
+  .header__link-to-main {
+    padding-left: 16px;
+  }
+  .header__menu-switcher{
+    padding-right: 16px;
+  }
+  .header-optional{
+    display: none;
+  }
+}
+
 .header_optional-ml{
   margin-left: 34px;
 }

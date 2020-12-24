@@ -51,17 +51,15 @@ $mainMenuHeight: 765px;
 
 @include main-menu_size_desktop;
 
-@mixin main-menu_visible {
-  .main-menu {
+@mixin main-menu_visible_desktop-tablet {
     transition: width 0.2s ease-in-out;
     width: $mainMenuWidth;
-  }
 }
 
-.main-menu_visible {
-  @include main-menu_visible
+@mixin main-menu_visible_mobile {
+  transition: width 0.2s ease-in-out;
+  width: 100%;
 }
-
 
 .main-menu__close {
   text-align: right;

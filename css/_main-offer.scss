@@ -13,13 +13,22 @@
 }
 
 @mixin main-offer_size_tablet {
-  .main-offer {
-    margin-top: 20px;
-  }
+  margin-top: 20px;
   .main-offer__grid .offer-card:not(:last-child) {
     margin-right: 20px;
   }
   .main-offer__grid {
     margin-bottom: 20px;
+  }
+}
+
+@mixin main-offer_size_mobile {
+  margin-top: 64px;
+  .main-offer__grid {
+    flex-direction: column;
+    margin-bottom: 20px;
+    .offer-card:not(:last-child){
+      margin-right: 0;
+    }
   }
 }
