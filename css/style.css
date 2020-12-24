@@ -22,13 +22,6 @@ a {
   position: relative;
 }
 
-.header__content {
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
 .header__link-to-search {
   margin-left: 41px;
 }
@@ -39,6 +32,68 @@ a {
 
 .header_optional-ml {
   margin-left: 34px;
+}
+
+.main-menu {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  width: 0;
+  height: max-content;
+  z-index: 1;
+  box-shadow: 6px 4px 35px rgba(0, 0, 0, 0.21);
+  transition: transform 2.2s;
+  overflow: hidden;
+}
+
+.main-menu__inner-box {
+  min-width: 232px;
+  min-height: 765px;
+  padding: 16px 16px 34px 34px;
+  background: white;
+}
+
+.main-menu_visible {
+  transition: width 0.2s ease-in-out;
+  width: 232px;
+}
+
+.main-menu__close {
+  text-align: right;
+}
+
+.main-menu__heading {
+  /*padding: 10px 10px 0 10px */
+  padding-bottom: 4px;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 17px;
+  color: #000000;
+}
+
+.main-menu__section-heading {
+  margin-top: 20px;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 17px;
+  color: #F16D7F;
+}
+
+.main-menu__item {
+  display: block;
+  padding: 5px 63px 5px 21px;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 17px;
+  color: #6F6E6E;
+}
+
+.header #id-menu-switcher:checked ~ .main-menu {
+  transition: width 0.2s ease-in-out;
+  width: 232px;
 }
 
 .header-optional {
@@ -134,57 +189,6 @@ a {
 .main-promo_dim .main-promo__img-box,
 .main-promo_dim .main-promo__text-box {
   filter: brightness(50%);
-}
-
-.main-menu {
-  position: absolute;
-  top: 0;
-  right: 0;
-  width: max-content;
-  max-width: 100vh;
-  min-height: 100%;
-  background: white;
-  padding: 16px 16px 34px 34px;
-  z-index: 1;
-  box-shadow: 6px 4px 35px rgba(0, 0, 0, 0.21);
-  display: none;
-}
-
-.main-menu_visible {
-  display: block;
-}
-
-.main-menu__close {
-  text-align: right;
-}
-
-.main-menu__heading {
-  /*padding: 10px 10px 0 10px */
-  padding-bottom: 4px;
-  font-style: normal;
-  font-weight: bold;
-  font-size: 14px;
-  line-height: 17px;
-  color: #000000;
-}
-
-.main-menu__section-heading {
-  margin-top: 20px;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 14px;
-  line-height: 17px;
-  color: #F16D7F;
-}
-
-.main-menu__item {
-  display: block;
-  padding: 5px 63px 5px 21px;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 14px;
-  line-height: 17px;
-  color: #6F6E6E;
 }
 
 .catalog-product {
@@ -774,7 +778,8 @@ a {
   filter: brightness(50%);
 }
 .main-promo:hover .main-menu {
-  display: block;
+  transition: width 0.2s ease-in-out;
+  width: 232px;
 }
 
 .b-breadcrumbs-bar {
@@ -1436,12 +1441,22 @@ details[open] summary + .b-dropdown-menu__dropdown-content {
   box-sizing: border-box;
 }
 
+.container-p {
+  padding-left: calc(50vw - 570px);
+  padding-right: calc(50vw - 570px);
+}
+
 @media (max-width: 1171.98px) {
   .container {
     max-width: 960px;
     margin-left: auto;
     margin-right: auto;
     box-sizing: border-box;
+  }
+
+  .container-p {
+    padding-left: calc(50vw - 480px);
+    padding-right: calc(50vw - 480px);
   }
 }
 @media (max-width: 991.98px) {
@@ -1452,8 +1467,17 @@ details[open] summary + .b-dropdown-menu__dropdown-content {
     box-sizing: border-box;
   }
 
-  .header__content {
-    padding: 0 16px;
+  .container-p {
+    padding-left: calc(50vw - 368px);
+    padding-right: calc(50vw - 368px);
+  }
+
+  .header__link-to-main {
+    padding-left: 16px;
+  }
+
+  .header-optional {
+    padding-right: 16px;
   }
 
   .main-promo__text-box-inner {
@@ -1547,6 +1571,11 @@ details[open] summary + .b-dropdown-menu__dropdown-content {
     margin-right: auto;
     box-sizing: border-box;
   }
+
+  .container-p {
+    padding-left: calc(50vw - 270px);
+    padding-right: calc(50vw - 270px);
+  }
 }
 @media (max-width: 571.98px) {
   .container {
@@ -1554,6 +1583,11 @@ details[open] summary + .b-dropdown-menu__dropdown-content {
     margin-left: auto;
     margin-right: auto;
     box-sizing: border-box;
+  }
+
+  .container-p {
+    padding-left: calc(50vw - 187.5px);
+    padding-right: calc(50vw - 187.5px);
   }
 }
 

@@ -1,24 +1,36 @@
 .main-menu {
   position: absolute;
-  top: 0;
+  top: 100%;
   right: 0;
-  width: max-content;
-  max-width: 100vh;
-  min-height: 100%;
-  background: white;
-  padding: 16px 16px 34px 34px;
+  width: 0;
+  height: max-content;
   z-index: 1;
   box-shadow: 6px 4px 35px rgba(0, 0, 0, 0.21);
-  display: none;
+  transition: transform 2.2s;
+  overflow: hidden;
+}
+
+@mixin main-menu_size($w, $h){
+  width: $w;
+  height: $h;
+}
+
+.main-menu__inner-box{
+  min-width: 232px;
+  min-height: 765px;
+  padding: 16px 16px 34px 34px;
+  background: white;
 }
 
 @mixin main-menu_visible {
-  display: block;
+  transition: width 0.2s ease-in-out;
+  width: 232px;
 }
 
 .main-menu_visible {
   @include main-menu_visible
 }
+
 
 .main-menu__close {
   text-align: right;

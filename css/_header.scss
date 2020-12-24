@@ -7,15 +7,6 @@
   position: relative;
 }
 
-.header__content {
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-//.header__link-to-main
-
 .header__link-to-search {
   margin-left: 41px;
 }
@@ -24,17 +15,21 @@
   flex-grow: 1;
 }
 
-//.header__link-to-catalog
-
-
-//.
-
 @mixin header_size_tablet{
-  .header__content {
-    padding: 0 16px;
+  .header__link-to-main {
+    padding-left: 16px;
+  }
+  .header-optional{
+    padding-right: 16px;
   }
 }
 
 .header_optional-ml{
   margin-left: 34px;
+}
+
+@import "main-menu";
+
+.header #id-menu-switcher:checked ~ .main-menu{
+  @include main-menu_visible();
 }
