@@ -19,6 +19,7 @@ a {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  position: relative;
 }
 
 .header__content {
@@ -58,6 +59,25 @@ a {
 }
 
 .link-img__img {
+  display: block;
+}
+
+.switcher__checkbox {
+  position: absolute;
+  left: -999999999px;
+  visibility: hidden;
+  z-index: -100;
+}
+
+.switcher__label {
+  transition: transform 0.2s ease-in-out;
+}
+
+.switcher__label:hover {
+  transform: scale(1.3);
+}
+
+.switcher__label-img {
   display: block;
 }
 

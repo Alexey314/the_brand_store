@@ -1,0 +1,23 @@
+
+.switcher__checkbox {
+  position: absolute;
+  left: -999999999px;
+  visibility: hidden;
+  z-index: -100;
+}
+
+.switcher__label {
+  transition: transform 0.2s ease-in-out;
+}
+
+.switcher__label:hover {
+  transform: scale(1.3);
+}
+
+.switcher__label-img {
+  display: block;
+}
+
+//.switcher__checkbox:checked + .switcher__label > .switcher__label-img {
+//  filter: invert(1);
+//}
