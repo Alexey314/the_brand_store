@@ -36,14 +36,6 @@ a {
 //pages
 @import "page-main";
 
-.main-promo:hover {
-  @include main-promo_dim(50%);
-
-  .main-menu {
-    @include main-menu_visible
-  }
-}
-
 .b-breadcrumbs-bar {
   padding: 60px 0;
   background: #F8F3F4;
@@ -314,17 +306,14 @@ details[open] summary + .b-dropdown-menu__dropdown-content {
 
 $fields: 16px;
 
-//laptop L
+//laptop
 @include container(1140px);
 
-@media (max-width: 1140px+$fields*2-0.02px) {
-  @include container(960px)
-}
-
 //tablet
-@media (max-width: 960px+$fields*2-0.02px) {
+@media (max-width: 1140px+$fields*2-0.02px) {
   @include container(736px);
   @include header_size_tablet;
+  @include main-menu_size_tablet;
   @include main-promo_size_tablet;
   @include main-offer_size_tablet;
   @include featured-products_size_tablet;
@@ -334,10 +323,6 @@ $fields: 16px;
 }
 
 @media (max-width: 736px+$fields*2-0.02px) {
-  @include container(540px)
-}
-
-@media (max-width: 540px+$fields*2-0.02px) {
   @include container(375px)
 }
 

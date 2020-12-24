@@ -28,8 +28,3 @@
   margin-left: 34px;
 }
 
-@import "main-menu";
-
-.header #id-menu-switcher:checked ~ .main-menu{
-  @include main-menu_visible();
-}

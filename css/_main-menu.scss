@@ -1,6 +1,9 @@
+$mainMenuWidth: 232px;
+$mainMenuHeight: 765px;
+
 .main-menu {
   position: absolute;
-  top: 100%;
+  top: 0;
   right: 0;
   width: 0;
   height: max-content;
@@ -10,21 +13,49 @@
   overflow: hidden;
 }
 
-@mixin main-menu_size($w, $h){
-  width: $w;
-  height: $h;
+.main-menu-placeholder {
+  position: relative;
 }
 
-.main-menu__inner-box{
-  min-width: 232px;
-  min-height: 765px;
+@mixin main-menu_size_desktop() {
+  .main-menu__inner-box {
+    min-width: $mainMenuWidth;
+    width: max-content;
+    min-height: $mainMenuHeight;
+    height: max-content;
+  }
+}
+
+@mixin main-menu_size_tablet() {
+  .main-menu__inner-box {
+    min-width: unset;
+    width: $mainMenuWidth;
+    min-height: unset;
+    height: max-content;
+  }
+}
+
+@mixin main-menu_size_mobile() {
+  .main-menu__inner-box {
+    min-width: unset;
+    width: 100%;
+    min-height: unset;
+    height: max-content;
+  }
+}
+
+.main-menu__inner-box {
   padding: 16px 16px 34px 34px;
   background: white;
 }
 
+@include main-menu_size_desktop;
+
 @mixin main-menu_visible {
-  transition: width 0.2s ease-in-out;
-  width: 232px;
+  .main-menu {
+    transition: width 0.2s ease-in-out;
+    width: $mainMenuWidth;
+  }
 }
 
 .main-menu_visible {

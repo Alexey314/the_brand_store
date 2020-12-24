@@ -50,10 +50,13 @@
 }
 
 @mixin main-promo_dim($level) {
-  .main-promo__img-box,
-  .main-promo__text-box {
+  .main-promo {
     filter: brightness(#{$level});
   }
+  //.main-promo__img-box,
+  //.main-promo__text-box {
+  //  filter: brightness(#{$level});
+  //}
   //filter: brightness(#{$level});
 }
 
