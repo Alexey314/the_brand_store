@@ -1,0 +1,12 @@
+.link-img {
+  display: block;
+  transition: transform 0.2s ease-in-out;
+}
+
+.link-img:hover {
+  transform: scale(1.3);
+}
+
+.link-img__img {
+  display: block;
+}
