@@ -1,0 +1,22 @@
+@use "main-promo";
+@use "catalog-view";
+@use "main-offer";
+@use "featured-products";
+
+@mixin desktop {
+  .page-catalog {
+    @include catalog-view.catalog-view_size_desktop;
+  }
+}
+
+@mixin tablet {
+  .page-catalog {
+    @include catalog-view.catalog-view_size_tablet;
+  }
+}
+
+@mixin mobile {
+  .page-catalog {
+    @include catalog-view.catalog-view_size_mobile;
+  }
+}
