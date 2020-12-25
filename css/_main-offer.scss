@@ -22,44 +22,52 @@
 }
 
 @mixin main-offer_size_tablet {
-  margin-top: 20px;
-  .main-offer__small-cards .offer-card:not(:last-child) {
-    margin-right: 20px;
-  }
-  .main-offer__small-cards {
-    margin-bottom: 20px;
+  .main-offer {
+    margin-top: 20px;
+
+    .main-offer__small-cards .offer-card:not(:last-child) {
+      margin-right: 20px;
+    }
+
+    .main-offer__small-cards {
+      margin-bottom: 20px;
+    }
   }
 }
 
 @mixin main-offer_size_mobile {
-  margin-top: 64px;
-  padding-left: 8px;
-  padding-right: 8px;
-  .main-offer__small-cards {
-    flex-direction: column;
-    margin-bottom: 0;
+  .main-offer {
+    margin-top: 64px;
+    padding-left: 8px;
+    padding-right: 8px;
 
-    .offer-card:not(:last-child) {
-      margin-right: 0;
+    .main-offer__small-cards {
+      flex-direction: column;
+      margin-bottom: 0;
+
+      .offer-card:not(:last-child) {
+        margin-right: 0;
+      }
+
+      .offer-card {
+        flex-basis: unset;
+        flex-grow: unset;
+        margin-right: 0;
+        margin-bottom: 32px;
+      }
     }
 
-    .offer-card {
-      flex-basis: unset;
-      flex-grow: unset;
-      margin-right: 0;
-      margin-bottom: 32px;
+    .main-offer__big-card {
+      height: 111px;
+      overflow: hidden;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      .offer-card__img {
+        width: unset;
+        transform: scale(0.6);
+      }
     }
   }
-  .main-offer__big-card {
-    height: 111px;
-    overflow: hidden;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    .offer-card__img {
-      width: unset;
-      transform: scale(0.6);
-    }
-  }
-
 }

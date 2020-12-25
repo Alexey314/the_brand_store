@@ -1,4 +1,13 @@
 $containerWidthDesktop: 1140px;
+$containerFieldsDesktop: 16px;
 $containerWidthTablet: 736px;
+$containerFieldsTablet: 16px;
 $containerWidthMobile: 360px;
-$containerFields: 16px;
+$containerFieldsMobile: 8px;
+
+$maxWidthMobile: $containerWidthTablet - 0.02px;
+
+$minWidthTablet: $containerWidthTablet;
+$maxWidthTablet: $containerWidthDesktop - 0.02px;
+
+$minWidthDesktop: $containerWidthDesktop;

@@ -43,20 +43,25 @@
 }
 
 @mixin featured-products_size_tablet {
-  margin-top: 155px;
-  .featured-products__text {
-    margin-bottom: 72px;
-  }
+  .featured-products {
+    margin-top: 155px;
 
+    .featured-products__text {
+      margin-bottom: 72px;
+    }
+  }
 }
 
 @mixin featured-products_size_mobile {
-  margin-top: 64px;
-  .featured-products__text {
-    margin-bottom: 64px;
-  }
-  .featured-products__catalog-btn {
-    margin-top: 24px;
-  }
+  .featured-products {
+    margin-top: 64px;
 
+    .featured-products__text {
+      margin-bottom: 64px;
+    }
+
+    .featured-products__catalog-btn {
+      margin-top: 24px;
+    }
+  }
 }

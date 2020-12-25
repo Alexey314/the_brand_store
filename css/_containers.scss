@@ -1,0 +1,14 @@
+// media
+@mixin containers($width) {
+  .container {
+    max-width: $width;
+    margin-left: auto;
+    margin-right: auto;
+    box-sizing: border-box;
+  }
+
+  .container-p {
+    padding-left: calc(50vw - #{$width/2});
+    padding-right: calc(50vw - #{$width/2});
+  }
+}

@@ -1,3 +1,67 @@
+@use "vars";
+@use "containers";
+@use "header";
 @use "main-menu";
 @use "main-promo";
+@use "main-offer";
+@use "featured-products";
+@use "catalog-view";
+@use "store-features";
+@use "footer";
 
+@mixin desktop {
+  .page-main {
+    #id-main-menu-switcher:checked ~ {
+      @include main-promo.main-promo_dim(50%);
+    }
+
+    #id-main-menu-switcher:checked ~ .main-menu {
+      @include main-menu.main-menu_visible_desktop-tablet();
+    }
+
+    @include containers.containers(vars.$containerWidthDesktop);
+    @include main-menu.main-menu_size_desktop;
+    @include catalog-view.catalog-view_size_desktop;
+
+  }
+}
+
+@mixin tablet {
+  .page-main {
+    #id-main-menu-switcher:checked ~ {
+      @include main-promo.main-promo_dim(50%);
+    }
+
+    #id-main-menu-switcher:checked ~ .main-menu {
+      @include main-menu.main-menu_visible_desktop-tablet();
+    }
+
+    @include containers.containers(vars.$containerWidthTablet);
+    @include header.header_size_tablet;
+    @include main-menu.main-menu_size_tablet;
+    @include main-promo.main-promo_size_tablet;
+    @include main-offer.main-offer_size_tablet;
+    @include featured-products.featured-products_size_tablet;
+    @include catalog-view.catalog-view_size_tablet;
+    @include store-features.store-features_size_tablet;
+    @include footer.footer_size_tablet;
+  }
+}
+
+@mixin mobile {
+  .page-main {
+    #id-main-menu-switcher:checked ~ .main-menu {
+      @include main-menu.main-menu_visible_mobile();
+    }
+
+    @include containers.containers(vars.$containerWidthMobile);
+    @include header.header_size_mobile;
+    @include main-menu.main-menu_size_mobile;
+    @include main-promo.main-promo_size_mobile;
+    @include main-offer.main-offer_size_mobile;
+    @include featured-products.featured-products_size_mobile;
+    @include catalog-view.catalog-view_size_tablet;
+    @include store-features.store-features_size_tablet;
+    @include footer.footer_size_mobile;
+  }
+}

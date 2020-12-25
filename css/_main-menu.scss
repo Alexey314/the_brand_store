@@ -11,7 +11,8 @@ $mainMenuHeight: 765px;
   box-shadow: 6px 4px 35px rgba(0, 0, 0, 0.21);
   transition: transform 2.2s;
   overflow: hidden;
-  .header-optional{
+
+  .header-optional {
     display: none;
   }
 }
@@ -21,37 +22,45 @@ $mainMenuHeight: 765px;
 }
 
 @mixin main-menu_size_desktop() {
-  .main-menu__inner-box {
-    min-width: $mainMenuWidth;
-    width: max-content;
-    min-height: $mainMenuHeight;
-    height: max-content;
+  .main-menu {
+    .main-menu__inner-box {
+      min-width: $mainMenuWidth;
+      width: max-content;
+      min-height: $mainMenuHeight;
+      height: max-content;
+    }
   }
 }
 
 @mixin main-menu_size_tablet() {
-  .main-menu__inner-box {
-    min-width: unset;
-    width: $mainMenuWidth;
-    min-height: unset;
-    height: max-content;
+  .main-menu {
+    .main-menu__inner-box {
+      min-width: unset;
+      width: $mainMenuWidth;
+      min-height: unset;
+      height: max-content;
+    }
   }
 }
 
 @mixin main-menu_size_mobile() {
-  .header-optional{
-    display: flex;
-    justify-content: center;
-    .header-optional__link{
-      padding: 16px;
-      filter: brightness(0.2);
+  .main-menu {
+    .header-optional {
+      display: flex;
+      justify-content: center;
+
+      .header-optional__link {
+        padding: 16px;
+        filter: brightness(0.2);
+      }
     }
-  }
-  .main-menu__inner-box {
-    min-width: unset;
-    width: 100%;
-    min-height: unset;
-    height: max-content;
+
+    .main-menu__inner-box {
+      min-width: unset;
+      width: 100%;
+      min-height: unset;
+      height: max-content;
+    }
   }
 }
 
@@ -60,11 +69,9 @@ $mainMenuHeight: 765px;
   background: white;
 }
 
-@include main-menu_size_desktop;
-
 @mixin main-menu_visible_desktop-tablet {
-    transition: width 0.2s ease-in-out;
-    width: $mainMenuWidth;
+  transition: width 0.2s ease-in-out;
+  width: $mainMenuWidth;
 }
 
 @mixin main-menu_visible_mobile {

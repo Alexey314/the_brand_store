@@ -38,21 +38,25 @@
 }
 
 @mixin store-features_size_tablet {
+  .store-features {
+    padding-top: 48px;
+    padding-bottom: 64px;
 
-  padding-top: 48px;
-  padding-bottom: 64px;
+    .store-features_mt {
+      margin-top: 64px;
+    }
 
-  .store-features_mt {
-    margin-top: 64px;
-  }
-  .store-features__box {
-    flex-direction: column;
-    align-items: center;
-  }
-  .store-features__feature {
-    max-width: 360px;
-  }
-  .store-features__feature:not(:last-of-type) {
-    margin-bottom: 48px;
+    .store-features__box {
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .store-features__feature {
+      max-width: 360px;
+    }
+
+    .store-features__feature:not(:last-of-type) {
+      margin-bottom: 48px;
+    }
   }
 }

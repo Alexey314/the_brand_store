@@ -1,5 +1,6 @@
 //blocks
 @use "vars";
+@use "containers";
 @use "header";
 @use "header-optional";
 @use "link-img";
@@ -39,7 +40,6 @@ body {
 a {
   text-decoration: none;
 }
-
 
 
 .b-breadcrumbs-bar {
@@ -290,93 +290,20 @@ details[open] summary + .b-dropdown-menu__dropdown-content {
   }
 }
 
-#id-main-menu-switcher:checked ~ {
-  @include main-promo.main-promo_dim(50%);
-}
-
-
-// media
-@mixin containers($width) {
-  .container {
-    max-width: $width;
-    margin-left: auto;
-    margin-right: auto;
-    box-sizing: border-box;
-  }
-
-  .container-p {
-    padding-left: calc(50vw - #{$width/2});
-    padding-right: calc(50vw - #{$width/2});
-  }
-}
-
-
 
 //laptop
-@include containers(vars.$containerWidthDesktop);
-#id-main-menu-switcher:checked ~ .main-menu {
-  @include main-menu.main-menu_visible_desktop-tablet();
+@media (min-width: vars.$minWidthDesktop) {
+  @include page-main.desktop;
 }
 
 //tablet
-@media (max-width: vars.$containerWidthDesktop+vars.$containerFields*2-0.02px) {
-  @include containers(vars.$containerWidthTablet);
-  .header {
-    @include header.header_size_tablet;
-  }
-  .main-menu {
-    @include main-menu.main-menu_size_tablet;
-  }
-  .main-promo {
-    @include main-promo.main-promo_size_tablet;
-  }
-  .main-offer {
-    @include main-offer.main-offer_size_tablet;
-  }
-  .featured-products {
-    @include featured-products.featured-products_size_tablet;
-  }
-  .catalog-view {
-    @include catalog-view.catalog-view_size_tablet;
-  }
-  .store-features {
-    @include store-features.store-features_size_tablet;
-  }
-  .footer {
-    @include footer.footer_size_tablet;
-  }
+@media (min-width: vars.$minWidthTablet) and (max-width: vars.$maxWidthTablet) {
+  @include page-main.tablet;
 }
 
 //mobile
-@media (max-width: vars.$containerWidthTablet+vars.$containerFields*2-0.02px) {
-  @include containers(vars.$containerWidthMobile);
-  .header {
-    @include header.header_size_mobile;
-  }
-  .main-menu {
-    @include main-menu.main-menu_size_mobile;
-  }
-  .main-promo {
-    @include main-promo.main-promo_size_mobile;
-  }
-  .main-offer {
-    @include main-offer.main-offer_size_mobile;
-  }
-  .featured-products {
-    @include featured-products.featured-products_size_mobile;
-  }
-  .catalog-view {
-    @include catalog-view.catalog-view_size_tablet;
-  }
-  .store-features {
-    @include store-features.store-features_size_tablet;
-  }
-  .footer {
-    @include footer.footer_size_mobile;
-  }
-  #id-main-menu-switcher:checked ~ .main-menu {
-    @include main-menu.main-menu_visible_mobile();
-  }
+@media (max-width: vars.$maxWidthMobile) {
+  @include page-main.mobile;
 }
 
 

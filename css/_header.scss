@@ -15,28 +15,31 @@
   flex-grow: 1;
 }
 
-@mixin header_size_tablet{
-  .header__link-to-main {
-    padding-left: 16px;
-  }
-  .header-optional{
-    padding-right: 16px;
+@mixin header_size_tablet {
+  .header {
+    .header__link-to-main {
+      padding-left: 16px;
+    }
+
+    .header-optional {
+      padding-right: 16px;
+    }
   }
 }
 
-@mixin header_size_mobile{
+@mixin header_size_mobile {
   .header__link-to-main {
     padding-left: 8px;
   }
-  .header__menu-switcher{
+  .header__menu-switcher {
     padding-right: 8px;
   }
-  .header-optional{
+  .header-optional {
     display: none;
   }
 }
 
-.header_optional-ml{
+.header_optional-ml {
   margin-left: 34px;
 }
 
