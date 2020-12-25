@@ -1793,8 +1793,12 @@ details[open] summary + .b-dropdown-menu__dropdown-content {
     margin-bottom: 48px;
   }
   .footer .footer__social {
-    padding-left: 16px;
-    padding-right: 16px;
+    padding-top: 43px;
+    padding-bottom: 9px;
+    flex-direction: column-reverse;
+  }
+  .footer .footer__social .footer__copyright {
+    margin-top: 40px;
   }
 
   #id-main-menu-switcher:checked ~ .main-menu {

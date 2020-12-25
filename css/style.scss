@@ -368,7 +368,7 @@ details[open] summary + .b-dropdown-menu__dropdown-content {
     @include store-features_size_tablet;
   }
   .footer {
-    @include footer_size_tablet;
+    @include footer_size_mobile;
   }
   #id-main-menu-switcher:checked ~ .main-menu {
     @include main-menu_visible_mobile();
