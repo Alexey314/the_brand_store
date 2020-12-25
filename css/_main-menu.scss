@@ -11,6 +11,9 @@ $mainMenuHeight: 765px;
   box-shadow: 6px 4px 35px rgba(0, 0, 0, 0.21);
   transition: transform 2.2s;
   overflow: hidden;
+  .header-optional{
+    display: none;
+  }
 }
 
 .main-menu-placeholder {
@@ -36,6 +39,14 @@ $mainMenuHeight: 765px;
 }
 
 @mixin main-menu_size_mobile() {
+  .header-optional{
+    display: flex;
+    justify-content: center;
+    .header-optional__link{
+      padding: 16px;
+      filter: brightness(0.2);
+    }
+  }
   .main-menu__inner-box {
     min-width: unset;
     width: 100%;

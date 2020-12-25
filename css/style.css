@@ -126,6 +126,9 @@
   transition: transform 2.2s;
   overflow: hidden;
 }
+.main-menu .header-optional {
+  display: none;
+}
 
 .main-menu-placeholder {
   position: relative;
@@ -1578,6 +1581,14 @@ details[open] summary + .b-dropdown-menu__dropdown-content {
     display: none;
   }
 
+  .main-menu .header-optional {
+    display: flex;
+    justify-content: center;
+  }
+  .main-menu .header-optional .header-optional__link {
+    padding: 16px;
+    filter: brightness(0.2);
+  }
   .main-menu .main-menu__inner-box {
     min-width: unset;
     width: 100%;
