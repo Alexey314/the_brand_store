@@ -1,18 +1,4 @@
 @import url("https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap");
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-body {
-  font-family: Lato, serif;
-}
-
-a {
-  text-decoration: none;
-}
-
 .header {
   background: #222222;
   height: 75px;
@@ -1140,6 +1126,66 @@ a {
   cursor: pointer;
 }
 
+.b-site-location-band {
+  background: #F8F3F4;
+  padding-top: 60px;
+  padding-bottom: 60px;
+}
+
+.b-site-location-band__section-name {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 24px;
+  line-height: 29px;
+  color: #F16D7F;
+}
+
+.reg-content {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 64px;
+}
+
+.reg-content__promo {
+  width: 652px;
+}
+
+.reg-content__promo-heading {
+  font-style: normal;
+  font-weight: 300;
+  font-size: 24px;
+  line-height: 29px;
+  color: #000000;
+  margin-bottom: 22px;
+}
+
+.reg-content__promo-text {
+  font-style: normal;
+  font-weight: 300;
+  font-size: 24px;
+  line-height: 29px;
+  color: #000000;
+}
+
+.reg-content__promo-text > img {
+  margin-right: 22px;
+  padding-top: 16px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Lato, serif;
+}
+
+a {
+  text-decoration: none;
+}
+
 .b-breadcrumbs-bar {
   padding: 60px 0;
   background: #F8F3F4;
@@ -1387,167 +1433,6 @@ details[open] summary + .b-dropdown-menu__dropdown-content {
 }
 #id-main-menu-switcher:checked ~ .main-promo {
   filter: brightness(50%);
-}
-
-.main-menu {
-  position: absolute;
-  top: 0;
-  right: 0;
-  width: 0;
-  height: max-content;
-  z-index: 1;
-  box-shadow: 6px 4px 35px rgba(0, 0, 0, 0.21);
-  transition: transform 2.2s;
-  overflow: hidden;
-}
-
-.main-menu-placeholder {
-  position: relative;
-}
-
-.main-menu__inner-box {
-  padding: 16px 16px 34px 34px;
-  background: white;
-}
-
-.main-menu__inner-box {
-  min-width: 232px;
-  width: max-content;
-  min-height: 765px;
-  height: max-content;
-}
-
-.main-menu__close {
-  text-align: right;
-}
-
-.main-menu__heading {
-  /*padding: 10px 10px 0 10px */
-  padding-bottom: 4px;
-  font-style: normal;
-  font-weight: bold;
-  font-size: 14px;
-  line-height: 17px;
-  color: #000000;
-}
-
-.main-menu__section-heading {
-  margin-top: 20px;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 14px;
-  line-height: 17px;
-  color: #F16D7F;
-}
-
-.main-menu__item {
-  display: block;
-  padding: 5px 63px 5px 21px;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 14px;
-  line-height: 17px;
-  color: #6F6E6E;
-}
-
-.main-promo {
-  display: flex;
-  position: relative;
-}
-
-.main-promo__img-box {
-  flex-basis: 50%;
-  background: #f4f3f3;
-  display: flex;
-  justify-content: flex-end;
-}
-
-.main-promo__img {
-  width: 100%;
-  flex-basis: 800px;
-}
-
-/*max-width: 800px */
-.main-promo__text-box {
-  flex-basis: 50%;
-  background: #F1E4E6;
-  display: flex;
-  align-items: center;
-}
-
-.main-promo__text-box-inner {
-  max-width: 550px;
-  border-left: 12px solid #F16D7F;
-  margin-left: 64px;
-  padding-left: 16px;
-}
-
-.main-promo__text-box-inner-heading {
-  font-weight: 900;
-  font-size: 48px;
-  line-height: 58px;
-  color: #222222;
-}
-
-.main-promo__text-box-inner-text {
-  font-weight: 700;
-  font-size: 37px;
-  line-height: 44px;
-  color: #222222;
-}
-
-.main-promo__text-box-inner-text-highlighted {
-  color: #F16D7F;
-}
-
-.main-promo_dim .main-promo {
-  filter: brightness(50%);
-}
-
-.b-site-location-band {
-  background: #F8F3F4;
-  padding-top: 60px;
-  padding-bottom: 60px;
-}
-
-.b-site-location-band__section-name {
-  font-style: normal;
-  font-weight: normal;
-  font-size: 24px;
-  line-height: 29px;
-  color: #F16D7F;
-}
-
-.reg-content {
-  display: flex;
-  justify-content: space-between;
-  margin-top: 64px;
-}
-
-.reg-content__promo {
-  width: 652px;
-}
-
-.reg-content__promo-heading {
-  font-style: normal;
-  font-weight: 300;
-  font-size: 24px;
-  line-height: 29px;
-  color: #000000;
-  margin-bottom: 22px;
-}
-
-.reg-content__promo-text {
-  font-style: normal;
-  font-weight: 300;
-  font-size: 24px;
-  line-height: 29px;
-  color: #000000;
-}
-
-.reg-content__promo-text > img {
-  margin-right: 22px;
-  padding-top: 16px;
 }
 
 .container {

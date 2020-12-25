@@ -1,3 +1,29 @@
+//blocks
+@use "vars";
+@use "header";
+@use "header-optional";
+@use "link-img";
+@use "switcher";
+@use "main-promo";
+@use "main-menu";
+@use "catalog-product";
+@use "catalog-view";
+@use "featured-products";
+@use "store-features";
+@use "footer";
+@use "main-offer";
+@use "offer-card";
+@use "input-checkbox";
+@use "input-radio";
+@use "input-radio_text_size_s";
+@use "registration-form";
+@use "b-product-view";
+@use "b-cart";
+
+//pages
+@use "page-main";
+@use "page-registration";
+
 @import url("https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap");
 
 * {
@@ -14,27 +40,7 @@ a {
   text-decoration: none;
 }
 
-//blocks
-@import "vars";
-@import "header";
-@import "header-optional";
-@import "link-img";
-@import "switcher";
-@import "main-promo";
-@import "main-menu";
-@import "catalog-product";
-@import "catalog-view";
-@import "featured-products";
-@import "store-features";
-@import "footer";
-@import "main-offer";
-@import "offer-card";
-@import "input-checkbox";
-@import "input-radio";
-@import "input-radio_text_size_s";
-@import "registration-form";
-@import "b-product-view";
-@import "b-cart";
+
 
 .b-breadcrumbs-bar {
   padding: 60px 0;
@@ -285,7 +291,7 @@ details[open] summary + .b-dropdown-menu__dropdown-content {
 }
 
 #id-main-menu-switcher:checked ~ {
-  @include main-promo_dim(50%);
+  @include main-promo.main-promo_dim(50%);
 }
 
 
@@ -304,74 +310,72 @@ details[open] summary + .b-dropdown-menu__dropdown-content {
   }
 }
 
-//pages
-@import "page-main";
-@import "page-registration";
+
 
 //laptop
-@include containers($containerWidthDesktop);
+@include containers(vars.$containerWidthDesktop);
 #id-main-menu-switcher:checked ~ .main-menu {
-  @include main-menu_visible_desktop-tablet();
+  @include main-menu.main-menu_visible_desktop-tablet();
 }
 
 //tablet
-@media (max-width: $containerWidthDesktop+$containerFields*2-0.02px) {
-  @include containers($containerWidthTablet);
+@media (max-width: vars.$containerWidthDesktop+vars.$containerFields*2-0.02px) {
+  @include containers(vars.$containerWidthTablet);
   .header {
-    @include header_size_tablet;
+    @include header.header_size_tablet;
   }
   .main-menu {
-    @include main-menu_size_tablet;
+    @include main-menu.main-menu_size_tablet;
   }
   .main-promo {
-    @include main-promo_size_tablet;
+    @include main-promo.main-promo_size_tablet;
   }
   .main-offer {
-    @include main-offer_size_tablet;
+    @include main-offer.main-offer_size_tablet;
   }
   .featured-products {
-    @include featured-products_size_tablet;
+    @include featured-products.featured-products_size_tablet;
   }
   .catalog-view {
-    @include catalog-view_size_tablet;
+    @include catalog-view.catalog-view_size_tablet;
   }
   .store-features {
-    @include store-features_size_tablet;
+    @include store-features.store-features_size_tablet;
   }
   .footer {
-    @include footer_size_tablet;
+    @include footer.footer_size_tablet;
   }
 }
 
 //mobile
-@media (max-width: $containerWidthTablet+$containerFields*2-0.02px) {
-  @include containers($containerWidthMobile);
+@media (max-width: vars.$containerWidthTablet+vars.$containerFields*2-0.02px) {
+  @include containers(vars.$containerWidthMobile);
   .header {
-    @include header_size_mobile;
+    @include header.header_size_mobile;
   }
   .main-menu {
-    @include main-menu_size_mobile;
+    @include main-menu.main-menu_size_mobile;
   }
   .main-promo {
-    @include main-promo_size_mobile;
+    @include main-promo.main-promo_size_mobile;
   }
   .main-offer {
-    @include main-offer_size_mobile;
+    @include main-offer.main-offer_size_mobile;
   }
   .featured-products {
-    @include featured-products_size_mobile;
+    @include featured-products.featured-products_size_mobile;
   }
   .catalog-view {
-    @include catalog-view_size_tablet;
+    @include catalog-view.catalog-view_size_tablet;
   }
   .store-features {
-    @include store-features_size_tablet;
+    @include store-features.store-features_size_tablet;
   }
   .footer {
-    @include footer_size_mobile;
+    @include footer.footer_size_mobile;
   }
   #id-main-menu-switcher:checked ~ .main-menu {
-    @include main-menu_visible_mobile();
+    @include main-menu.main-menu_visible_mobile();
   }
 }
 
