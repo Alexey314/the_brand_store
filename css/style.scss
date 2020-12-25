@@ -359,7 +359,7 @@ details[open] summary + .b-dropdown-menu__dropdown-content {
     @include main-offer_size_mobile;
   }
   .featured-products {
-    @include featured-products_size_tablet;
+    @include featured-products_size_mobile;
   }
   .catalog-view {
     @include catalog-view_size_tablet;

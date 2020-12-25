@@ -49,3 +49,14 @@
   }
 
 }
+
+@mixin featured-products_size_mobile {
+  margin-top: 64px;
+  .featured-products__text {
+    margin-bottom: 64px;
+  }
+  .featured-products__catalog-btn {
+    margin-top: 24px;
+  }
+
+}
