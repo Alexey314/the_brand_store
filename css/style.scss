@@ -295,6 +295,7 @@ details[open] summary + .b-dropdown-menu__dropdown-content {
 @media (min-width: vars.$minWidthDesktop) {
   @include containers.containers(vars.$containerWidthDesktop);
   @include main-menu.main-menu_size_desktop;
+  @include main-menu.main-menu_visible_desktop-tablet();
   @include page-main.desktop;
 }
 
@@ -303,6 +304,7 @@ details[open] summary + .b-dropdown-menu__dropdown-content {
   @include containers.containers(vars.$containerWidthTablet);
   @include header.header_size_tablet;
   @include main-menu.main-menu_size_tablet;
+  @include main-menu.main-menu_visible_desktop-tablet();
   @include page-main.tablet;
   @include store-features.store-features_size_tablet;
   @include footer.footer_size_tablet;
@@ -313,6 +315,7 @@ details[open] summary + .b-dropdown-menu__dropdown-content {
   @include containers.containers(vars.$containerWidthMobile);
   @include header.header_size_mobile;
   @include main-menu.main-menu_size_mobile;
+  @include main-menu.main-menu_visible_mobile();
   @include page-main.mobile;
   @include store-features.store-features_size_tablet;
   @include footer.footer_size_mobile;

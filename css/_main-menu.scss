@@ -7,7 +7,7 @@ $mainMenuHeight: 765px;
   right: 0;
   width: 0;
   height: max-content;
-  z-index: 1;
+  z-index: 100;
   box-shadow: 6px 4px 35px rgba(0, 0, 0, 0.21);
   transition: transform 2.2s;
   overflow: hidden;
@@ -70,13 +70,17 @@ $mainMenuHeight: 765px;
 }
 
 @mixin main-menu_visible_desktop-tablet {
-  transition: width 0.2s ease-in-out;
-  width: $mainMenuWidth;
+  #id-main-menu-switcher:checked ~ .main-menu {
+    transition: width 0.2s ease-in-out;
+    width: $mainMenuWidth;
+  }
 }
 
 @mixin main-menu_visible_mobile {
-  transition: width 0.2s ease-in-out;
-  width: 100%;
+  #id-main-menu-switcher:checked ~ .main-menu {
+    transition: width 0.2s ease-in-out;
+    width: 100%;
+  }
 }
 
 .main-menu__close {

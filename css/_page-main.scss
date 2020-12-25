@@ -15,10 +15,6 @@
       @include main-promo.main-promo_dim(50%);
     }
 
-    #id-main-menu-switcher:checked ~ .main-menu {
-      @include main-menu.main-menu_visible_desktop-tablet();
-    }
-
     @include catalog-view.catalog-view_size_desktop;
   }
 }
@@ -27,10 +23,6 @@
   .page-main {
     #id-main-menu-switcher:checked ~ {
       @include main-promo.main-promo_dim(50%);
-    }
-
-    #id-main-menu-switcher:checked ~ .main-menu {
-      @include main-menu.main-menu_visible_desktop-tablet();
     }
 
     @include main-promo.main-promo_size_tablet;
@@ -42,10 +34,6 @@
 
 @mixin mobile {
   .page-main {
-    #id-main-menu-switcher:checked ~ .main-menu {
-      @include main-menu.main-menu_visible_mobile();
-    }
-
     @include main-promo.main-promo_size_mobile;
     @include main-offer.main-offer_size_mobile;
     @include featured-products.featured-products_size_mobile;
