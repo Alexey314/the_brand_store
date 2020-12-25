@@ -1679,10 +1679,10 @@ details[open] summary + .b-dropdown-menu__dropdown-content {
   }
 
   .header .header__link-to-main {
-    padding-left: 16px;
+    padding-left: 8px;
   }
   .header .header__menu-switcher {
-    padding-right: 16px;
+    padding-right: 8px;
   }
   .header .header-optional {
     display: none;
