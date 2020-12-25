@@ -2,33 +2,62 @@
   margin-top: 63px;
 }
 
-.main-offer__grid {
+.main-offer__small-cards {
   display: flex;
   margin-bottom: 30px;
   justify-content: space-between;
 }
 
-.main-offer__grid .offer-card:not(:last-child) {
+.main-offer__small-cards .offer-card {
+  flex-basis: 360px;
+  flex-grow: 1;
+}
+
+.main-offer__small-cards .offer-card:not(:last-child) {
   margin-right: 30px;
+}
+
+.main-offer__big-card {
+  width: 100%;
 }
 
 @mixin main-offer_size_tablet {
   margin-top: 20px;
-  .main-offer__grid .offer-card:not(:last-child) {
+  .main-offer__small-cards .offer-card:not(:last-child) {
     margin-right: 20px;
   }
-  .main-offer__grid {
+  .main-offer__small-cards {
     margin-bottom: 20px;
   }
 }
 
 @mixin main-offer_size_mobile {
   margin-top: 64px;
-  .main-offer__grid {
+  .main-offer__small-cards {
     flex-direction: column;
-    margin-bottom: 20px;
-    .offer-card:not(:last-child){
+    margin-bottom: 0;
+
+    .offer-card:not(:last-child) {
       margin-right: 0;
     }
+
+    .offer-card {
+      flex-basis: unset;
+      flex-grow: unset;
+      margin-right: 0;
+      margin-bottom: 32px;
+    }
   }
+  .main-offer__big-card {
+    height: 111px;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .offer-card__img {
+      width: unset;
+      transform: scale(0.6);
+    }
+  }
+
 }
