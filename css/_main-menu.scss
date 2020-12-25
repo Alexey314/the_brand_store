@@ -76,6 +76,7 @@ $mainMenuHeight: 765px;
 }
 
 .main-menu__section-heading {
+  display: block;
   margin-top: 20px;
   font-style: normal;
   font-weight: normal;
@@ -92,4 +93,9 @@ $mainMenuHeight: 765px;
   font-size: 14px;
   line-height: 17px;
   color: #6F6E6E;
+
+}
+
+.main-menu__item:hover {
+  color: #F16D7F;
 }
