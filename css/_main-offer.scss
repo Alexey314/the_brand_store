@@ -33,6 +33,8 @@
 
 @mixin main-offer_size_mobile {
   margin-top: 64px;
+  padding-left: 8px;
+  padding-right: 8px;
   .main-offer__small-cards {
     flex-direction: column;
     margin-bottom: 0;

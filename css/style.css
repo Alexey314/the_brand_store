@@ -1720,6 +1720,8 @@ details[open] summary + .b-dropdown-menu__dropdown-content {
 
   .main-offer {
     margin-top: 64px;
+    padding-left: 8px;
+    padding-right: 8px;
   }
   .main-offer .main-offer__small-cards {
     flex-direction: column;
