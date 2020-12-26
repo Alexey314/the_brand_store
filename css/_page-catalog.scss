@@ -3,6 +3,13 @@
 @use "main-offer";
 @use "featured-products";
 @use "breadcrumbs-bar";
+@use "paginator";
+
+.page-catalog__main-paginator{
+  margin-top: 18px;
+  margin-left: auto;
+  margin-right: auto;
+}
 
 @mixin desktop {
   .page-catalog {
@@ -13,6 +20,12 @@
 @mixin tablet {
   .page-catalog {
     @include catalog-view.catalog-view_size_tablet;
+    .catalog-product:last-child {
+      display: none;
+    }
+  }
+  .page-catalog__main-paginator{
+    margin-top: 10px;
   }
 }
 
@@ -20,5 +33,8 @@
   .page-catalog {
     @include breadcrumbs-bar.breadcrumbs-bar_size_mobile;
     @include catalog-view.catalog-view_size_mobile;
+  }
+  .page-catalog__main-paginator{
+    margin-top: 10px;
   }
 }

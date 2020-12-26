@@ -1151,6 +1151,40 @@
   color: #F16D7F;
 }
 
+.paginator {
+  width: max-content;
+  border: 1px solid lightgray;
+  line-height: 43px;
+}
+
+.paginator__prev {
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.paginator__next {
+  padding-right: 15px;
+}
+
+.paginator__item {
+  margin-right: 15px;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 16px;
+  /*line-height: 19px */
+  color: #636363;
+}
+
+.paginator__item_current {
+  color: #EF5B70;
+}
+
+.page-catalog__main-paginator {
+  margin-top: 18px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 .b-site-location-band {
   background: #F8F3F4;
   padding-top: 60px;
@@ -1305,35 +1339,6 @@ a {
 }
 
 .catalog__filter__tree .accordion__section[open] .accordion__section__title {
-  color: #EF5B70;
-}
-
-.b-paginator {
-  width: fit-content;
-  margin-top: 13px;
-  border: 1px solid lightgray;
-  line-height: 43px;
-}
-
-.b-paginator__prev {
-  padding-left: 15px;
-  padding-right: 15px;
-}
-
-.paginator__next {
-  padding-right: 15px;
-}
-
-.b-paginator__item {
-  margin-right: 15px;
-  font-style: normal;
-  font-weight: 300;
-  font-size: 16px;
-  /*line-height: 19px */
-  color: #636363;
-}
-
-.b-paginator__item_current {
   color: #EF5B70;
 }
 
@@ -1531,13 +1536,17 @@ details[open] summary + .b-dropdown-menu__dropdown-content {
   .page-catalog .catalog-view .catalog-product {
     margin-bottom: 16px;
   }
+  .page-catalog .catalog-product:last-child {
+    display: none;
+  }
+
+  .page-catalog__main-paginator {
+    margin-top: 10px;
+  }
 
   .store-features {
     padding-top: 48px;
     padding-bottom: 64px;
-  }
-  .store-features .store-features_mt {
-    margin-top: 64px;
   }
   .store-features .store-features__box {
     flex-direction: column;
@@ -1548,6 +1557,10 @@ details[open] summary + .b-dropdown-menu__dropdown-content {
   }
   .store-features .store-features__feature:not(:last-of-type) {
     margin-bottom: 48px;
+  }
+
+  .store-features_mt {
+    margin-top: 64px;
   }
 
   .footer .footer__subscribe-inner {
@@ -1687,12 +1700,13 @@ details[open] summary + .b-dropdown-menu__dropdown-content {
     margin-bottom: 16px;
   }
 
+  .page-catalog__main-paginator {
+    margin-top: 10px;
+  }
+
   .store-features {
     padding-top: 48px;
     padding-bottom: 64px;
-  }
-  .store-features .store-features_mt {
-    margin-top: 64px;
   }
   .store-features .store-features__box {
     flex-direction: column;
@@ -1703,6 +1717,10 @@ details[open] summary + .b-dropdown-menu__dropdown-content {
   }
   .store-features .store-features__feature:not(:last-of-type) {
     margin-bottom: 48px;
+  }
+
+  .store-features_mt {
+    margin-top: 64px;
   }
 
   .footer .footer__subscribe-inner {

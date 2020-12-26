@@ -1,0 +1,28 @@
+.paginator {
+  width: max-content;
+  border: 1px solid lightgray;
+  line-height: 43px;
+}
+
+.paginator__prev {
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.paginator__next {
+  padding-right: 15px;
+}
+
+.paginator__item {
+  margin-right: 15px;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 16px;
+
+  /*line-height: 19px */
+  color: #636363;
+}
+
+.paginator__item_current {
+  color: #EF5B70;
+}
