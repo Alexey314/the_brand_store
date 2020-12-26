@@ -4,6 +4,7 @@
 @use "featured-products";
 @use "breadcrumbs-bar";
 @use "paginator";
+@use "catalog-filters";
 
 .page-catalog__main-paginator{
   margin-top: 18px;
@@ -14,6 +15,7 @@
 @mixin desktop {
   .page-catalog {
     @include catalog-view.catalog-view_size_desktop;
+
   }
 }
 
@@ -32,6 +34,7 @@
 @mixin mobile {
   .page-catalog {
     @include breadcrumbs-bar.breadcrumbs-bar_size_mobile;
+    @include catalog-filters.catalog-filters_size_mobile;
     @include catalog-view.catalog-view_size_mobile;
   }
   .page-catalog__main-paginator{
