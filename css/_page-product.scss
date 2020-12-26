@@ -1,0 +1,27 @@
+@use "main-promo";
+@use "catalog-view";
+@use "breadcrumbs-bar";
+@use "paginator";
+@use "catalog-filters";
+
+@mixin desktop {
+  .page-product {
+
+  }
+}
+
+@mixin tablet {
+  .page-product {
+    @include catalog-view.catalog-view_size_tablet;
+    .catalog-product:last-child {
+      display: none;
+    }
+  }
+}
+
+@mixin mobile {
+  .page-product {
+    @include breadcrumbs-bar.breadcrumbs-bar_size_mobile;
+    @include catalog-view.catalog-view_size_mobile;
+  }
+}

@@ -24,6 +24,7 @@
 //pages
 @use "page-main";
 @use "page-catalog";
+@use "page-product";
 @use "page-registration";
 
 @import url("https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap");
@@ -147,6 +148,7 @@ details[open] summary + .b-dropdown-menu__dropdown-content {
   @include main-menu.main-menu_visible_desktop-tablet();
   @include page-main.desktop;
   @include page-catalog.desktop;
+  @include page-product.desktop;
 }
 
 //tablet
@@ -157,6 +159,7 @@ details[open] summary + .b-dropdown-menu__dropdown-content {
   @include main-menu.main-menu_visible_desktop-tablet();
   @include page-main.tablet;
   @include page-catalog.tablet;
+  @include page-product.tablet;
   @include store-features.store-features_size_tablet;
   @include footer.footer_size_tablet;
 }
@@ -169,6 +172,7 @@ details[open] summary + .b-dropdown-menu__dropdown-content {
   @include main-menu.main-menu_visible_mobile();
   @include page-main.mobile;
   @include page-catalog.mobile;
+  @include page-product.mobile;
   @include store-features.store-features_size_mobile;
   @include footer.footer_size_mobile;
 }

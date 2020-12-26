@@ -1544,6 +1544,13 @@ details[open] summary + .b-dropdown-menu__dropdown-content {
     margin-top: 10px;
   }
 
+  .page-product .catalog-view .catalog-product {
+    margin-bottom: 16px;
+  }
+  .page-product .catalog-product:last-child {
+    display: none;
+  }
+
   .store-features {
     padding-top: 48px;
     padding-bottom: 64px;
@@ -1735,6 +1742,21 @@ details[open] summary + .b-dropdown-menu__dropdown-content {
 
   .page-catalog__main-paginator {
     margin-top: 10px;
+  }
+
+  .page-product .breadcrumbs-bar {
+    padding: 24px 0 46px;
+  }
+  .page-product .breadcrumbs-bar .breadcrumbs-bar__content-box {
+    padding: 0;
+    flex-direction: column;
+    align-items: center;
+  }
+  .page-product .breadcrumbs-bar .breadcrumbs-bar__full-path {
+    margin-top: 32px;
+  }
+  .page-product .catalog-view .catalog-product {
+    margin-bottom: 16px;
   }
 
   .store-features {
