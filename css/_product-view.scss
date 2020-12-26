@@ -48,7 +48,7 @@
 /********************************************************************** */
 
 .product-view__content-box {
-    height: 600px;
+    //height: 600px;
     position: relative;
     top: -64px;
     z-index: 1;
@@ -166,4 +166,36 @@
 
 .product-view__add-to-cart-btn:hover > svg > path {
     fill: #fff;
+}
+
+@mixin product-view_size_tablet{
+    .product-view{
+        .product-view__content-box {
+            top: unset;
+        }
+    }
+}
+
+@mixin product-view_size_mobile{
+    .product-view{
+        .product-view__content-box {
+            top: unset;
+        }
+        .product-view__price-menu-spacer {
+            width: 175px;
+        }
+        .product-view__content {
+            padding-right: 0;
+            padding-left: 0;
+        }
+        .product-view__text {
+            max-width: 326px;
+        }
+        .b-dropdown-menu {
+            font-weight: 400;
+            font-size: 10px;
+            line-height: 12px;
+            margin-right: 24px;
+        }
+    }
 }

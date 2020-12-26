@@ -3,18 +3,25 @@
 @use "breadcrumbs-bar";
 @use "paginator";
 @use "catalog-filters";
+@use "product-view";
 
 @mixin desktop {
   .page-product {
-
+    .page-product__product-view{
+      margin-bottom: 64px;
+    }
   }
 }
 
 @mixin tablet {
   .page-product {
+    @include product-view.product-view_size_tablet;
     @include catalog-view.catalog-view_size_tablet;
     .catalog-product:last-child {
       display: none;
+    }
+    .page-product__product-view{
+      margin-bottom: 128px;
     }
   }
 }
@@ -22,6 +29,10 @@
 @mixin mobile {
   .page-product {
     @include breadcrumbs-bar.breadcrumbs-bar_size_mobile;
+    @include product-view.product-view_size_mobile;
     @include catalog-view.catalog-view_size_mobile;
+    .page-product__product-view{
+      margin-bottom: 64px;
+    }
   }
 }
