@@ -28,7 +28,7 @@
   text-align: center;
   //margin-top: 30px;
   font-style: normal;
-  font-weight: normal;
+  font-weight: 400;
   font-size: 20px;
   line-height: 24px;
   color: #222224;
@@ -156,6 +156,7 @@
 
     .footer__subscribe-citation-box {
       margin-bottom: 48px;
+
     }
 
     .footer__social {
@@ -176,6 +177,18 @@
 
     .footer__subscribe-citation-box {
       margin-bottom: 48px;
+      font-size: 18px;
+      line-height: 22px;
+    }
+
+    .footer__subscribe-form-heading {
+      font-size: 24px;
+      line-height: 38px;
+    }
+
+    .footer__subscribe-form-text {
+      font-size: 14px;
+      line-height: 22px;
     }
 
     .footer__social {
