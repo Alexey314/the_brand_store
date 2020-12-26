@@ -2,6 +2,7 @@
 @use "catalog-view";
 @use "main-offer";
 @use "featured-products";
+@use "breadcrumbs-bar";
 
 @mixin desktop {
   .page-catalog {
@@ -17,6 +18,7 @@
 
 @mixin mobile {
   .page-catalog {
+    @include breadcrumbs-bar.breadcrumbs-bar_size_mobile;
     @include catalog-view.catalog-view_size_mobile;
   }
 }

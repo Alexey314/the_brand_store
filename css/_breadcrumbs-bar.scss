@@ -1,0 +1,47 @@
+
+.breadcrumbs-bar {
+  padding: 60px 0;
+  background: #F8F3F4;
+
+}
+
+.breadcrumbs-bar__content-box {
+  padding: 0 10px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.breadcrumbs-bar__subsection {
+  font-style: normal;
+  font-weight: 300;
+  font-size: 14px;
+  line-height: 17px;
+  color: #636363;
+}
+
+.breadcrumbs-bar__current-subsection {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 24px;
+  line-height: 29px;
+  color: #F16D7F;
+}
+
+.breadcrumbs-bar__subsection:last-child {
+  font-weight: 700;
+  color: #F16D7F;
+}
+
+@mixin breadcrumbs-bar_size_mobile{
+  .breadcrumbs-bar {
+    padding: 24px 0 46px;
+    .breadcrumbs-bar__content-box {
+      padding: 0;
+      flex-direction: column;
+      align-items: center;
+    }
+    .breadcrumbs-bar__full-path {
+      margin-top: 32px;
+    }
+  }
+}
