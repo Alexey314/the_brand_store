@@ -1,3 +1,4 @@
+@use "fonts";
 //blocks
 @use "vars";
 @use "containers";
@@ -27,7 +28,7 @@
 @use "page-product";
 @use "page-registration";
 
-@import url("https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap");
+
 
 * {
   margin: 0;
