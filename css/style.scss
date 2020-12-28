@@ -27,6 +27,7 @@
 @use "page-catalog";
 @use "page-product";
 @use "page-registration";
+@use "page-cart";
 
 
 
@@ -150,6 +151,7 @@ details[open] summary + .b-dropdown-menu__dropdown-content {
   @include page-main.desktop;
   @include page-catalog.desktop;
   @include page-product.desktop;
+  @include page-cart.desktop;
 }
 
 //tablet
@@ -161,6 +163,7 @@ details[open] summary + .b-dropdown-menu__dropdown-content {
   @include page-main.tablet;
   @include page-catalog.tablet;
   @include page-product.tablet;
+  @include page-cart.tablet;
   @include store-features.store-features_size_tablet;
   @include footer.footer_size_tablet;
 }
@@ -174,6 +177,7 @@ details[open] summary + .b-dropdown-menu__dropdown-content {
   @include page-main.mobile;
   @include page-catalog.mobile;
   @include page-product.mobile;
+  @include page-cart.mobile;
   @include store-features.store-features_size_mobile;
   @include footer.footer_size_mobile;
 }

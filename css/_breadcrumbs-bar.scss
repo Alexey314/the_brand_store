@@ -32,6 +32,10 @@
   color: #F16D7F;
 }
 
+.breadcrumbs-bar__full-path_hidden{
+  display: none;
+}
+
 @mixin breadcrumbs-bar_size_mobile{
   .breadcrumbs-bar {
     padding: 24px 0 46px;

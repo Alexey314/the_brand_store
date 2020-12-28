@@ -1,0 +1,19 @@
+@use "breadcrumbs-bar";
+
+@mixin desktop {
+  .page-cart {
+
+  }
+}
+
+@mixin tablet {
+  .page-cart {
+
+  }
+}
+
+@mixin mobile {
+  .page-cart {
+    @include breadcrumbs-bar.breadcrumbs-bar_size_mobile;
+  }
+}

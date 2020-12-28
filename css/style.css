@@ -1178,6 +1178,10 @@
   color: #F16D7F;
 }
 
+.breadcrumbs-bar__full-path_hidden {
+  display: none;
+}
+
 .paginator {
   width: max-content;
   border: 1px solid lightgray;
@@ -1816,6 +1820,18 @@ details[open] summary + .b-dropdown-menu__dropdown-content {
   }
   .page-product .page-product__product-view {
     margin-bottom: 64px;
+  }
+
+  .page-cart .breadcrumbs-bar {
+    padding: 24px 0 46px;
+  }
+  .page-cart .breadcrumbs-bar .breadcrumbs-bar__content-box {
+    padding: 0;
+    flex-direction: column;
+    align-items: center;
+  }
+  .page-cart .breadcrumbs-bar .breadcrumbs-bar__full-path {
+    margin-top: 32px;
   }
 
   .store-features {
