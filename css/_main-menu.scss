@@ -87,6 +87,11 @@ $mainMenuHeight: 765px;
   text-align: right;
 }
 
+.main-menu__close:hover path {
+  fill: #F16D7F;
+  cursor: pointer;
+}
+
 .main-menu__heading {
   /*padding: 10px 10px 0 10px */
   padding-bottom: 4px;
