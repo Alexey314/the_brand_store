@@ -8,7 +8,7 @@
     <title>Brand: Registration</title>
 </head>
 
-<body>
+<body class="page-registration">
 <header class="header container-p">
     <a href="index.html" class="link-img header__link-to-main"><img class="link-img__img" src="img/logo.svg"
                                                                     alt="logo"></a>
@@ -72,69 +72,71 @@
         </nav>
     </div>
 </div>
-
-<section>
-    <div class="b-site-location-band ">
-        <h1 class="b-site-location-band__section-name container">REGISTRATION</h1>
+<div class="breadcrumbs-bar">
+    <div class="breadcrumbs-bar__content-box container">
+        <p class="breadcrumbs-bar__current-subsection">REGISTRATION</p>
+        <nav class="breadcrumbs-bar__full-path breadcrumbs-bar_full-path-hidden">
+            <a class="breadcrumbs-bar__subsection" href="index.html">HOME /</a>
+            <a class="breadcrumbs-bar__subsection" href="#">MEN /</a>
+            <a class="breadcrumbs-bar__subsection" href="#">NEW ARRIVALS</a>
+        </nav>
     </div>
-    <div class="reg-content container">
-        <form class="registration-form" action="#">
+</div>
+<div class="page-registration__main-box container">
+    <form class="registration-form" action="#">
 
-            <span class="registration-form__label-text">Your Name</span>
-            <input class="registration-form__input-text registration-form__input-text_first-name"
-                   type="text" placeholder="First name" required>
-            <input class="registration-form__input-text registration-form__input-text_last-name"
-                   type="text" placeholder="Last name" required>
+        <span class="registration-form__label-text">Your Name</span>
+        <input class="registration-form__input-text registration-form__input-text_first-name"
+               type="text" placeholder="First name" required>
+        <input class="registration-form__input-text registration-form__input-text_last-name"
+               type="text" placeholder="Last name" required>
 
-            <div class="registration-form__gender-selector">
-                <label class="input-radio input-radio_text_size_s">
-                    <input class="input-radio__input registration-form__gender-selector-male" type="radio"
-                           name="gender-selector">
-                    <span class="input-radio__text">Male</span>
-                </label>
-                <label class="input-radio input-radio_text_size_s">
-                    <input class="input-radio__input registration-form__gender-selector-female" type="radio"
-                           name="gender-selector">
-                    <span class="input-radio__text">Female</span>
-                </label>
-                <label class="input-radio input-radio_text_size_s">
-                    <input class="input-radio__input registration-form__gender-selector-other" type="radio"
-                           name="gender-selector">
-                    <span class="input-radio__text">Other</span>
-                </label>
-            </div>
+        <div class="registration-form__gender-selector">
+            <label class="input-radio input-radio_text_size_s">
+                <input class="input-radio__input registration-form__gender-selector-male" type="radio"
+                       name="gender-selector">
+                <span class="input-radio__text">Male</span>
+            </label>
+            <label class="input-radio input-radio_text_size_s">
+                <input class="input-radio__input registration-form__gender-selector-female" type="radio"
+                       name="gender-selector">
+                <span class="input-radio__text">Female</span>
+            </label>
+            <label class="input-radio input-radio_text_size_s">
+                <input class="input-radio__input registration-form__gender-selector-other" type="radio"
+                       name="gender-selector">
+                <span class="input-radio__text">Other</span>
+            </label>
+        </div>
 
-            <span class="registration-form__label-text">Login details</span>
-            <input class="registration-form__input-text registration-form__input-text_email"
-                   type="email" placeholder="Email" required>
-            <input class="registration-form__input-text registration-form__input-text_password"
-                   type="password" placeholder="Password" required>
+        <span class="registration-form__label-text">Login details</span>
+        <input class="registration-form__input-text registration-form__input-text_email"
+               type="email" placeholder="Email" required>
+        <input class="registration-form__input-text registration-form__input-text_password"
+               type="password" placeholder="Password" required>
 
-            <p class="registration-form__password-requirements">
-                Please use 8 or more characters, with at least 1 number and a mixture of uppercase and lowercase letters
-            </p>
-            <button type="submit" class="registration-form__submit">JOIN NOW
-                <img src="img/rarr_17x10.svg" alt="submit"></button>
-        </form>
-        <article class="reg-content__promo">
-            <h2 class="reg-content__promo-heading">LOYALTY HAS ITS PERKS</h2>
-            <p class="reg-content__promo-text">Get in on the loyalty program where you can earn points and unlock
-                serious perks. Starting with these as soon as you join:</p>
-            <p class="reg-content__promo-text"><img src="img/check_20x16.svg" alt="checkmark">15% off welcome offer</p>
-            <p class="reg-content__promo-text"><img src="img/check_20x16.svg" alt="checkmark">Free shipping, returns and
-                exchanges on all orders</p>
-            <p class="reg-content__promo-text"><img src="img/check_20x16.svg" alt="checkmark">$10 off a purchase on your
-                birthday</p>
-            <p class="reg-content__promo-text"><img src="img/check_20x16.svg" alt="checkmark">Early access to products
-            </p>
-            <p class="reg-content__promo-text"><img src="img/check_20x16.svg" alt="checkmark">Exclusive offers & rewards
-            </p>
-        </article>
-        <!-- /.reg-content__promo -->
-    </div>
-
-</section>
-
+        <p class="registration-form__password-requirements">
+            Please use 8 or more characters, with at least 1 number and a mixture of uppercase and lowercase letters
+        </p>
+        <button type="submit" class="registration-form__submit">JOIN NOW
+            <img src="img/rarr_17x10.svg" alt="submit"></button>
+    </form>
+    <article class="page-registration__promo">
+        <h2 class="page-registration__promo-heading">LOYALTY HAS ITS PERKS</h2>
+        <p class="page-registration__promo-text">Get in on the loyalty program where you can earn points and unlock
+            serious perks. Starting with these as soon as you join:</p>
+        <p class="page-registration__promo-text page-registration__promo-text_check">15% off welcome offer</p>
+        <p class="page-registration__promo-text page-registration__promo-text_check">Free shipping, returns and
+            exchanges on all orders</p>
+        <p class="page-registration__promo-text page-registration__promo-text_check">$10 off a purchase on your
+            birthday</p>
+        <p class="page-registration__promo-text page-registration__promo-text_check">Early access to products
+        </p>
+        <p class="page-registration__promo-text page-registration__promo-text_check">Exclusive offers & rewards
+        </p>
+    </article>
+    <!-- /.page-registration__promo -->
+</div>
 <footer class="footer footer_mt">
     <div class="footer__subscribe-background">
         <div class="footer__subscribe-inner container">

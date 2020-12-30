@@ -1,30 +1,18 @@
+@use "registration-form";
+
 $hoverColor: #F16D7F;
 
-.b-site-location-band {
-  background: #F8F3F4;
-  padding-top: 60px;
-  padding-bottom: 60px;
-}
-
-.b-site-location-band__section-name {
-  font-style: normal;
-  font-weight: normal;
-  font-size: 24px;
-  line-height: 29px;
-  color: $hoverColor;
-}
-
-.reg-content {
+.page-registration__main-box {
   display: flex;
   justify-content: space-between;
   margin-top: 64px;
 }
 
-.reg-content__promo {
-  width: 652px;
+.page-registration__promo {
+  max-width: 652px;
 }
 
-.reg-content__promo-heading {
+.page-registration__promo-heading {
   font-style: normal;
   font-weight: 300;
   font-size: 24px;
@@ -33,15 +21,84 @@ $hoverColor: #F16D7F;
   margin-bottom: 22px;
 }
 
-.reg-content__promo-text {
+.page-registration__promo-text {
   font-style: normal;
   font-weight: 300;
   font-size: 24px;
   line-height: 29px;
   color: #000000;
+  margin-bottom: 17px;
 }
 
-.reg-content__promo-text > img {
+.page-registration__promo-text_check {
+  padding-left: 40px;
+  position: relative;;
+}
+
+.page-registration__promo-text_check:before {
+  content: "";
+  position: absolute;
+  display: block;
+  top: 5px;
+  left: 0;
+  width: 40px;
+  height: 20px;
+  background-image: url(../img/check_20x16.svg);
+  background-repeat: no-repeat;
+  background-position: 0 bottom;
+}
+
+.page-registration__promo-text > img {
   margin-right: 22px;
   padding-top: 16px;
+}
+
+@mixin desktop {
+  .page-registration {
+
+  }
+}
+
+@mixin tablet {
+  .page-registration {
+    .page-registration__main-box {
+      margin-top: 40px;
+    }
+    .page-registration__promo {
+      max-width: 354px;
+
+      .page-registration__promo-heading {
+        font-size: 16px;
+        margin-bottom: 32px;
+      }
+
+      .page-registration__promo-text {
+        font-size: 16px;
+      }
+    }
+  }
+}
+
+@mixin mobile {
+  .page-registration {
+    .page-registration__main-box {
+      flex-direction: column;
+      justify-content: space-between;
+      margin-top: 40px;
+    }
+
+    .page-registration__promo {
+      margin-top: 40px;
+      max-width: unset;
+
+      .page-registration__promo-heading {
+        font-size: 16px;
+        margin-bottom: 32px;
+      }
+
+      .page-registration__promo-text {
+        font-size: 16px;
+      }
+    }
+  }
 }
