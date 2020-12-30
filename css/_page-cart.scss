@@ -9,12 +9,13 @@
 
 @mixin tablet {
   .page-cart {
-
+    @include cart-view.cart-view_size_tablet;
   }
 }
 
 @mixin mobile {
   .page-cart {
     @include breadcrumbs-bar.breadcrumbs-bar_size_mobile;
+    @include cart-view.cart-view_size_mobile;
   }
 }

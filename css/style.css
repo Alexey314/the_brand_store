@@ -949,17 +949,14 @@
 
 .cart-product {
   display: flex;
-  width: 652px;
   height: 306px;
-  margin-bottom: 40px;
-  margin-left: auto;
-  margin-right: auto;
   background: #FFFFFF;
   filter: drop-shadow(17px 19px 24px rgba(0, 0, 0, 0.13));
 }
 
 .cart-product__img {
   display: block;
+  height: 100%;
 }
 
 .cart-product__details {
@@ -969,6 +966,7 @@
 }
 
 .cart-product__details-name {
+  display: block;
   font-style: normal;
   font-weight: normal;
   font-size: 24px;
@@ -1022,9 +1020,18 @@
   flex-wrap: wrap;
 }
 
+.cart-view__products-box {
+  max-width: 652px;
+}
+
+.cart-view__product {
+  margin-bottom: 40px;
+}
+
 .cart-view__products-buttons-box {
   display: flex;
   justify-content: space-between;
+  margin-top: 72px;
 }
 
 .cart-view__products-btn-clear, .cart-view__products-btn-shopping {
@@ -1044,7 +1051,7 @@
   color: #F16D7F;
 }
 
-.b-cart-buying {
+.cart-view__pricing-box {
   display: block;
 }
 
@@ -1096,12 +1103,13 @@
   color: #F16D7F;
 }
 
-.b-cart-goto-checkout {
+.cart-view__total-price-box {
   margin-top: 58px;
   width: 360px;
   padding: 40px 43px;
   background: #F5F3F3;
   text-align: right;
+  height: max-content;
 }
 
 .b-cart-goto-checkout__sub-total {
@@ -1132,7 +1140,7 @@
   color: #F16D7F;
 }
 
-.b-cart-goto-checkout hr {
+.cart-view__total-price-box hr {
   border: none;
   color: #E2E2E2;
   background-color: #E2E2E2;
@@ -1602,6 +1610,26 @@ details[open] summary + .b-dropdown-menu__dropdown-content {
     margin-bottom: 128px;
   }
 
+  .page-cart .cart-view {
+    padding-top: 60px;
+    flex-direction: column;
+  }
+  .page-cart .cart-view .cart-view__products-box {
+    max-width: unset;
+  }
+  .page-cart .cart-view .cart-view__products-buttons-box {
+    justify-content: center;
+    margin-top: 62px;
+  }
+  .page-cart .cart-view .cart-view__products-buttons-box .cart-view__products-btn-clear {
+    margin-right: 48px;
+  }
+  .page-cart .cart-view .cart-view__pricing-box {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 64px;
+  }
+
   .store-features {
     padding-top: 48px;
     padding-bottom: 64px;
@@ -1842,6 +1870,64 @@ details[open] summary + .b-dropdown-menu__dropdown-content {
   }
   .page-cart .breadcrumbs-bar .breadcrumbs-bar__full-path {
     margin-top: 32px;
+  }
+  .page-cart .cart-view {
+    padding-top: 40px;
+    flex-direction: column;
+  }
+  .page-cart .cart-view .cart-view__products-box {
+    max-width: unset;
+  }
+  .page-cart .cart-view .cart-view__products-box .cart-view__product {
+    margin-bottom: 32px;
+    height: 188px;
+  }
+  .page-cart .cart-view .cart-product {
+    filter: drop-shadow(8px 8px 21px rgba(0, 0, 0, 0.13));
+  }
+  .page-cart .cart-view .cart-product .cart-product__details-btn-del {
+    width: 10px;
+    height: 10px;
+  }
+  .page-cart .cart-view .cart-product .cart-product__details {
+    padding: 13px 17px;
+  }
+  .page-cart .cart-view .cart-product .cart-product__details .cart-product__details-btn-del {
+    top: 17px;
+    right: 12px;
+  }
+  .page-cart .cart-view .cart-product .cart-product__details .cart-product__details-name {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 19px;
+    margin-bottom: 26px;
+  }
+  .page-cart .cart-view .cart-product .cart-product__details .cart-product__details-param {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 17px;
+  }
+  .page-cart .cart-view .cart-product .cart-product__details .cart-product__details-quantity-input {
+    font-size: 10px;
+    line-height: 12px;
+  }
+  .page-cart .cart-view .cart-view__products-buttons-box {
+    justify-content: space-between;
+    margin-top: 30px;
+  }
+  .page-cart .cart-view .cart-view__products-buttons-box .cart-view__products-btn-shopping,
+.page-cart .cart-view .cart-view__products-buttons-box .cart-view__products-btn-clear {
+    margin-right: 0;
+    font-size: 12px;
+    line-height: 33px;
+    padding-left: 18px;
+    padding-right: 18px;
+  }
+  .page-cart .cart-view .cart-view__pricing-box {
+    display: block;
+    margin-top: 48px;
   }
 
   .store-features {

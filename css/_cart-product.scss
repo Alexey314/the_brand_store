@@ -1,22 +1,26 @@
 .cart-product {
   display: flex;
-  width: 652px;
+  //width: 652px;
   height: 306px;
-  margin-bottom: 40px;
-  margin-left: auto;
-  margin-right: auto;
+  //margin-left: auto;
+  //margin-right: auto;
   background: #FFFFFF;
   filter: drop-shadow(17px 19px 24px rgba(0, 0, 0, 0.13));
 }
+
 .cart-product__img {
   display: block;
+  height: 100%;
 }
+
 .cart-product__details {
   padding: 22px 97px 0 31px;
   position: relative;
   flex-basis: 100%;
 }
+
 .cart-product__details-name {
+  display: block;
   font-style: normal;
   font-weight: normal;
   font-size: 24px;
@@ -24,9 +28,11 @@
   color: #222222;
   margin-bottom: 42px;
 }
+
 .cart-product__details-name:hover {
   color: #F16D7F;
 }
+
 .cart-product__details-param {
   font-style: normal;
   font-weight: normal;
@@ -35,9 +41,11 @@
   color: #575757;
   margin-bottom: 6px;
 }
+
 .cart-product__details-price {
   color: #F16D7F;
 }
+
 .cart-product__details-quantity-input {
   width: 43px;
   height: 24px;
@@ -46,12 +54,56 @@
   outline: none;
   text-align: center;
 }
+
 .cart-product__details-btn-del {
   position: absolute;
   top: 28px;
   right: 22px;
   cursor: pointer;
 }
+
 .cart-product__details-btn-del:hover path {
   fill: #F16D7F;
+}
+
+@mixin cart-product_size_mobile {
+  .cart-product {
+    filter: drop-shadow(8px 8px 21px rgba(0, 0, 0, 0.13));
+
+    .cart-product__details-btn-del {
+      width: 10px;
+      height: 10px;
+    }
+
+    .cart-product__details {
+      padding: 13px 17px;
+
+      .cart-product__details-btn-del {
+        top: 17px;
+        right: 12px;
+      }
+
+      .cart-product__details-name {
+        font-style: normal;
+        font-weight: normal;
+        font-size: 16px;
+        line-height: 19px;
+        margin-bottom: 26px;
+      }
+
+      .cart-product__details-param {
+        font-style: normal;
+        font-weight: normal;
+        font-size: 14px;
+        line-height: 17px;
+      }
+
+      .cart-product__details-quantity-input {
+        font-size: 10px;
+        line-height: 12px;
+      }
+    }
+
+
+  }
 }
