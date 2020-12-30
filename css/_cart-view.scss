@@ -1,13 +1,8 @@
+@use  "cart-product";
+
 $hoverColor: #F16D7F;
 
-
-.b-cart h1 {
-  font-style: normal;
-  font-weight: normal;
-  font-size: 24px;
-  line-height: 29px;
-}
-.b-cart__content {
+.cart-view {
   padding-top: 96px;
   padding-bottom: 32px;
   display: flex;
@@ -15,11 +10,15 @@ $hoverColor: #F16D7F;
   flex-wrap: wrap;
 }
 
-.b-cart-products__buttons {
+.cart-view__products-box{
+
+}
+
+.cart-view__products-buttons-box {
   display: flex;
   justify-content: space-between;
 }
-.b-cart-products__btn-clr, .b-cart-products__btn-shopping {
+.cart-view__products-btn-clear, .cart-view__products-btn-shopping {
   display: block;
   padding-left: 40px;
   padding-right: 40px;
@@ -30,67 +29,9 @@ $hoverColor: #F16D7F;
   line-height: 49px;
   color: #000000;
 }
-.b-cart-products__btn-clr:hover, .b-cart-products__btn-shopping:hover {
+.cart-view__products-btn-clear:hover, .cart-view__products-btn-shopping:hover {
   border-color: #F16D7F;
   color: #F16D7F;
-}
-
-.b-cart-products-item {
-  display: flex;
-  width: 652px;
-  height: 306px;
-  margin-bottom: 40px;
-  margin-left: auto;
-  margin-right: auto;
-  background: #FFFFFF;
-  filter: drop-shadow(17px 19px 24px rgba(0, 0, 0, 0.13));
-}
-.b-cart-products-item__img {
-  display: block;
-}
-.b-cart-products-item__details {
-  padding: 22px 97px 0 31px;
-  position: relative;
-  flex-basis: 100%;
-}
-.b-cart-products-item__details-name {
-  font-style: normal;
-  font-weight: normal;
-  font-size: 24px;
-  line-height: 29px;
-  color: #222222;
-  margin-bottom: 42px;
-}
-.b-cart-products-item__details-name:hover {
-  color: #F16D7F;
-}
-.b-cart-products-item__details-param {
-  font-style: normal;
-  font-weight: normal;
-  font-size: 22px;
-  line-height: 26px;
-  color: #575757;
-  margin-bottom: 6px;
-}
-.b-cart-products-item__details-price {
-  color: #F16D7F;
-}
-.b-cart-products-item__details-quantity-input {
-  width: 43px;
-  height: 24px;
-  border: 1px solid #EAEAEA;
-  margin-left: 24px;
-  outline: none;
-  text-align: center;
-}
-.b-cart-products-item__details-btn-del {
-  position: absolute;
-  top: 28px;
-  right: 22px;
-  cursor: pointer;
-}
-.b-cart-products-item__details-btn-del:hover path {
-  fill: #F16D7F;
 }
 
 .b-cart-buying {
