@@ -1,0 +1,22 @@
+{
+  "name": "the_brand_store",
+  "version": "1.0.0",
+  "description": "the_brand_store",
+  "main": "server.js",
+  "scripts": {
+    "test": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Alexey314/the_brand_store.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Alexey314/the_brand_store/issues"
+  },
+  "homepage": "https://github.com/Alexey314/the_brand_store#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
