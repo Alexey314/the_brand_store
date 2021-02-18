@@ -13,6 +13,23 @@ export default class CatalogProductItem extends ProductItem {
     }
 
     getMarkup() {
-
+        return `<div class="catalog-product">
+                <div class="catalog-product__img-box">
+                    <a href="product.html">
+                        <img class="catalog-product__img" src="${this.imgSrc}" alt="product image">
+                    </a>
+                    <a class="catalog-product__add-to-cart-overlay-btn" href="cart.html">
+                        <img class="catalog-product__add-to-cart-icon" src="img/cart_add.svg" alt="add to cart">Add to
+                        Cart
+                    </a>
+                </div>
+                <div class="catalog-product__description">
+                    <a href="product.html">
+                        <h3 class="catalog-product__description-heading">${this.name}</h3>
+                    </a>
+                    <p class="catalog-product__description-text">${this.description}</p>
+                    <p class="catalog-product__description-price">$${this.price}</p>
+                </div>
+            </div>`;
     }
 }

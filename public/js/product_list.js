@@ -2,7 +2,7 @@
 /**
  * Abstract product list class. Contains an array of product items,
  *  */
-export default class AbstractProductList {
+export default class ProductList {
     items = [];
     parentSelector = null;
 
@@ -23,10 +23,10 @@ export default class AbstractProductList {
     }
 
     render() {
-        const parentEl = document.querySelector(parentSelector);
+        const parentEl = document.querySelector(this.parentSelector);
         if (this.items.length !== 0 && parentEl !== null) {
             this.items.forEach(item => {
-                item.getMarkup();
+                parentEl.insertAdjacentHTML("beforeend", item.getMarkup());
             });
         }
     }
