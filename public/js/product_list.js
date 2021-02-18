@@ -5,6 +5,7 @@
 export default class ProductList {
     items = [];
     parentSelector = null;
+    parentElement = null;
 
     /**
      * @param {string} parentSelector - Selector of parent html element to insert items markup to
@@ -19,15 +20,20 @@ export default class ProductList {
             this.items = Array.from(itemArray);
         }
 
-        this.render();
+        this.parentElement = document.querySelector(this.parentSelector);
+
+        this.renderList();
     }
 
-    render() {
-        const parentEl = document.querySelector(this.parentSelector);
-        if (this.items.length !== 0 && parentEl !== null) {
-            this.items.forEach(item => {
-                parentEl.insertAdjacentHTML("beforeend", item.getMarkup());
-            });
+    renderProduct(product) {
+        let el = product.getElement();
+        this.parentElement.appendChild(el);
+        return el;
+    }
+
+    renderList() {
+        if (this.items.length !== 0 && this.parentElement !== null) {
+            this.items.forEach(product => this.renderProduct(product) );
         }
     }
 }

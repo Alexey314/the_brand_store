@@ -11,7 +11,7 @@ export default class ProductItem {
     description = "";
     imgSrc = "";
     price = "";
-
+    docElement = null;
 
     /**
      * @param {ProductItemData} itemData - Data for creating a new instance of a product item
@@ -26,5 +26,12 @@ export default class ProductItem {
 
     getMarkup() {
 
+    }
+
+    getElement(){
+        let div = document.createElement("div");
+        div.innerHTML = this.getMarkup();
+        this.docElement = div.firstChild;
+        return this.docElement;
     }
 }

@@ -5,6 +5,7 @@ import ProductItem from './product_item.js';
  *  */
 export default class CatalogProductItem extends ProductItem {
 
+    addToCartBtnSelector = "catalog-product__add-to-cart-overlay-btn";
     /**
      * @param {ProductItemData} itemData - Data for creating a new instance of a product item
      */
@@ -18,7 +19,7 @@ export default class CatalogProductItem extends ProductItem {
                     <a href="product.html">
                         <img class="catalog-product__img" src="${this.imgSrc}" alt="product image">
                     </a>
-                    <a class="catalog-product__add-to-cart-overlay-btn" href="cart.html">
+                    <a class="${this.addToCartBtnSelector}" href="javascript:void(0);">
                         <img class="catalog-product__add-to-cart-icon" src="img/cart_add.svg" alt="add to cart">Add to
                         Cart
                     </a>
@@ -32,4 +33,16 @@ export default class CatalogProductItem extends ProductItem {
                 </div>
             </div>`;
     }
+
+    getElement(product) {
+        let el = ProductItem.prototype.getElement.call(this,product);
+        el.querySelector("." + this.addToCartBtnSelector)
+            .addEventListener("click", this.onAddToCart.bind(this));
+        return el;
+    }
+
+    onAddToCart(){
+        console.log("added to cart");
+    }
+
 }
