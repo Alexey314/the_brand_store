@@ -39,7 +39,4 @@ function getRandomCatalogProducts(count) {
     return products;
 }
 
-
-
 const catalogProductList = new CatalogProductList(".catalog-view", getRandomCatalogProducts(21));
-//const cartProductList = new CartProductList();

@@ -1,7 +1,7 @@
 import ProductItem from './product_item.js';
 
 /**
- * Catalog product item.
+ * Cart product item.
  *  */
 export default class CartProductItem extends ProductItem {
 
@@ -9,9 +9,8 @@ export default class CartProductItem extends ProductItem {
     /**
      * @param {ProductItemData} itemData - Data for creating a new instance of a product item
      */
-    constructor(itemData, onAddToCartFn) {
+    constructor(itemData) {
         super(itemData);
-        this.onAddToCartFn = onAddToCartFn;
     }
 
     getMarkup() {
@@ -24,11 +23,6 @@ export default class CartProductItem extends ProductItem {
                     <p class="catalog-product__description-text">QTY: <span>${this.quantity}</span></p>
                 </div>
             </div>`;
-    }
-
-    getElement(product) {
-        let el = ProductItem.prototype.getElement.call(this,product);
-        return el;
     }
 
     get quantity(){

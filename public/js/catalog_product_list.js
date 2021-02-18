@@ -7,9 +7,5 @@ export default class CatalogProductList extends ProductList{
         super(parentSelector, itemArray);
     }
 
-    // renderProduct(product) {
-    //     let el = ProductList.prototype.renderProduct.call(this, product);
-    //     // el.addEventListener("click", product.onAddToCart.bind(product));
-    //    // this.parentElement.insertAdjacentHTML("beforeend", product.getMarkup());
-    // }
+    /* Пока хватило функционала родителя  */
 }
