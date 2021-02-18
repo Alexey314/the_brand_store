@@ -13,7 +13,7 @@ export default class CatalogProductItem extends ProductItem {
     }
 
     getMarkup() {
-        return `<div class="catalog-product">
+        return `<div class="catalog-product" data-id="${this.id}">
                 <div class="catalog-product__img-box">
                     <a href="product.html">
                         <img class="catalog-product__img" src="${this.imgSrc}" alt="product image">
