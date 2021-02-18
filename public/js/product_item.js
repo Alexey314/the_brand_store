@@ -34,4 +34,14 @@ export default class ProductItem {
         this.docElement = div.firstChild;
         return this.docElement;
     }
+
+    getProductData(){
+        return {
+            id: this.id,
+            name: this.name,
+            description: this.description,
+            imgSrc: this.imgSrc,
+            price: this.price
+        };
+    }
 }

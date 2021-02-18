@@ -36,4 +36,5 @@ export default class ProductList {
             this.items.forEach(product => this.renderProduct(product) );
         }
     }
+
 }

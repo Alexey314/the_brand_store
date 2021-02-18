@@ -6,11 +6,13 @@ import ProductItem from './product_item.js';
 export default class CatalogProductItem extends ProductItem {
 
     addToCartBtnSelector = "catalog-product__add-to-cart-overlay-btn";
+    onAddToCartFn = null;
     /**
      * @param {ProductItemData} itemData - Data for creating a new instance of a product item
      */
-    constructor(itemData) {
+    constructor(itemData, onAddToCartFn) {
         super(itemData);
+        this.onAddToCartFn = onAddToCartFn;
     }
 
     getMarkup() {
@@ -42,7 +44,11 @@ export default class CatalogProductItem extends ProductItem {
     }
 
     onAddToCart(){
-        console.log("added to cart");
+        if (this.onAddToCartFn !== null){
+            this.onAddToCartFn(this.getProductData());
+        }else {
+            console.warn("CatalogProductItem.onAddToCartFn is null");
+        }
     }
 
 }
