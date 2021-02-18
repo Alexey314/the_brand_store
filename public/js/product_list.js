@@ -37,4 +37,8 @@ export default class ProductList {
         }
     }
 
+    addProduct(product){
+        this.items.push(product);
+        this.renderProduct(product);
+    }
 }
