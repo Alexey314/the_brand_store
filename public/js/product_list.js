@@ -48,4 +48,8 @@ export default class ProductList {
             add(product)
         }
     }
+
+    get length(){
+       return  this.items.length;
+    }
 }
