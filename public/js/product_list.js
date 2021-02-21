@@ -38,7 +38,14 @@ export default class ProductList {
     }
 
     addProduct(product){
-        this.items.push(product);
-        this.renderProduct(product);
+        const add = item => {
+            this.items.push(item);
+            this.renderProduct(item);
+        };
+        if (Array.isArray(product)){
+            product.forEach(add);
+        } else {
+            add(product)
+        }
     }
 }

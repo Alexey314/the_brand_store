@@ -11,12 +11,10 @@ const onAddToCart = productData => {
 };
 
 function fetchProducts(url, callbackFn) {
-    fetch(url)
-    // let products = [];
-    // for (let i = 0; i < count; i++) {
-    //     products.push(new CatalogProductItem(getRandomProductData(), onAddToCart));
-    // }
-    // return products;
+    fetch(url).then((response) => {
+        return response.json();
+    })
+    .then(callbackFn);
 }
 
 const catalogProductList = new CatalogProductList(".catalog-view");
@@ -25,5 +23,7 @@ const baseUrl = window.location.href.replace(/\/[^\/]+$/,"/");
 
 //console.log(baseUrl);
 fetchProducts(baseUrl + "data/products.json", (productDataArray)=>{
-    catalogProductList.addProduct(productDataArray);
+    catalogProductList.addProduct(productDataArray.map(data => {
+        return new CatalogProductItem(data,onAddToCart);
+    }));
 });
