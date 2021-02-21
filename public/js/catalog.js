@@ -27,7 +27,7 @@ const scrollCheck = document.querySelector(".scroll-check");
 
 function needShowMoreProducts(){
     const scrollCheckTop = scrollCheck.getBoundingClientRect().top;
-    console.log(scrollCheckTop);
+    //console.log(scrollCheckTop);
     return scrollCheckTop <= window.innerHeight;
 }
 
@@ -49,7 +49,7 @@ fetchProducts(baseUrl + "data/products.json", (productDataArray)=>{
     onShowMoreProducts(5);
     document.addEventListener('scroll', (event)=>{
         const lastScrollY = window.scrollY;
-        console.log("scroll=",lastScrollY);
+        //console.log("scroll=",lastScrollY);
         if (needShowMoreProducts()){
             onShowMoreProducts(5);
             // если так не делать, иногда залипает в конце страницы и грузит все карточки сразу
