@@ -2,79 +2,65 @@ import CatalogProductList from './catalog_product_list.js';
 import CatalogProductItem from './catalog_product_item.js';
 import CartProductItem from './cart_product_item.js';
 import CartProductList from './cart_product_list.js';
+import ProductsDataloader from './products_data_loader.js';
 
+// Список товаров видимых в корзине
 const cartProductList = new CartProductList(".cart-view");
 
+/**
+ * Добавляет в cartProductList товар с указанными данными.
+ * @param {ProductItemData} productData
+ * */
 const onAddToCart = productData => {
     cartProductList.addProduct(new CartProductItem(productData));
     //console.log(productData);
 };
 
-function fetchProducts(url, callbackFn) {
-    fetch(url).then((response) => {
-        return response.json();
-    })
-    .then(callbackFn);
-}
-
+// Список товаров видимых на странице
 const catalogProductList = new CatalogProductList(".catalog-view");
 
+// Ссылка без имени файла
 const baseUrl = window.location.href.replace(/\/[^\/]+$/,"/");
 
-let catalogProductsData = [];
-
+// Находим элемент разметки по положению которого в окне браузера будем решать грузить ли еще карточки товаров
 const scrollCheck = document.querySelector(".scroll-check");
 
+/**
+ * Возвращает true, если страница прокручена до конца списка товаров и надо догрузить еще
+ * @return {boolean}
+* */
 function needShowMoreProducts(){
     const scrollCheckTop = scrollCheck.getBoundingClientRect().top;
     //console.log(scrollCheckTop);
     return scrollCheckTop <= window.innerHeight;
 }
 
-function showMoreProducts(productsData, productList, count){
-    if (productList.length < productsData.length) {
-        let countToShow = Math.min(count, productsData.length - productList.length);
-        let productDataIdx = productList.length;
-        while (countToShow--) {
-            productList.addProduct(new CatalogProductItem(productsData[productDataIdx++], onAddToCart));
-        }
-    }
-}
+/**
+ * Вызывается когда нужно показать на странице еще карточки товара на основе массива с их данными
+ * @param {ProductItemData[]} productDataArray
+ * */
+const onProductsDataFetched = (productDataArray)=>{
+    // Запоминаем положение скролла до вставки новых карточек
+    const lastScrollY = window.scrollY;
 
-const onShowMoreProducts = (count) => showMoreProducts(catalogProductsData, catalogProductList, count);
+    // Вставляем новые карточки, не забыв прибить к ним обработчик onAddToCart
+    catalogProductList.addProduct(productDataArray.map(val => new CatalogProductItem(val, onAddToCart)));
 
-//console.log(baseUrl);
-fetchProducts(baseUrl + "data/products.json", (productDataArray)=>{
-    catalogProductsData = productDataArray;
-    onShowMoreProducts(5);
-    document.addEventListener('scroll', (event)=>{
-        const lastScrollY = window.scrollY;
-        //console.log("scroll=",lastScrollY);
-        if (needShowMoreProducts()){
-            onShowMoreProducts(5);
-            // если так не делать, иногда залипает в конце страницы и грузит все карточки сразу
-            window.scroll({
-                top: lastScrollY
-            });
-        }
+    // Восстанавливаем положение скролла после вставки новых карточек
+    window.scroll({
+        top: lastScrollY
     });
+};
+
+// Отвечает за загрузку товаров из базы на сервере
+const productsDataloader = new ProductsDataloader(baseUrl + "data/products.json");
+
+// Запускаем асинхронную загрузку начального кол-ва карточек товаров
+productsDataloader.fetchData(onProductsDataFetched, 0, 30);
+
+// Вешаем обработчик скроллинга чтобы динамически подгружать новые карточки товаров
+document.addEventListener('scroll', ()=>{
+    if (needShowMoreProducts()){
+        productsDataloader.fetchData(onProductsDataFetched, productsDataloader.loadedCount, 30);
+    }
 });
-
-
-
-//
-// /**
-//  * Функция вставляет несколько постов на страницу.
-//  */
-// function insertPosts() {
-//     // 3. в postsMarkup вам надо будет в цикле дописывать с помощью конкатенации
-//     // разметку, возвращаемую getPostMarkup.
-//     // 3.1 в getPostMarkup в качестве аргумента передавайте счетчик цикла
-//     let postsMarkup = '';
-//     for (let i = 1; i <= 3; i++){
-//         postsMarkup += getPostMarkup(i);
-//     }
-//
-//     // 3.2 Перед scrollCheck вставьте записанную в postsMarkup разметку
-//     scrollCheck.insertAdjacentHTML("beforebegin", postsMarkup);
-// }

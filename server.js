@@ -3,6 +3,7 @@ const mime = require('mime/lite');
 const express = require('express');
 const app = express();
 const fs = require('fs');
+const { Readable } = require('stream');
 
 // получаем полный путь к папке public
 const dir = path.join(__dirname, 'public');
@@ -28,20 +29,35 @@ function getRandomProductData() {
     };
 }
 
-// Открываем файл для json объектов ProductData для записи
-const productsFd = fs.openSync(path.join(__dirname, 'public/data/products.json'), 'w');
+// Генерим массив рандомных ProductData и пишем его в файл products.json
+(() => {
+    // Открываем файл для json объектов ProductData для записи
+    const productsFd = fs.openSync(path.join(__dirname, 'public/data/products.json'), 'w');
 
-// Генерим пустой массив для рандомных объектов ProductData
-const productObjs = new Array(1000).fill(null);
+    // Генерим пустой массив для рандомных объектов ProductData
+    const productObjs = new Array(100).fill(null);
 
-// Заполняем массив рандомными объектами ProductData
-productObjs.forEach((val, idx,array) => {
-    array[idx] = getRandomProductData();
-});
+    // Заполняем массив рандомными объектами ProductData
+    productObjs.forEach((val, idx, array) => {
+        array[idx] = getRandomProductData();
+    });
 
-// Записываем в файл массив  ProductData в виде JSON строки
-fs.appendFileSync(productsFd, JSON.stringify(productObjs), 'utf8');
-fs.closeSync(productsFd);
+    // Записываем в файл массив  ProductData в виде JSON строки
+    fs.appendFileSync(productsFd, JSON.stringify(productObjs), 'utf8');
+    fs.closeSync(productsFd);
+})();
+
+function getProductsDataStream(fileName, start, count){
+    const f = fs.readFileSync(fileName, {encoding: "utf-8"});
+    const productsData = JSON.parse(f);
+    const productsDataPart = productsData.slice(start, start + count);
+    return new Readable({
+        read() {
+            this.push(Buffer.from(JSON.stringify(productsDataPart)));
+            this.push(null);
+        },
+    });
+}
 
 
 // добавляем общий обработчик
@@ -60,24 +76,34 @@ app.get('*', function (req, res) {
     const type = mime.getType(ext) || 'text/plain';
     //console.log(ext, type);
 
-    // создаем стрим для чтения запрошенного файла
-    const s = fs.createReadStream(file);
-
-    // создаем обработчик чтения запрошенного файла из стрима
-    s.on('open', function () {
-        // указываем MIME-тип запрошенного файла
+    // проверяем наличие параметров в запросе
+    let start = +req.query.start;
+    let count = +req.query.count;
+    if (ext === "json" && Number.isInteger(start) && Number.isInteger(count)){
+        console.log("parameters passed ", start, count);
         res.set('Content-Type', type);
-        // связываем стримы чтения запрошенного файла и записи ответа
-        s.pipe(res);
-    });
+        getProductsDataStream(file, start, count).pipe(res);
+    } else {
+        // создаем стрим для чтения запрошенного файла
+        const s = fs.createReadStream(file);
 
-    // создаем обработчик ошибки чтения запрошенного файла из стрима
-    s.on('error', function () {
-        // указываем MIME-тип простого текста
-        res.set('Content-Type', 'text/plain');
-        // возвращаем ошибку
-        res.status(404).end('Not found');
-    });
+        // создаем обработчик чтения запрошенного файла из стрима
+        s.on('open', function () {
+            // указываем MIME-тип запрошенного файла
+            res.set('Content-Type', type);
+
+            // связываем стримы чтения запрошенного файла и записи ответа
+            s.pipe(res);
+        });
+
+        // создаем обработчик ошибки чтения запрошенного файла из стрима
+        s.on('error', function () {
+            // указываем MIME-тип простого текста
+            res.set('Content-Type', 'text/plain');
+            // возвращаем ошибку
+            res.status(404).end('Not found');
+        });
+    }
 });
 
 // определяем на каком порту серверу ждать входящие соединения
