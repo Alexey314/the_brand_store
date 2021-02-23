@@ -1,6 +1,7 @@
 const path = require('path');
 const mime = require('mime/lite');
 const express = require('express');
+const bodyParser = require("body-parser");
 const app = express();
 const fs = require('fs');
 const { Readable } = require('stream');
@@ -59,6 +60,7 @@ function getProductsDataStream(fileName, start, count){
     });
 }
 
+app.use(bodyParser.json());
 
 // добавляем общий обработчик
 app.get('*', function (req, res) {
@@ -104,6 +106,39 @@ app.get('*', function (req, res) {
             res.status(404).end('Not found');
         });
     }
+});
+
+const clientCartsMap = new Map;
+
+const onAddToCart = function (clientId, productId) {
+    console.log(clientId, productId);
+    let cartMap = clientCartsMap.get(clientId);;
+    if (cartMap === undefined){
+        cartMap = new Map;
+        clientCartsMap.set(clientId, cartMap);
+    }
+
+    let productObj = cartMap.get(productId);
+    if (productObj === undefined){
+        productObj = {
+            id: productId,
+            quantity: 1
+        }
+        cartMap.set(productId, productObj);
+    }else{
+        ++productObj.quantity;
+    }
+
+    console.log(productObj);
+};
+
+// Обработка данных отправляемых клиентом
+app.post("/cart", function (req, res){
+    // Добавляем товар в корзину пользователя
+    // TODO: как-то идентифицировать клиента
+    onAddToCart("any", req.body.id);
+    res.set('Content-Type', 'text/plain');
+    return res.status(200).end("OK");
 });
 
 // определяем на каком порту серверу ждать входящие соединения

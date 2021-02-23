@@ -7,20 +7,36 @@ import ProductsDataloader from './products_data_loader.js';
 // Список товаров видимых в корзине
 const cartProductList = new CartProductList(".cart-view");
 
+// Ссылка без имени файла
+const baseUrl = window.location.href.replace(/\/[^\/]+$/,"/");
+
 /**
  * Добавляет в cartProductList товар с указанными данными.
  * @param {ProductItemData} productData
  * */
 const onAddToCart = productData => {
-    cartProductList.addProduct(new CartProductItem(productData));
-    //console.log(productData);
+    // cartProductList.addProduct(new CartProductItem(productData));
+    // //console.log(productData);
+    fetch(baseUrl + "cart", {
+        method: 'POST', // или 'PUT'
+        body: JSON.stringify({ id: productData.id }),
+        headers: {
+            'Content-Type': 'application/json'
+        }
+    }).then((response)=>{
+        if (response.ok) {
+            console.log("item added to cart");
+        }else{
+            console.error("item NOT added to cart");
+        }
+    }).catch(response=>
+    {
+        console.error("item NOT added to cart");
+    });
 };
 
 // Список товаров видимых на странице
 const catalogProductList = new CatalogProductList(".catalog-view");
-
-// Ссылка без имени файла
-const baseUrl = window.location.href.replace(/\/[^\/]+$/,"/");
 
 // Находим элемент разметки по положению которого в окне браузера будем решать грузить ли еще карточки товаров
 const scrollCheck = document.querySelector(".scroll-check");
