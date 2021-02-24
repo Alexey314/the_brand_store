@@ -48,13 +48,49 @@ function getRandomProductData() {
     fs.closeSync(productsFd);
 })();
 
-function getProductsDataStream(fileName, start, count){
+function getProductsData(fileName){
     const f = fs.readFileSync(fileName, {encoding: "utf-8"});
-    const productsData = JSON.parse(f);
+    return JSON.parse(f);
+}
+
+function getProductsDataStream(fileName, start, count){
+    const productsData = getProductsData(fileName);
     const productsDataPart = productsData.slice(start, start + count);
     return new Readable({
         read() {
             this.push(Buffer.from(JSON.stringify(productsDataPart)));
+            this.push(null);
+        },
+    });
+}
+
+function getClientId(request){
+    // TODO get client id somehow
+    return "any"
+}
+
+const clientCartsMap = new Map;
+
+function getCartDataStream(clientId, clientCartsMap, productsDataFilename){
+    // const f = fs.readFileSync(fileName, {encoding: "utf-8"});
+    // const productsData = JSON.parse(f);
+    // const productsDataPart = productsData.slice(start, start + count);
+    const cartMap = clientCartsMap.get(clientId) || new Map;
+    const productsDataAll = getProductsData(productsDataFilename);
+    const productsDataCart = [];
+    cartMap.forEach(function (value, key, map) {
+//        console.log(key, value );
+        const productData = productsDataAll.find(function(val){
+           return val.id == key;
+        });
+        if (productData){
+            productData.quantity = value.quantity;
+            productsDataCart.push(productData);
+        }
+    });
+    return new Readable({
+        read() {
+            this.push(Buffer.from(JSON.stringify(productsDataCart)));
             this.push(null);
         },
     });
@@ -81,10 +117,14 @@ app.get('*', function (req, res) {
     // проверяем наличие параметров в запросе
     let start = +req.query.start;
     let count = +req.query.count;
-    if (ext === "json" && Number.isInteger(start) && Number.isInteger(count)){
-        console.log("parameters passed ", start, count);
+    const filename = path.basename(file);
+    if ( filename === "products.json" && Number.isInteger(start) && Number.isInteger(count)){
+        //console.log("parameters passed ", start, count);
         res.set('Content-Type', type);
         getProductsDataStream(file, start, count).pipe(res);
+    } else if (filename === "cart.json"){
+        res.set('Content-Type', type);
+        getCartDataStream(getClientId(req), clientCartsMap, dir + "/data/products.json").pipe(res);
     } else {
         // создаем стрим для чтения запрошенного файла
         const s = fs.createReadStream(file);
@@ -108,8 +148,6 @@ app.get('*', function (req, res) {
     }
 });
 
-const clientCartsMap = new Map;
-
 const onAddToCart = function (clientId, productId) {
     console.log(clientId, productId);
     let cartMap = clientCartsMap.get(clientId);;
@@ -119,14 +157,13 @@ const onAddToCart = function (clientId, productId) {
     }
 
     let productObj = cartMap.get(productId);
-    if (productObj === undefined){
+    if (productObj){
+        ++productObj.quantity;
+    }else{
         productObj = {
-            id: productId,
             quantity: 1
         }
         cartMap.set(productId, productObj);
-    }else{
-        ++productObj.quantity;
     }
 
     console.log(productObj);
@@ -135,8 +172,7 @@ const onAddToCart = function (clientId, productId) {
 // Обработка данных отправляемых клиентом
 app.post("/cart", function (req, res){
     // Добавляем товар в корзину пользователя
-    // TODO: как-то идентифицировать клиента
-    onAddToCart("any", req.body.id);
+    onAddToCart(getClientId(req), req.body.id);
     res.set('Content-Type', 'text/plain');
     return res.status(200).end("OK");
 });
