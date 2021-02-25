@@ -31,22 +31,22 @@ function getRandomProductData() {
 }
 
 // Генерим массив рандомных ProductData и пишем его в файл products.json
-(() => {
-    // Открываем файл для json объектов ProductData для записи
-    const productsFd = fs.openSync(path.join(__dirname, 'public/data/products.json'), 'w');
-
-    // Генерим пустой массив для рандомных объектов ProductData
-    const productObjs = new Array(100).fill(null);
-
-    // Заполняем массив рандомными объектами ProductData
-    productObjs.forEach((val, idx, array) => {
-        array[idx] = getRandomProductData();
-    });
-
-    // Записываем в файл массив  ProductData в виде JSON строки
-    fs.appendFileSync(productsFd, JSON.stringify(productObjs), 'utf8');
-    fs.closeSync(productsFd);
-})();
+// (() => {
+//     // Открываем файл для json объектов ProductData для записи
+//     const productsFd = fs.openSync(path.join(__dirname, 'public/data/products.json'), 'w');
+//
+//     // Генерим пустой массив для рандомных объектов ProductData
+//     const productObjs = new Array(100).fill(null);
+//
+//     // Заполняем массив рандомными объектами ProductData
+//     productObjs.forEach((val, idx, array) => {
+//         array[idx] = getRandomProductData();
+//     });
+//
+//     // Записываем в файл массив  ProductData в виде JSON строки
+//     fs.appendFileSync(productsFd, JSON.stringify(productObjs), 'utf8');
+//     fs.closeSync(productsFd);
+// })();
 
 function getProductsData(fileName){
     const f = fs.readFileSync(fileName, {encoding: "utf-8"});
