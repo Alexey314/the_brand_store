@@ -4,14 +4,23 @@ import ProductItem from './product_item.js';
  * Cart product item.
  *  */
 export default class CartProductItem extends ProductItem {
-
+    destroyItemSelector = ".cart-product__details-btn-del";
+    onAddCartItemFn = null;
+    onRemoveCartItemFn = null;
+    onDestroyCartItemFn = null;
     quantity = 1;
     /**
      * @param {ProductItemData} itemData - Data for creating a new instance of a product item
+     * @param {function} onAddCartItemFn
+     * @param {function} onRemoveCartItemFn
+     * @param {function} onDestroyCartItemFn
      */
-    constructor(itemData) {
+    constructor(itemData, onAddCartItemFn, onRemoveCartItemFn, onDestroyCartItemFn) {
         super(itemData);
         this.quantity = itemData.quantity;
+        this.onAddCartItemFn = onAddCartItemFn;
+        this.onRemoveCartItemFn = onRemoveCartItemFn;
+        this.onDestroyCartItemFn = onDestroyCartItemFn;
     }
 
     getMarkup() {
@@ -43,5 +52,13 @@ export default class CartProductItem extends ProductItem {
                 </div>
         </div>`;
     }
+
+    getElement(product) {
+        let el = ProductItem.prototype.getElement.call(this,product);
+        el.querySelector(this.destroyItemSelector)
+            .addEventListener("click", () => this.onDestroyCartItemFn(this.getProductData()));
+        return el;
+    }
+
 
 }

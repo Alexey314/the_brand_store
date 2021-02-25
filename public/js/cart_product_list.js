@@ -23,4 +23,11 @@ export default class CartProductList extends ProductList {
             }
         }
     }
+
+    removeProductById(productId){
+        let item = this.items.get(productId);
+        if (item){
+            item.docElement.remove();
+        }
+    }
 }

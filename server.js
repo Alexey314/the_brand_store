@@ -172,9 +172,14 @@ const modifyCart = function (clientId, requestObj) {
                 cartMap.set(requestObj.id, productObj);
             }
             break;
+        case "destroy":
+            if (productObj){
+                cartMap.delete(requestObj.id);
+            }
+            break;
     }
 
-    console.log(productObj);
+    console.log("cart modify", productObj, requestObj);
 };
 
 // Обработка данных отправляемых клиентом
