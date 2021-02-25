@@ -11,15 +11,13 @@ const cartProductList = new CartProductList(".cart-view");
 const baseUrl = window.location.href.replace(/\/[^\/]+$/,"/");
 
 /**
- * Добавляет в cartProductList товар с указанными данными.
+ * Добавляет в корзину на сервере товар по его уникальному id.
  * @param {ProductItemData} productData
  * */
 const onAddToCart = productData => {
-    // cartProductList.addProduct(new CartProductItem(productData));
-    // //console.log(productData);
     fetch(baseUrl + "cart", {
         method: 'POST', // или 'PUT'
-        body: JSON.stringify({ id: productData.id }),
+        body: JSON.stringify({ id: productData.id, action: "add" }),
         headers: {
             'Content-Type': 'application/json'
         }

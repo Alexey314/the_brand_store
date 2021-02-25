@@ -148,22 +148,30 @@ app.get('*', function (req, res) {
     }
 });
 
-const onAddToCart = function (clientId, productId) {
-    console.log(clientId, productId);
+const modifyCart = function (clientId, requestObj) {
+    console.log(clientId, requestObj.id);
     let cartMap = clientCartsMap.get(clientId);;
     if (cartMap === undefined){
         cartMap = new Map;
         clientCartsMap.set(clientId, cartMap);
     }
 
-    let productObj = cartMap.get(productId);
-    if (productObj){
-        ++productObj.quantity;
-    }else{
-        productObj = {
-            quantity: 1
-        }
-        cartMap.set(productId, productObj);
+    if (!requestObj.hasOwnProperty("id") || !requestObj.hasOwnProperty("action")){
+        return;
+    }
+
+    let productObj = cartMap.get(requestObj.id);
+    switch (requestObj.action){
+        case "add":
+            if (productObj){
+                ++productObj.quantity;
+            }else{
+                productObj = {
+                    quantity: 1
+                };
+                cartMap.set(requestObj.id, productObj);
+            }
+            break;
     }
 
     console.log(productObj);
@@ -172,7 +180,7 @@ const onAddToCart = function (clientId, productId) {
 // Обработка данных отправляемых клиентом
 app.post("/cart", function (req, res){
     // Добавляем товар в корзину пользователя
-    onAddToCart(getClientId(req), req.body.id);
+    modifyCart(getClientId(req), req.body);
     res.set('Content-Type', 'text/plain');
     return res.status(200).end("OK");
 });
