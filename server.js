@@ -78,10 +78,10 @@ function getCartDataStream(clientId, clientCartsMap, productsDataFilename){
     const cartMap = clientCartsMap.get(clientId) || new Map;
     const productsDataAll = getProductsData(productsDataFilename);
     const productsDataCart = [];
-    cartMap.forEach(function (value, key, map) {
+    cartMap.forEach(function (value, key) {
 //        console.log(key, value );
         const productData = productsDataAll.find(function(val){
-           return val.id == key;
+           return val.id === key;
         });
         if (productData){
             productData.quantity = value.quantity;
@@ -150,7 +150,7 @@ app.get('*', function (req, res) {
 
 const modifyCart = function (clientId, requestObj) {
     console.log(clientId, requestObj.id);
-    let cartMap = clientCartsMap.get(clientId);;
+    let cartMap = clientCartsMap.get(clientId);
     if (cartMap === undefined){
         cartMap = new Map;
         clientCartsMap.set(clientId, cartMap);
