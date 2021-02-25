@@ -28,6 +28,7 @@ export default class CartProductList extends ProductList {
         let item = this.items.get(productId);
         if (item){
             item.docElement.remove();
+            this.items.delete(productId);
         }
     }
 }
