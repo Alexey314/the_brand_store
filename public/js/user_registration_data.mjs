@@ -32,7 +32,7 @@ export default class UserRegistrationData{
         } = {
             firstNameRe: /^[a-zA-Zа-яА-Я '.-]{2,30}$/,
             lastNameRe: /^[a-zA-Zа-яА-Я '.-]{2,30}$/,
-            phoneNumberRe: /^$/,
+            phoneNumberRe: /^\+7\(\d{3}\)\d{3}-\d{4}$/,
             emailRe: /^$/,
             passwordRe: /^$/
         }) {
@@ -77,8 +77,10 @@ export default class UserRegistrationData{
      * @return {boolean}
      * */
     setPhoneNumber(value) {
-        if (this._phoneNumberRe.test(value)){
-            this._phoneNumber = value;
+        // Убираем все пробелы
+        const normalizedVal = value.replace(/ +/g, "");
+        if (this._phoneNumberRe.test(normalizedVal)){
+            this._phoneNumber = normalizedVal;
             return true;
         }
         return false;
