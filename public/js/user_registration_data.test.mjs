@@ -192,3 +192,29 @@ describe("Email validation", () => {
         assert.equal(uut.setEmail(" my-mail@mail.ru "), true);
     });
 });
+
+describe("Password validation", () => {
+    it("Should reject empty value ", () => {
+        const uut = new UserRegistrationData;
+        assert.equal(uut.setPassword(""), false);
+        assert.equal(uut.setPassword(" "), false);
+    });
+
+    it("Should reject too short value ", () => {
+        const uut = new UserRegistrationData;
+        assert.equal(uut.setPassword("Aa12345"), false);
+        assert.equal(uut.setPassword(" Aa12345   "), false);
+    });
+
+    it("Should reject value with unwanted symbols", () => {
+        const uut = new UserRegistrationData;
+        assert.equal(uut.setPassword("Aa12 345678"), false);
+        assert.equal(uut.setPassword(" Aa.12345698   "), false);
+    });
+
+    it("Should accept matched value", () => {
+        const uut = new UserRegistrationData;
+        assert.equal(uut.setPassword("Aa12345678"), true);
+        assert.equal(uut.setPassword(" Aa12345698   "), true);
+    });
+});

@@ -30,11 +30,11 @@ export default class UserRegistrationData{
             emailRe,
             passwordRe
         } = {
-            firstNameRe: /^[a-zA-Zа-яА-Я '.-]{2,30}$/,
-            lastNameRe: /^[a-zA-Zа-яА-Я '.-]{2,30}$/,
-            phoneNumberRe: /^\+7\(\d{3}\)\d{3}-\d{4}$/,
+            firstNameRe: /^[a-zA-Zа-яА-Я '.-]{2,30}$/, //От 2 до 30 символов латиницы и кириллицы и может содержать ' . -
+            lastNameRe: /^[a-zA-Zа-яА-Я '.-]{2,30}$/, // -/-
+            phoneNumberRe: /^\+7\(\d{3}\)\d{3}-\d{4}$/, // +7(000)000-0000
             emailRe: /^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/, //W3C recommends
-            passwordRe: /^$/
+            passwordRe: /^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)[A-Za-z\d]{8,}$/ // Не менее 8 символов, обязательно большие маленькие буквы и цифры
         }) {
         this._firstNameRe = firstNameRe;
         this._lastNameRe = lastNameRe;
@@ -63,6 +63,7 @@ export default class UserRegistrationData{
      * @return {boolean}
      * */
     setLastName(value) {
+        // Убираем внешние пробелы
         const trimmedVal = value.trim();
         if (this._lastNameRe.test(trimmedVal)){
             this._lastName = trimmedVal;
@@ -107,8 +108,10 @@ export default class UserRegistrationData{
      * @return {boolean}
      * */
     setPassword(value) {
-        if (this._passwordRe.test(value)){
-            this._password = value;
+        // Убираем внешние пробелы
+        const trimmedVal = value.trim();
+        if (this._passwordRe.test(trimmedVal)){
+            this._password = trimmedVal;
             return true;
         }
         return false;
