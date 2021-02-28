@@ -33,7 +33,7 @@ export default class UserRegistrationData{
             firstNameRe: /^[a-zA-Zа-яА-Я '.-]{2,30}$/,
             lastNameRe: /^[a-zA-Zа-яА-Я '.-]{2,30}$/,
             phoneNumberRe: /^\+7\(\d{3}\)\d{3}-\d{4}$/,
-            emailRe: /^$/,
+            emailRe: /^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/, //W3C recommends
             passwordRe: /^$/
         }) {
         this._firstNameRe = firstNameRe;
@@ -92,8 +92,10 @@ export default class UserRegistrationData{
      * @return {boolean}
      * */
     setEmail(value) {
-        if (this._emailRe.test(value)){
-            this._email = value;
+        // Убираем все пробелы
+        const normalizedVal = value.replace(/ +/g, "");
+        if (this._emailRe.test(normalizedVal)){
+            this._email = normalizedVal;
             return true;
         }
         return false;

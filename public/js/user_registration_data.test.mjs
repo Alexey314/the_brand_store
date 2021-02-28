@@ -136,3 +136,59 @@ describe("Phone number validation", () => {
         assert.equal(uut.setPhoneNumber("+7(123)456-7892"), true);
     });
 });
+
+describe("Email validation", () => {
+    it("Should reject empty value ", () => {
+        const uut = new UserRegistrationData;
+        assert.equal(uut.setEmail(""), false);
+        assert.equal(uut.setEmail(" "), false);
+    });
+
+    it("Should reject @mail.ru value ", () => {
+        const uut = new UserRegistrationData;
+        assert.equal(uut.setEmail("@mail.ru"), false);
+        assert.equal(uut.setEmail(" @mail .ru "), false);
+    });
+
+    it("Should reject mymail@ value ", () => {
+        const uut = new UserRegistrationData;
+        assert.equal(uut.setEmail("mymail@"), false);
+        assert.equal(uut.setEmail(" mymail@ "), false);
+    });
+
+    it("Should reject mymail value ", () => {
+        const uut = new UserRegistrationData;
+        assert.equal(uut.setEmail("mymail"), false);
+        assert.equal(uut.setEmail(" mymail "), false);
+    });
+
+    it("Should reject mymail@. value ", () => {
+        const uut = new UserRegistrationData;
+        assert.equal(uut.setEmail("mymail@."), false);
+        assert.equal(uut.setEmail(" mymail@ . "), false);
+    });
+
+    it("Should accept mymail@mail value ", () => {
+        const uut = new UserRegistrationData;
+        assert.equal(uut.setEmail("mymail@mail"), true);
+        assert.equal(uut.setEmail(" mymail@mail "), true);
+    });
+
+    it("Should accept mymail@mail.ru value ", () => {
+        const uut = new UserRegistrationData;
+        assert.equal(uut.setEmail("mymail@mail.ru"), true);
+        assert.equal(uut.setEmail(" mymail@mail .ru "), true);
+    });
+
+    it("Should accept my.mail@mail.ru value ", () => {
+        const uut = new UserRegistrationData;
+        assert.equal(uut.setEmail("my.mail@mail.ru"), true);
+        assert.equal(uut.setEmail(" my.mail@m ail.ru "), true);
+    });
+
+    it("Should accept my-mail@mail.ru value ", () => {
+        const uut = new UserRegistrationData;
+        assert.equal(uut.setEmail("my-mail@mail.ru"), true);
+        assert.equal(uut.setEmail(" my-mail@mail.ru "), true);
+    });
+});
