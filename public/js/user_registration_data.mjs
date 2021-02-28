@@ -9,7 +9,6 @@ export default class UserRegistrationData{
     _phoneNumber = "";
     _email = "";
     _password = "";
-    _isValid = false;
 
     /**
      * Инициализирует новый объект UserRegistrationData с заданным или дефолтным набором regexp для валидации
@@ -115,6 +114,20 @@ export default class UserRegistrationData{
             return true;
         }
         return false;
+    }
+
+    /**
+     * Возвращает JSON строку с регистрационными данными
+     * @return {string}
+     * */
+    getJson() {
+        return JSON.stringify({
+            firstName: this._firstName,
+            lastName: this._lastName,
+            phoneNumber: this._phoneNumber,
+            email: this._email,
+            password: this._password
+        });
     }
 }
 

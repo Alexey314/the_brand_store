@@ -6,6 +6,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Brand: Registration</title>
+    <script defer src="https://unpkg.com/@popperjs/core@2/dist/umd/popper.min.js"></script>
+    <script defer src="https://unpkg.com/tippy.js@6/dist/tippy-bundle.umd.js"></script>
     <script defer type="module" src="js/registration.js"></script>
 </head>
 
@@ -86,7 +88,7 @@
     </div>
 </div>
 <div class="page-registration__main-box container">
-    <form class="registration-form" action="javascript">
+    <form class="registration-form" action="javascript" novalidate>
 
         <span class="registration-form__label-text">Your Name</span>
         <input class="registration-form__input-text registration-form__input-text_first-name"
