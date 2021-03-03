@@ -4,7 +4,7 @@
   "description": "the_brand_store",
   "main": "server.js",
   "scripts": {
-    "test": "mocha ./public/js/user_registration_data.test.mjs"
+    "test": "mocha src/js/user_registration_data.test.mjs"
   },
   "repository": {
     "type": "git",
@@ -17,11 +17,22 @@
   },
   "homepage": "https://github.com/Alexey314/the_brand_store#readme",
   "dependencies": {
+    "@babel/polyfill": "^7.12.1",
     "body-parser": "^1.19.0",
     "chai": "^4.3.0",
     "express": "^4.17.1",
     "mime": "^2.5.2",
     "mocha": "^8.3.0",
     "tippy.js": "^6.3.1"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.13.0",
+    "@babel/core": "^7.13.8",
+    "@babel/plugin-proposal-class-properties": "^7.13.0",
+    "@babel/plugin-syntax-class-properties": "^7.12.13",
+    "@babel/preset-env": "^7.13.9",
+    "babel-loader": "^8.2.2",
+    "webpack": "^5.24.2",
+    "webpack-cli": "^4.5.0"
   }
 }
