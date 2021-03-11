@@ -6,6 +6,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Brand: Registration</title>
+    <script defer src="https://unpkg.com/@popperjs/core@2/dist/umd/popper.min.js"></script>
+    <script defer src="https://unpkg.com/tippy.js@6/dist/tippy-bundle.umd.js"></script>
+    <script defer type="module" src="js/registration.js"></script>
 </head>
 
 <body class="page-registration">
@@ -85,13 +88,13 @@
     </div>
 </div>
 <div class="page-registration__main-box container">
-    <form class="registration-form" action="#">
+    <form class="registration-form" action="javascript" novalidate>
 
         <span class="registration-form__label-text">Your Name</span>
         <input class="registration-form__input-text registration-form__input-text_first-name"
-               type="text" placeholder="First name" required>
+               type="text" placeholder="First name" >
         <input class="registration-form__input-text registration-form__input-text_last-name"
-               type="text" placeholder="Last name" required>
+               type="text" placeholder="Last name" >
 
         <div class="registration-form__gender-selector">
             <label class="input-radio input-radio_text_size_s">
@@ -112,10 +115,12 @@
         </div>
 
         <span class="registration-form__label-text">Login details</span>
+        <input class="registration-form__input-text registration-form__input-text_tel"
+             type="tel" placeholder="+7(xxx)xxx-xxxx" >
         <input class="registration-form__input-text registration-form__input-text_email"
-               type="email" placeholder="Email" required>
+               type="email" placeholder="Email" >
         <input class="registration-form__input-text registration-form__input-text_password"
-               type="password" placeholder="Password" required>
+               type="password" placeholder="Password" >
 
         <p class="registration-form__password-requirements">
             Please use 8 or more characters, with at least 1 number and a mixture of uppercase and lowercase letters

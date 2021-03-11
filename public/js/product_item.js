@@ -4,7 +4,8 @@
 export default class ProductItem {
     /**
      * A ProductItemData
-     * @typedef {{id: string, name: string, description: string, imgSrc: string, price: (string|number)}} ProductItemData
+     * @typedef {{id: string, name: string, description: string, imgSrc: string, price: (string|number),
+     *  quantity: number }} ProductItemData
      */
     id = "";
     name = "";

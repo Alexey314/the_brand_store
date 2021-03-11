@@ -4,7 +4,7 @@
   "description": "the_brand_store",
   "main": "server.js",
   "scripts": {
-    "test": "node server.js"
+    "test": "mocha ./public/js/user_registration_data.test.mjs"
   },
   "repository": {
     "type": "git",
@@ -17,6 +17,11 @@
   },
   "homepage": "https://github.com/Alexey314/the_brand_store#readme",
   "dependencies": {
-    "express": "^4.17.1"
+    "body-parser": "^1.19.0",
+    "chai": "^4.3.0",
+    "express": "^4.17.1",
+    "mime": "^2.5.2",
+    "mocha": "^8.3.0",
+    "tippy.js": "^6.3.1"
   }
 }
