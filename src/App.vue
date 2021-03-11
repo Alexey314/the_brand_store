@@ -1,7 +1,9 @@
 <template>
   <div>
+    <h1>Catalog</h1>
     <Catalog :items-data="catalogItemsDataArray"/>
-    <Cart />
+
+    <Cart :items-data="catalogItemsDataArray" />
   </div>
 </template>
 
@@ -32,7 +34,7 @@ export default {
     // Запускаем асинхронную загрузку начального кол-ва карточек товаров
     productsDataloader.fetchData((catalogItemsDataArray)=>{
       this.catalogItemsDataArray = catalogItemsDataArray;
-    }, 0, 30);
+    }, 0, 3);
   }
 }
 </script>

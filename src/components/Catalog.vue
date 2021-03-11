@@ -1,5 +1,5 @@
 <template>
-  <div >
+  <div  :class=[$style.flex]>
 <!--    <h1>Catalog:</h1>-->
     <CatalogItem  v-for="item in itemsData" :data="item" :key="item.id"/>
   </div>
@@ -25,5 +25,11 @@ export default {
 </script>
 
 <style module>
-
+.flex {
+  display: flex;
+  flex-wrap: wrap;
+}
+.flex > div {
+  margin: 8px;
+}
 </style>
