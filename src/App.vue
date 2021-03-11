@@ -2,8 +2,8 @@
   <div>
     <h1>Catalog</h1>
     <Catalog :items-data="catalogItemsDataArray"/>
-
-    <Cart :items-data="catalogItemsDataArray" />
+    <h1>Cart</h1>
+    <Cart :items-data="cartItemsDataArray" />
   </div>
 </template>
 
@@ -23,7 +23,8 @@ const productsDataloader = new ProductsDataloader(baseUrl + "data/products.json"
 export default {
   data(){
     return {
-      catalogItemsDataArray: []
+      catalogItemsDataArray: [],
+      cartItemsDataArray: [],
     }
   },
   components: {
@@ -33,8 +34,10 @@ export default {
   created() {
     // Запускаем асинхронную загрузку начального кол-ва карточек товаров
     productsDataloader.fetchData((catalogItemsDataArray)=>{
-      this.catalogItemsDataArray = catalogItemsDataArray;
-    }, 0, 3);
+      this.catalogItemsDataArray = catalogItemsDataArray.slice(0,3);
+      this.cartItemsDataArray = catalogItemsDataArray.slice(3);
+    }, 0, 6);
+
   }
 }
 </script>
