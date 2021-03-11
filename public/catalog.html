@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brand Catalog</title>
+<!--    <script defer src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>-->
+    <script defer src="catalog.bundle.js"></script>
+</head>
+
+<body>
+  <div class="page-catalog"></div>
+<!--<header class="header container-p">-->
+<!--    <a href="index.html" class="link-img header__link-to-main"><img class="link-img__img" src="img/logo.svg"-->
+<!--                                                                    alt="logo"></a>-->
+<!--    <a href="#" class="link-img header__link-to-search"><img class="link-img__img" src="img/search.svg"-->
+<!--                                                             alt="search"></a>-->
+<!--    <div class="header__spacer"></div>-->
+
+<!--    <label for="id-main-menu-switcher" class="switcher__label header__menu-switcher"><img class="switcher__label-img"-->
+<!--                                                                                          src="img/menu.svg"-->
+<!--                                                                                          alt="menu"></label>-->
+<!--    <nav class="header-optional header_optional-ml">-->
+<!--        <a href="registration.html" class="link-img header-optional_mr"><img class="link-img__img"-->
+<!--                                                                             src="img/account.svg"-->
+<!--                                                                             alt="account"></a>-->
+<!--        <a href="cart.html" class="link-img "><img class="link-img__img" src="img/cart.svg"-->
+<!--                                                   alt="cart"></a>-->
+<!--    </nav>-->
+
+<!--</header>-->
+<!--<div class="main-menu-placeholder">-->
+<!--    <input id="id-main-menu-switcher" class="switcher__checkbox" type="checkbox">-->
+<!--    <div class="main-menu">-->
+<!--        <nav class="main-menu__inner-box">-->
+<!--            <div class="main-menu__close">-->
+<!--                <label for="id-main-menu-switcher">-->
+<!--                    <svg width="13" height="13" viewBox="0 0 13 13" fill="none" xmlns="http://www.w3.org/2000/svg">-->
+<!--                        <path d="M7.4158 6.00409L11.7158 1.71409C11.9041 1.52579 12.0099 1.27039 12.0099 1.00409C12.0099 0.73779 11.9041 0.482395 11.7158 0.294092C11.5275 0.105788 11.2721 0 11.0058 0C10.7395 0 10.4841 0.105788 10.2958 0.294092L6.0058 4.59409L1.7158 0.294092C1.52749 0.105788 1.2721 -1.9841e-09 1.0058 0C0.739497 1.9841e-09 0.484102 0.105788 0.295798 0.294092C0.107495 0.482395 0.0017066 0.73779 0.0017066 1.00409C0.0017066 1.27039 0.107495 1.52579 0.295798 1.71409L4.5958 6.00409L0.295798 10.2941C0.20207 10.3871 0.127676 10.4977 0.0769072 10.6195C0.0261385 10.7414 0 10.8721 0 11.0041C0 11.1361 0.0261385 11.2668 0.0769072 11.3887C0.127676 11.5105 0.20207 11.6211 0.295798 11.7141C0.388761 11.8078 0.499362 11.8822 0.621222 11.933C0.743081 11.9838 0.873786 12.0099 1.0058 12.0099C1.13781 12.0099 1.26852 11.9838 1.39038 11.933C1.51223 11.8822 1.62284 11.8078 1.7158 11.7141L6.0058 7.41409L10.2958 11.7141C10.3888 11.8078 10.4994 11.8822 10.6212 11.933C10.7431 11.9838 10.8738 12.0099 11.0058 12.0099C11.1378 12.0099 11.2685 11.9838 11.3904 11.933C11.5122 11.8822 11.6228 11.8078 11.7158 11.7141C11.8095 11.6211 11.8839 11.5105 11.9347 11.3887C11.9855 11.2668 12.0116 11.1361 12.0116 11.0041C12.0116 10.8721 11.9855 10.7414 11.9347 10.6195C11.8839 10.4977 11.8095 10.3871 11.7158 10.2941L7.4158 6.00409Z"-->
+<!--                              fill="#6F6E6E"/>-->
+<!--                    </svg>-->
+<!--                </label>-->
+<!--            </div>-->
+<!--            <nav class="header-optional">-->
+<!--                <a href="registration.html" class="link-img header-optional__link"><img class="link-img__img"-->
+<!--                                                                                        src="img/account.svg"-->
+<!--                                                                                        alt="account"></a>-->
+<!--                <a href="cart.html" class="link-img header-optional__link"><img class="link-img__img" src="img/cart.svg"-->
+<!--                                                                                alt="cart"></a>-->
+<!--            </nav>-->
+<!--            <div class="main-menu__heading">-->
+<!--                MENU-->
+<!--            </div>-->
+
+<!--            <a href="catalog.html" class="main-menu__section-heading">MAIN</a>-->
+<!--            <a href="catalog.html" class="main-menu__item">Accessories</a>-->
+<!--            <a href="catalog.html" class="main-menu__item">Bags</a>-->
+<!--            <a href="catalog.html" class="main-menu__item">Denim</a>-->
+<!--            <a href="catalog.html" class="main-menu__item">T-Shirts</a>-->
+
+<!--            <a href="catalog.html" class="main-menu__section-heading">WOMAN</a>-->
+<!--            <a href="catalog.html" class="main-menu__item">Shirts</a>-->
+<!--            <a href="catalog.html" class="main-menu__item">Accessories</a>-->
+<!--            <a href="catalog.html" class="main-menu__item">Jackets & Coats</a>-->
+<!--            <a href="catalog.html" class="main-menu__item">Polos</a>-->
+<!--            <a href="catalog.html" class="main-menu__item">T-Shirts</a>-->
+
+<!--            <a href="catalog.html" class="main-menu__section-heading">KIDS</a>-->
+<!--            <a href="catalog.html" class="main-menu__item">Shirts</a>-->
+<!--            <a href="catalog.html" class="main-menu__item">Accessories</a>-->
+<!--            <a href="catalog.html" class="main-menu__item">Jackets & Coats</a>-->
+<!--            <a href="catalog.html" class="main-menu__item">Polos</a>-->
+<!--            <a href="catalog.html" class="main-menu__item">T-Shirts</a>-->
+<!--            <a href="catalog.html" class="main-menu__item">Bags</a>-->
+<!--        </nav>-->
+<!--    </div>-->
+<!--</div>-->
+<!--<div class="breadcrumbs-bar">-->
+<!--    <div class="breadcrumbs-bar__content-box container">-->
+<!--        <p class="breadcrumbs-bar__current-subsection">NEW ARRIVALS</p>-->
+<!--        <nav class="breadcrumbs-bar__full-path">-->
+<!--            <a class="breadcrumbs-bar__subsection" href="index.html">HOME /</a>-->
+<!--            <a class="breadcrumbs-bar__subsection" href="#">MEN /</a>-->
+<!--            <a class="breadcrumbs-bar__subsection" href="#">NEW ARRIVALS</a>-->
+<!--        </nav>-->
+<!--    </div>-->
+<!--</div>-->
+<!--<section class="page-catalog__main container">-->
+<!--    <div class="catalog-filters">-->
+<!--        <div class="catalog-filters__main-placeholder">-->
+<!--            <details class="catalog-filters__main">-->
+<!--                <summary class="b-dropdown-menu_no-default-marker g-hide-focus g-cursor-default">-->
+<!--                    <span class="catalog-filters__main-heading">FILTER</span>-->
+<!--                    <svg class="catalog-filters__main-svg" width="15" height="10" viewBox="0 0 15 10"-->
+<!--                         xmlns="http://www.w3.org/2000/svg">-->
+<!--                        <path class="catalog__main-filter__icon__path"-->
+<!--                              d="M0.833333 10H4.16667C4.625 10 5 9.625 5 9.16667C5 8.70833 4.625 8.33333 4.16667 8.33333H0.833333C0.375 8.33333 0 8.70833 0 9.16667C0 9.625 0.375 10 0.833333 10ZM0 0.833333C0 1.29167 0.375 1.66667 0.833333 1.66667H14.1667C14.625 1.66667 15 1.29167 15 0.833333C15 0.375 14.625 0 14.1667 0H0.833333C0.375 0 0 0.375 0 0.833333ZM0.833333 5.83333H9.16667C9.625 5.83333 10 5.45833 10 5C10 4.54167 9.625 4.16667 9.16667 4.16667H0.833333C0.375 4.16667 0 4.54167 0 5C0 5.45833 0.375 5.83333 0.833333 5.83333Z"-->
+<!--                              fill="black"/>-->
+<!--                    </svg>-->
+<!--                </summary>-->
+<!--                <div class="accordion catalog__main-filter__popup">-->
+<!--                    <details class="accordion__section">-->
+<!--                        <summary class="accordion__section__title b-dropdown-menu_no-default-marker">-->
+<!--                            CATEGORY-->
+<!--                        </summary>-->
+<!--                        <div class="accordion__section__content ">-->
+<!--                            <a href="#" class="catalog__main-filter__section_content__link">Accessories</a>-->
+<!--                            <a href="#" class="catalog__main-filter__section_content__link">Bags</a>-->
+<!--                            <a href="#" class="catalog__main-filter__section_content__link">Denim</a>-->
+<!--                            <a href="#" class="catalog__main-filter__section_content__link">Hoodies &-->
+<!--                                Sweatshirts</a>-->
+<!--                            <a href="#" class="catalog__main-filter__section_content__link">Jackets & Coats</a>-->
+<!--                            <a href="#" class="catalog__main-filter__section_content__link">Polos</a>-->
+<!--                            <a href="#" class="catalog__main-filter__section_content__link">Shirts</a>-->
+<!--                            <a href="#" class="catalog__main-filter__section_content__link">Shoes</a>-->
+<!--                            <a href="#" class="catalog__main-filter__section_content__link">Sweaters & Knits</a>-->
+<!--                            <a href="#" class="catalog__main-filter__section_content__link">T-Shirts</a>-->
+<!--                            <a href="#" class="catalog__main-filter__section_content__link">Tanks</a>-->
+<!--                        </div>-->
+<!--                    </details>-->
+<!--                    <details class="accordion__section">-->
+<!--                        <summary class="accordion__section__title b-dropdown-menu_no-default-marker">-->
+<!--                            BRAND-->
+<!--                        </summary>-->
+<!--                        <div class="accordion__section__content ">-->
+<!--                            <a href="#" class="catalog__main-filter__section_content__link">Alpha</a>-->
+<!--                            <a href="#" class="catalog__main-filter__section_content__link">Gamma</a>-->
+<!--                            <a href="#" class="catalog__main-filter__section_content__link">Omega</a>-->
+<!--                        </div>-->
+<!--                    </details>-->
+<!--                    <details class="accordion__section">-->
+<!--                        <summary class="accordion__section__title b-dropdown-menu_no-default-marker">-->
+<!--                            DESIGNER-->
+<!--                        </summary>-->
+<!--                        <div class="accordion__section__content ">-->
+<!--                            <a href="#" class="catalog__main-filter__section_content__link">Ivanoff</a>-->
+<!--                            <a href="#" class="catalog__main-filter__section_content__link">Petroff</a>-->
+<!--                            <a href="#" class="catalog__main-filter__section_content__link">Sidoroff</a>-->
+<!--                        </div>-->
+<!--                    </details>-->
+<!--                </div>-->
+<!--            </details>-->
+<!--        </div>-->
+<!--        <div class="catalog-filters__group">-->
+<!--            <details class="b-dropdown-menu">-->
+<!--                <summary class="b-dropdown-menu_no-default-marker g-hide-focus g-cursor-pointer">-->
+<!--                    TRENDING NOW <img class="b-dropdown-menu__drop-marker-img" src="img/down.svg" alt="dropdown">-->
+<!--                </summary>-->
+<!--                <div class="b-dropdown-menu__dropdown-content">-->
+<!--                    <label class="input-checkbox">-->
+<!--                        <input class="input-checkbox__input" id="trend_1_checker"-->
+<!--                               type="checkbox">-->
+<!--                        <span class="input-checkbox__text">First</span>-->
+<!--                    </label>-->
+<!--                    <label class="input-checkbox">-->
+<!--                        <input class="input-checkbox__input" id="trend_2_checker"-->
+<!--                               type="checkbox">-->
+<!--                        <span class="input-checkbox__text">Second</span>-->
+<!--                    </label>-->
+<!--                    <label class="input-checkbox">-->
+<!--                        <input class="input-checkbox__input" id="trend_3_checker"-->
+<!--                               type="checkbox">-->
+<!--                        <span class="input-checkbox__text">Third</span>-->
+<!--                    </label>-->
+<!--                </div>-->
+<!--            </details>-->
+<!--            <details class="b-dropdown-menu">-->
+<!--                <summary class="b-dropdown-menu_no-default-marker g-hide-focus g-cursor-pointer">-->
+<!--                    SIZE<img class="b-dropdown-menu__drop-marker-img" src="img/down.svg" alt="dropdown">-->
+<!--                </summary>-->
+<!--                <div class="b-dropdown-menu__dropdown-content">-->
+<!--                    <label class="input-checkbox">-->
+<!--                        <input class="input-checkbox__input" id="size_xs_checker"-->
+<!--                               type="checkbox">-->
+<!--                        <span class="input-checkbox__text">XS</span>-->
+<!--                    </label>-->
+<!--                    <label class="input-checkbox">-->
+<!--                        <input class="input-checkbox__input" id="size_s_checker"-->
+<!--                               type="checkbox">-->
+<!--                        <span class="input-checkbox__text">S</span>-->
+<!--                    </label>-->
+<!--                    <label class="input-checkbox">-->
+<!--                        <input class="input-checkbox__input" id="size_m_checker"-->
+<!--                               type="checkbox">-->
+<!--                        <span class="input-checkbox__text">M</span>-->
+<!--                    </label>-->
+<!--                    <label class="input-checkbox">-->
+<!--                        <input class="input-checkbox__input" id="size_l_checker"-->
+<!--                               type="checkbox">-->
+<!--                        <span class="input-checkbox__text">L</span>-->
+<!--                    </label>-->
+<!--                </div>-->
+<!--            </details>-->
+<!--            <details class="b-dropdown-menu">-->
+<!--                <summary class="b-dropdown-menu_no-default-marker g-hide-focus g-cursor-pointer">-->
+<!--                    PRICE<img class="b-dropdown-menu__drop-marker-img" src="img/down.svg" alt="dropdown">-->
+<!--                </summary>-->
+<!--                <div class="b-dropdown-menu__dropdown-content">-->
+<!--                    <label class="input-checkbox">-->
+<!--                        <input class="input-checkbox__input" id="price_0_10_checker"-->
+<!--                               type="checkbox">-->
+<!--                        <span class="input-checkbox__text">0-10$</span>-->
+<!--                    </label>-->
+<!--                    <label class="input-checkbox">-->
+<!--                        <input class="input-checkbox__input" id="price_10_30_checker"-->
+<!--                               type="checkbox">-->
+<!--                        <span class="input-checkbox__text">10-30$</span>-->
+<!--                    </label>-->
+<!--                    <label class="input-checkbox">-->
+<!--                        <input class="input-checkbox__input" id="price_30_100_checker"-->
+<!--                               type="checkbox">-->
+<!--                        <span class="input-checkbox__text">30-100$</span>-->
+<!--                    </label>-->
+<!--                    <label class="input-checkbox">-->
+<!--                        <input class="input-checkbox__input" id="price_100_1k_checker"-->
+<!--                               type="checkbox">-->
+<!--                        <span class="input-checkbox__text">100-1k$</span>-->
+<!--                    </label>-->
+<!--                    <label class="input-checkbox">-->
+<!--                        <input class="input-checkbox__input" id="price_1k_unlim_checker"-->
+<!--                               type="checkbox">-->
+<!--                        <span class="input-checkbox__text">1k-&infin;$</span>-->
+<!--                    </label>-->
+<!--                </div>-->
+<!--            </details>-->
+<!--        </div>-->
+<!--    </div>-->
+<!--    <div class="catalog-view">-->
+<!--      <h1 @click="onClick(message)">{{message}}</h1>-->
+<!--    </div>-->
+<!--    <div class="scroll-check">-->
+<!--    </div>-->
+<!--    <div class="cart-view">-->
+
+<!--    </div>-->
+<!--    <nav class="paginator page-catalog__main-paginator">-->
+<!--        <a class="paginator__prev" href="#">-->
+<!--            <svg width="9" height="14" viewBox="0 0 9 14" fill="none" xmlns="http://www.w3.org/2000/svg">-->
+<!--                <path d="M8.99512 2L3.99512 7L8.99512 12L7.99512 14L0.995117 7L7.99512 0L8.99512 2Z" fill="black"/>-->
+<!--            </svg>-->
+<!--        </a>-->
+<!--        <a class="paginator__item paginator__item_current" href="#">1</a>-->
+<!--        <a class="paginator__item" href="#">2</a>-->
+<!--        <a class="paginator__item" href="#">3</a>-->
+<!--        <a class="paginator__item" href="#">4</a>-->
+<!--        <a class="paginator__item" href="#">5</a>-->
+<!--        <a class="paginator__item" href="#">6.....20</a>-->
+<!--        <a class="paginator__next" href="#">-->
+<!--            <svg width="9" height="14" viewBox="0 0 9 14" fill="none" xmlns="http://www.w3.org/2000/svg">-->
+<!--                <path d="M0.994995 12L5.995 7L0.994995 2L1.995 0L8.995 7L1.995 14L0.994995 12Z" fill="black"/>-->
+<!--            </svg>-->
+<!--        </a>-->
+<!--    </nav>-->
+<!--</section>-->
+<!--<section class="store-features store-features_mt">-->
+<!--    <div class="store-features__box container">-->
+<!--        <div class="store-features__feature">-->
+<!--            <figure>-->
+<!--                <img src="img/features/delivery.svg" alt="delivery">-->
+<!--                <figcaption class="store-features__feature-heading">-->
+<!--                    Free Delivery-->
+<!--                </figcaption>-->
+<!--            </figure>-->
+<!--            <p class="store-features__feature-text">Worldwide delivery on all. Authoritatively morph next-generation-->
+<!--                innovation with-->
+<!--                extensive-->
+<!--                models.</p>-->
+<!--        </div>-->
+<!--        <div class="store-features__feature">-->
+<!--            <figure>-->
+<!--                <img src="img/features/discount.svg" alt="discount">-->
+<!--                <figcaption class="store-features__feature-heading">-->
+<!--                    Sales & discounts-->
+<!--                </figcaption>-->
+<!--            </figure>-->
+<!--            <p class="store-features__feature-text">Worldwide delivery on all. Authoritatively morph next-generation-->
+<!--                innovation with-->
+<!--                extensive-->
+<!--                models.</p>-->
+<!--        </div>-->
+<!--        <div class="store-features__feature">-->
+<!--            <figure>-->
+<!--                <img src="img/features/quality.svg" alt="quality">-->
+<!--                <figcaption class="store-features__feature-heading">-->
+<!--                    Quality assurance-->
+<!--                </figcaption>-->
+<!--            </figure>-->
+<!--            <p class="store-features__feature-text">Worldwide delivery on all. Authoritatively morph next-generation-->
+<!--                innovation with-->
+<!--                extensive-->
+<!--                models.</p>-->
+<!--        </div>-->
+<!--    </div>-->
+<!--</section>-->
+<!--<footer class="footer">-->
+<!--    <div class="footer__subscribe-background">-->
+<!--        <div class="footer__subscribe-inner container">-->
+<!--            <figure class="footer__subscribe-citation-box">-->
+<!--                <img src="img/subscribe_face.png" alt="face photo">-->
+<!--                <figcaption>-->
+<!--                    <p class="footer__subscribe-citation-text">“Vestibulum quis porttitor dui! Quisque viverra-->
+<!--                        nunc-->
+<!--                        mi, a pulvinar purus condimentum“</p>-->
+<!--                </figcaption>-->
+<!--            </figure>-->
+<!--            <form class="footer__subscribe-form">-->
+<!--                <h2 class="footer__subscribe-form-heading">-->
+<!--                    SUBSCRIBE-->
+<!--                </h2>-->
+<!--                <p class="footer__subscribe-form-text">FOR OUR NEWSLETTER AND PROMOTION</p>-->
+<!--                <div class="footer__subscribe-form-controls">-->
+<!--                    <label for="#email"></label>-->
+<!--                    <input class="footer__subscribe-form-email-input" id="#email" type="email"-->
+<!--                           placeholder="Enter Your Email" required>-->
+<!--                    <button class="footer__subscribe-form-submit-btn" type="submit">Subscribe</button>-->
+<!--                </div>-->
+<!--            </form>-->
+<!--        </div>-->
+<!--    </div>-->
+<!--    <div class="footer__social container">-->
+<!--        <p class="footer__copyright">&copy;&nbsp;2021 Brand All Rights Reserved.</p>-->
+<!--        <nav class="footer__social-link-group">-->
+<!--            <a href="" class="footer__social-link">-->
+<!--                <img class="footer__social-link-img" src="img/social/facebook.svg" alt="facebook">-->
+<!--            </a>-->
+<!--            <a href="" class="footer__social-link">-->
+<!--                <img class="footer__social-link-img" src="img/social/instagram.svg" alt="instagram">-->
+<!--            </a>-->
+<!--            <a href="" class="footer__social-link">-->
+<!--                <img class="footer__social-link-img" src="img/social/pinterest.svg" alt="pinterest">-->
+<!--            </a>-->
+<!--            <a href="" class="footer__social-link">-->
+<!--                <img class="footer__social-link-img" src="img/social/twitter.svg" alt="twitter">-->
+<!--            </a>-->
+<!--        </nav>-->
+<!--    </div>-->
+<!--</footer>-->
+</body>
+
+</html>
