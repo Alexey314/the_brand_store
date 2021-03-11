@@ -1,8 +1,6 @@
 <template>
   <div>
-
-    <Catalog />
-
+    <Catalog :items-data="catalogItemsDataArray"/>
     <Cart />
   </div>
 </template>
@@ -10,11 +8,31 @@
 <script>
 import Catalog from "./components/Catalog.vue"
 import Cart from "./components/Cart.vue"
+import ProductsDataloader from './js/products_data_loader.js';
+
+// Ссылка без имени файла
+const baseUrl = window.location.href.replace(/\/[^\/]+$/,"/");
+
+// Отвечает за загрузку товаров из базы на сервере
+const productsDataloader = new ProductsDataloader(baseUrl + "data/products.json");
+
+
 
 export default {
+  data(){
+    return {
+      catalogItemsDataArray: []
+    }
+  },
   components: {
     Catalog,
     Cart
+  },
+  created() {
+    // Запускаем асинхронную загрузку начального кол-ва карточек товаров
+    productsDataloader.fetchData((catalogItemsDataArray)=>{
+      this.catalogItemsDataArray = catalogItemsDataArray;
+    }, 0, 30);
   }
 }
 </script>
