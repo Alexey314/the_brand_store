@@ -1,6 +1,9 @@
 "use strict"
 
 import UserRegistrationData from './user_registration_data.mjs';
+import tippy from 'tippy.js';
+import 'tippy.js/dist/tippy.css';
+import "./../css/style.scss"
 
 const registrationFormEl = document.querySelector(".registration-form");
 

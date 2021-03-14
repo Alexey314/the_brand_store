@@ -2,6 +2,8 @@ import CartProductItem from './cart_product_item.js';
 import CartProductList from './cart_product_list.js';
 import ProductsDataloader from './products_data_loader.js';
 
+import "./../css/style.scss"
+
 // Список товаров видимых в корзине
 const cartProductList = new CartProductList(".cart-view__products-box");
 
