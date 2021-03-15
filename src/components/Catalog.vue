@@ -8,19 +8,26 @@
 
 <script>
 import CatalogItem from "./CatalogItem.vue";
+
 export default {
   components: {
     CatalogItem
-  },
-  props: {
-    itemsData: Array
   },
   data() {
     return {
 
     }
   },
-
+  computed: {
+    itemsData() {
+      return this.$store.getters.getCatalogItemsData;
+    }
+  },
+  created() {
+    this.$store.dispatch('fetchCatalogItems', {
+      startItemIndex: this.$store.getters.getLoadedCatalogItemsCount,
+      itemsCount: 6});
+  }
 }
 </script>
 

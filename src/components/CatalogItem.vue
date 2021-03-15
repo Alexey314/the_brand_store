@@ -4,10 +4,10 @@
       <a href="product.html">
         <img class="catalog-product__img" :src="data.imgSrc" alt="product image">
       </a>
-      <a class="catalog-product__add-to-cart-overlay-btn" href="javascript:void(0);">
+      <div class="catalog-product__add-to-cart-overlay-btn" v-on:click="addToCart">
         <img class="catalog-product__add-to-cart-icon" src="img/cart_add.svg" alt="add to cart">
         Add to Cart
-      </a>
+      </div>
     </div>
     <div class="catalog-product__description">
       <a href="product.html">
@@ -24,6 +24,11 @@ export default {
   props: {
     data: Object,
   },
+  methods: {
+    addToCart(event){
+      console.log("addToCart ", this.data);
+    }
+  }
 }
 </script>
 
