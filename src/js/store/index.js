@@ -22,21 +22,38 @@ export default new Vuex.Store({
     mutations: {
         setCatalogItems (state, catalogItemsDataArray) {
             state.catalogItems.itemsData = catalogItemsDataArray;
-            console.log('setCatalogItems', catalogItemsDataArray);
+            // console.log('setCatalogItems', catalogItemsDataArray);
         },
         addToCart (state, id) {
-            // state.data = payload.newData;
-            // state.itemsOnPage = Object.keys(payload.newData);
+            const cartItemIdx = state.cartItems.findIndex(val => val.id === id);
+            if (cartItemIdx !== -1){
+                const cartItem = state.cartItems[cartItemIdx];
+                ++cartItem.count;
+                Vue.set(state.cartItems, cartItemIdx, cartItem);
+            } else {
+                const catalogItem = state.catalogItems.itemsData.find(val => val.id === id);
+                catalogItem.count = 1;
+                state.cartItems.push(catalogItem);
+            }
+            // console.log('storage mutation addToCart', id, state.cartItems);
         },
+        removeFromCart (state, id) {
+            const cartItemIdx = state.cartItems.findIndex(val => val.id === id);
+            if (cartItemIdx !== -1){
+                state.cartItems.splice(cartItemIdx,1);
+            }
+        }
     },
     getters: {
         getLoadedCatalogItemsCount: state => state.catalogItems.loadedCount,
         getAllCatalogItemsCount: state => state.catalogItems.allCount,
         getCatalogItemsData: state => state.catalogItems.itemsData,
+        getCartItemsDataArray: state => state.cartItems,
+        getCartItemData: state => id => state.cartItems.find(val => val.id === id),
     },
     actions: {
         fetchCatalogItems({ commit, state }, {startItemIndex,itemsCount} ){
-            console.log('fetchCatalogItems', startItemIndex, itemsCount);
+            // console.log('fetchCatalogItems', startItemIndex, itemsCount);
             // Запускаем асинхронную загрузку начального кол-ва карточек товаров
             productsDataloader.fetchData((catalogItemsDataArray)=>{
                 commit('setCatalogItems', catalogItemsDataArray)

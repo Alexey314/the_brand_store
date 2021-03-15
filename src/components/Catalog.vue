@@ -26,7 +26,7 @@ export default {
   created() {
     this.$store.dispatch('fetchCatalogItems', {
       startItemIndex: this.$store.getters.getLoadedCatalogItemsCount,
-      itemsCount: 6});
+      itemsCount: 3});
   }
 }
 </script>

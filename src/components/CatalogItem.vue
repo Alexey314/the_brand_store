@@ -26,9 +26,9 @@ export default {
   },
   methods: {
     addToCart(event){
-      console.log("addToCart ", this.data);
+      this.$store.commit('addToCart', this.data.id);
     }
-  }
+  },
 }
 </script>
 

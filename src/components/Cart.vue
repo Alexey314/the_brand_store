@@ -1,6 +1,6 @@
 <template>
     <div  :class=[$style.flex]>
-      <CartItem  v-for="item in itemsData" :data="item" :key="item.id"/>
+      <CartItem  v-for="item in itemsData" :key="item.id"/>
     </div>
 </template>
 
@@ -10,12 +10,15 @@ export default {
   components: {
     CartItem,
   },
-  props: {
-    itemsData: Array
-  },
   data() {
     return {
 
+    }
+  },
+  computed: {
+    itemsData() {
+      // console.log('cart', this.$store.getters.getCartItemsDataArray);
+      return this.$store.getters.getCartItemsDataArray;
     }
   },
 }
