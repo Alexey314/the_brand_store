@@ -1,27 +1,35 @@
 <template>
   <div>
-    <h1>Catalog</h1>
-    <Catalog />
-    <h1>Cart</h1>
-    <Cart />
+    <Header :selectedButtons="appState" @switch-state="switchState"/>
+    <Catalog v-show="appState.catalog"/>
+    <Cart  v-show="appState.cart"/>
   </div>
 </template>
 
 <script>
 import Catalog from "./components/Catalog.vue"
 import Cart from "./components/Cart.vue"
-import ProductsDataloader from './js/products_data_loader.js';
+import Header from "./components/Header.vue"
 
 export default {
   data(){
     return {
-      // catalogItemsDataArray: [],
-      // cartItemsDataArray: [],
+      appState : {
+        catalog:1,
+        cart:0
+      }
     }
   },
   components: {
+    Header,
     Catalog,
     Cart
+  },
+  methods: {
+    switchState(arg){
+      this.appState.catalog = arg === 'catalog';
+      this.appState.cart = arg === 'cart';
+    }
   },
   created() {
 

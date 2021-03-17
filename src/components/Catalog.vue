@@ -1,6 +1,5 @@
 <template>
-  <div  :class=[$style.flex]>
-<!--    <h1>Catalog:</h1>-->
+  <div  :class="[$style.flex]">
     <CatalogItem  v-for="item in itemsData" :data="item" :key="item.id"/>
   </div>
 
