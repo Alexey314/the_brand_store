@@ -17,6 +17,7 @@ export default new Vuex.Store({
         catalogItems: {
             loadedCount: 0,
             canLoadMore: 1,
+            fetchActive: 0,
             itemsData: [],
         },
         cartItems: [],
@@ -26,6 +27,7 @@ export default new Vuex.Store({
             state.catalogItems.itemsData.push(...catalogItemsDataArray);
             state.catalogItems.loadedCount += catalogItemsDataArray.length;
             state.catalogItems.canLoadMore = catalogItemsDataArray.length > 0;
+            state.catalogItems.fetchActive = 0;
         },
         addToCart (state, id) {
             const cartItemIdx = state.cartItems.findIndex(val => val.id === id);
@@ -48,6 +50,9 @@ export default new Vuex.Store({
         },
         setAppView(state, view) {
             state.appView = view;
+        },
+        setFetchCatalogItemsActive(state){
+            state.catalogItems.fetchActive = 1;
         }
     },
     getters: {
@@ -63,9 +68,12 @@ export default new Vuex.Store({
         fetchCatalogItems({ commit, state }, {startItemIndex,itemsCount} ){
             // console.log('fetchCatalogItems', startItemIndex, itemsCount);
             // Запускаем асинхронную загрузку начального кол-ва карточек товаров
-            productsDataloader.fetchData((catalogItemsDataArray)=>{
-                commit('setCatalogItems', catalogItemsDataArray)
-            }, startItemIndex, itemsCount);
+            if (!state.catalogItems.fetchActive){
+                commit('setFetchCatalogItemsActive');
+                productsDataloader.fetchData((catalogItemsDataArray)=>{
+                    commit('setCatalogItems', catalogItemsDataArray);
+                }, startItemIndex, itemsCount);
+            }
         }
     },
 })

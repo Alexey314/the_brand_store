@@ -29,7 +29,7 @@ export default {
   methods:{
     needShowMoreProducts(){
       const scrollCheckTop = this.$refs['scroll-check'].getBoundingClientRect().top;
-      console.log(scrollCheckTop, window.innerHeight);
+      //console.log(scrollCheckTop, window.innerHeight);
       return scrollCheckTop <= window.innerHeight;
     },
     fetchMoreItems(count){
