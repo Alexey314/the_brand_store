@@ -16,15 +16,16 @@ export default new Vuex.Store({
         appView: CATALOG_VIEW,
         catalogItems: {
             loadedCount: 0,
-            allCount: 0,
+            canLoadMore: 1,
             itemsData: [],
         },
         cartItems: [],
     },
     mutations: {
         setCatalogItems (state, catalogItemsDataArray) {
-            state.catalogItems.itemsData = catalogItemsDataArray;
-            // console.log('setCatalogItems', catalogItemsDataArray);
+            state.catalogItems.itemsData.push(...catalogItemsDataArray);
+            state.catalogItems.loadedCount += catalogItemsDataArray.length;
+            state.catalogItems.canLoadMore = catalogItemsDataArray.length > 0;
         },
         addToCart (state, id) {
             const cartItemIdx = state.cartItems.findIndex(val => val.id === id);
@@ -46,12 +47,12 @@ export default new Vuex.Store({
             }
         },
         setAppView(state, view) {
-            console.log(view);
             state.appView = view;
         }
     },
     getters: {
         getLoadedCatalogItemsCount: state => state.catalogItems.loadedCount,
+        canLoadMoreCatalogItems: state => state.catalogItems.canLoadMore,
         getAllCatalogItemsCount: state => state.catalogItems.allCount,
         getCatalogItemsData: state => state.catalogItems.itemsData,
         getCartItemsDataArray: state => state.cartItems,

@@ -31,11 +31,9 @@ export default {
       return n ? ` (${n})` : '';
     },
     isCatalogVisible(){
-      console.log('isCatalogVisible');
       return this.$store.getters.appView === CATALOG_VIEW;
     },
     isCartVisible(){
-      console.log('isCartVisible');
       return this.$store.getters.appView === CART_VIEW;
     },
   },
