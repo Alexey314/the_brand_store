@@ -32,7 +32,7 @@
 export default {
   methods:{
     removeItem(){
-      this.$store.commit('removeFromCart', this.$vnode.key);
+      this.$store.dispatch('removeFromCart', this.$vnode.key);
     }
   },
   computed: {

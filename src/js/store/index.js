@@ -69,7 +69,7 @@ export default new Vuex.Store({
         fetchCartItems({ commit, state }){
             fetch(cartUrl)
                 .then((response) => {
-                    console.log(response);
+                    //console.log(response);
                     return response.json();
                 })
                 .then((response) => {
@@ -85,7 +85,7 @@ export default new Vuex.Store({
                     }
                 })
                 .then((response)=>{
-                    console.log(response);
+                    //console.log(response);
                     return response.json();
                 })
                 .then((response)=>{
@@ -94,6 +94,27 @@ export default new Vuex.Store({
                 .catch(response=>
                 {
                     console.error("item NOT added to cart");
+                });
+            // console.log('storage mutation addToCart', id, state.cartItems);
+        },
+        removeFromCart ({ commit, state }, id) {
+            fetch(cartUrl, {
+                method: 'POST', // или 'PUT'
+                body: JSON.stringify({ id: id, action: "destroy" }),
+                headers: {
+                    'Content-Type': 'application/json'
+                }
+            })
+                .then((response)=>{
+                    //console.log(response);
+                    return response.json();
+                })
+                .then((response)=>{
+                    commit('setCartItems', response);
+                })
+                .catch(response=>
+                {
+                    console.error("item NOT destroyed in cart");
                 });
             // console.log('storage mutation addToCart', id, state.cartItems);
         },
