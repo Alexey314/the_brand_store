@@ -55,7 +55,7 @@ export default new Vuex.Store({
         getCartItemData: state => id => state.cartItems.find(val => val.id === id),
         appView: state => state.appView,
         cartItemCount: state => {
-            return state.cartItems.reduce((acc,val)=>acc+val.quantity, 0);
+            return state.cartItems.reduce((acc,val)=>acc+Number(val.quantity), 0);
         },
         cartTotal: state => {
             return state.cartItems.reduce((acc,val)=>{
@@ -123,6 +123,31 @@ export default new Vuex.Store({
                 .catch(response=>
                 {
                     console.error("item NOT destroyed in cart");
+                });
+            // console.log('storage mutation addToCart', id, state.cartItems);
+        },
+        setCartItemQuantity ({ commit, state }, {id, qty}) {
+            fetch(cartUrl, {
+                method: 'POST', // или 'PUT'
+                body: JSON.stringify({
+                    id: id,
+                    action: "quantity",
+                    qty: qty
+                }),
+                headers: {
+                    'Content-Type': 'application/json'
+                }
+            })
+                .then((response)=>{
+                    //console.log(response);
+                    return response.json();
+                })
+                .then((response)=>{
+                    commit('setCartItems', response);
+                })
+                .catch(response=>
+                {
+                    console.error("item NOT changed in cart");
                 });
             // console.log('storage mutation addToCart', id, state.cartItems);
         },

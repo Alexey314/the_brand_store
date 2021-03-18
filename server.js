@@ -172,6 +172,16 @@ const modifyCart = function (clientId, requestObj) {
                 cartMap.set(requestObj.id, productObj);
             }
             break;
+        case "quantity":
+            if (productObj){
+                productObj.quantity = requestObj.qty;
+            }else{
+                productObj = {
+                    quantity: requestObj.qty
+                };
+                cartMap.set(requestObj.id, productObj);
+            }
+            break;
         case "destroy":
             if (productObj){
                 cartMap.delete(requestObj.id);
