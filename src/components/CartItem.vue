@@ -20,7 +20,7 @@
       <form action="#" class="cart-product__details-param">
         <label class="">
           Quantity:
-          <input type="number" :value=getItemData.count min="1"
+          <input type="number" :value=getItemData.quantity min="1"
                  class="cart-product__details-quantity-input">
         </label>
       </form>

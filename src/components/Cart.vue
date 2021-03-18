@@ -21,6 +21,9 @@ export default {
       return this.$store.getters.getCartItemsDataArray;
     }
   },
+  created() {
+    this.$store.dispatch('fetchCartItems');
+  }
 }
 </script>
 

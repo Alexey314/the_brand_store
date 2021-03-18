@@ -122,7 +122,7 @@ app.get('*', function (req, res) {
         //console.log("parameters passed ", start, count);
         res.set('Content-Type', type);
         getProductsDataStream(file, start, count).pipe(res);
-    } else if (filename === "cart.json"){
+    } else if (filename === "cart"){
         res.set('Content-Type', type);
         getCartDataStream(getClientId(req), clientCartsMap, dir + "/data/products.json").pipe(res);
     } else {
@@ -186,8 +186,8 @@ const modifyCart = function (clientId, requestObj) {
 app.post("/cart", function (req, res){
     // Добавляем товар в корзину пользователя
     modifyCart(getClientId(req), req.body);
-    res.set('Content-Type', 'text/plain');
-    return res.status(200).end("OK");
+    res.set('Content-Type', 'application/json');
+    getCartDataStream(getClientId(req), clientCartsMap, dir + "/data/products.json").pipe(res);
 });
 
 // определяем на каком порту серверу ждать входящие соединения

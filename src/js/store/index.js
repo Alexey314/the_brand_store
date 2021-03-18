@@ -7,6 +7,7 @@ Vue.use(Vuex)
 
 // Ссылка без имени файла
 const baseUrl = window.location.href.replace(/\/[^\/]+$/,"/");
+const cartUrl = baseUrl + 'cart';
 
 // Отвечает за загрузку товаров из базы на сервере
 const productsDataloader = new ProductsDataloader(baseUrl + "data/products.json");
@@ -29,18 +30,8 @@ export default new Vuex.Store({
             state.catalogItems.canLoadMore = catalogItemsDataArray.length > 0;
             state.catalogItems.fetchActive = 0;
         },
-        addToCart (state, id) {
-            const cartItemIdx = state.cartItems.findIndex(val => val.id === id);
-            if (cartItemIdx !== -1){
-                const cartItem = state.cartItems[cartItemIdx];
-                ++cartItem.count;
-                Vue.set(state.cartItems, cartItemIdx, cartItem);
-            } else {
-                const catalogItem = state.catalogItems.itemsData.find(val => val.id === id);
-                catalogItem.count = 1;
-                state.cartItems.push(catalogItem);
-            }
-            // console.log('storage mutation addToCart', id, state.cartItems);
+        setCartItems (state, cartItemsDataArray) {
+            state.cartItems = cartItemsDataArray;
         },
         removeFromCart (state, id) {
             const cartItemIdx = state.cartItems.findIndex(val => val.id === id);
@@ -74,6 +65,37 @@ export default new Vuex.Store({
                     commit('setCatalogItems', catalogItemsDataArray);
                 }, startItemIndex, itemsCount);
             }
-        }
+        },
+        fetchCartItems({ commit, state }){
+            fetch(cartUrl)
+                .then((response) => {
+                    console.log(response);
+                    return response.json();
+                })
+                .then((response) => {
+                    commit('setCartItems', response);
+                });
+        },
+        addToCart ({ commit, state }, id) {
+            fetch(cartUrl, {
+                    method: 'POST', // или 'PUT'
+                    body: JSON.stringify({ id: id, action: "add" }),
+                    headers: {
+                        'Content-Type': 'application/json'
+                    }
+                })
+                .then((response)=>{
+                    console.log(response);
+                    return response.json();
+                })
+                .then((response)=>{
+                    commit('setCartItems', response);
+                })
+                .catch(response=>
+                {
+                    console.error("item NOT added to cart");
+                });
+            // console.log('storage mutation addToCart', id, state.cartItems);
+        },
     },
 })

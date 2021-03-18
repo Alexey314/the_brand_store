@@ -27,7 +27,7 @@ export default {
   },
   computed: {
     cartItemCount() {
-      const n = this.$store.getters.getCartItemsDataArray.reduce((acc,val)=>acc+val.count, 0);
+      const n = this.$store.getters.getCartItemsDataArray.reduce((acc,val)=>acc+val.quantity, 0);
       return n ? ` (${n})` : '';
     },
     isCatalogVisible(){
