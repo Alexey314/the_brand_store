@@ -1,6 +1,10 @@
 <template>
-    <div  :class=[$style.flex]>
-      <CartItem  v-for="item in itemsData" :key="item.id"/>
+    <div>
+      <h3 :class=[$style.total]>Items: {{itemsCount}}</h3>
+      <h3 :class=[$style.total]>Total: ${{total}}</h3>
+      <div  :class=[$style.flex]>
+        <CartItem  v-for="item in itemsData" :key="item.id"/>
+      </div>
     </div>
 </template>
 
@@ -17,8 +21,13 @@ export default {
   },
   computed: {
     itemsData() {
-      // console.log('cart', this.$store.getters.getCartItemsDataArray);
       return this.$store.getters.getCartItemsDataArray;
+    },
+    itemsCount() {
+      return this.$store.getters.cartItemCount;
+    },
+    total() {
+      return this.$store.getters.cartTotal;
     }
   },
   created() {
@@ -28,6 +37,9 @@ export default {
 </script>
 
 <style module>
+.total{
+  margin: 8px;
+}
 .flex {
   display: flex;
   flex-wrap: wrap;

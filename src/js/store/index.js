@@ -54,6 +54,14 @@ export default new Vuex.Store({
         getCartItemsDataArray: state => state.cartItems,
         getCartItemData: state => id => state.cartItems.find(val => val.id === id),
         appView: state => state.appView,
+        cartItemCount: state => {
+            return state.cartItems.reduce((acc,val)=>acc+val.quantity, 0);
+        },
+        cartTotal: state => {
+            return state.cartItems.reduce((acc,val)=>{
+                return acc+Number(val.price)*val.quantity;
+            }, 0).toFixed(2);
+        },
     },
     actions: {
         fetchCatalogItems({ commit, state }, {startItemIndex,itemsCount} ){
