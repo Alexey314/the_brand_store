@@ -1,29 +1,47 @@
 <template>
   <div :class="[$style.wrapper]" >
     <div :class="[$style.wrapper, $style.sticky]" >
-      <button :class="[$style.button, { [$style.button_selected]: selectedButtons.catalog } ]"
-              @click="$emit('switch-state', 'catalog')">Catalog</button>
-      <button :class="[$style.button, selectedButtons.cart ? $style.button_selected : '' ]"
-              @click="$emit('switch-state', 'cart')">Cart{{ cartItemCount }}</button>
+      <button :class="[$style.button, { [$style.button_selected]: isCatalogVisible } ]"
+              @click="showCatalog()">Catalog</button>
+      <button :class="[$style.button, { [$style.button_selected]: isCartVisible } ]"
+              @click="showCart()">Cart{{ cartItemCount }}</button>
     </div>
   </div>
 
 </template>
 
 <script>
+import { CATALOG_VIEW, CART_VIEW } from 'constants';
+
 export default {
   props: {
-    selectedButtons: Object
+
   },
   methods: {
-
+    showCatalog(){
+      this.$store.commit('setAppView', CATALOG_VIEW);
+    },
+    showCart(){
+      this.$store.commit('setAppView', CART_VIEW);
+    },
   },
   computed: {
     cartItemCount() {
       const n = this.$store.getters.getCartItemsDataArray.reduce((acc,val)=>acc+val.count, 0);
       return n ? ` (${n})` : '';
-    }
+    },
+    isCatalogVisible(){
+      console.log('isCatalogVisible');
+      return this.$store.getters.appView === CATALOG_VIEW;
+    },
+    isCartVisible(){
+      console.log('isCartVisible');
+      return this.$store.getters.appView === CART_VIEW;
+    },
   },
+  created() {
+
+  }
 }
 </script>
 

@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
 import ProductsDataloader from "../products_data_loader";
+import { CATALOG_VIEW } from 'constants';
 
 Vue.use(Vuex)
 
@@ -12,6 +13,7 @@ const productsDataloader = new ProductsDataloader(baseUrl + "data/products.json"
 
 export default new Vuex.Store({
     state: {
+        appView: CATALOG_VIEW,
         catalogItems: {
             loadedCount: 0,
             allCount: 0,
@@ -42,6 +44,10 @@ export default new Vuex.Store({
             if (cartItemIdx !== -1){
                 state.cartItems.splice(cartItemIdx,1);
             }
+        },
+        setAppView(state, view) {
+            console.log(view);
+            state.appView = view;
         }
     },
     getters: {
@@ -50,6 +56,7 @@ export default new Vuex.Store({
         getCatalogItemsData: state => state.catalogItems.itemsData,
         getCartItemsDataArray: state => state.cartItems,
         getCartItemData: state => id => state.cartItems.find(val => val.id === id),
+        appView: state => state.appView,
     },
     actions: {
         fetchCatalogItems({ commit, state }, {startItemIndex,itemsCount} ){
