@@ -1,6 +1,7 @@
 const path = require('path');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CopyPlugin = require("copy-webpack-plugin");
+const VueLoaderPlugin = require("vue-loader/lib/plugin");
 
 module.exports = {
     entry: {
@@ -31,10 +32,33 @@ module.exports = {
             //     use: [MiniCssExtractPlugin.loader, 'css-loader', 'sass-loader']
             // },
             {
-                test: /\.s?css$/,
-                use: ["style-loader", 'css-loader', 'sass-loader']
+                test: /\.scss$/,
+                use: [
+                    {loader: "style-loader"},
+                    {loader: 'css-loader'},
+                    {loader: 'sass-loader'}
+                ]
             },
-            { test: /\.(svg|woff|jpg|png)$/, use: ['file-loader'] }
+            {
+                test: /\.css$/,
+                use: [
+                    {loader: "style-loader"},
+                    {
+                        loader: 'css-loader',
+                        options: {
+                            modules: true
+                        }
+                    }
+                ]
+            },
+            {
+                test: /\.(svg|woff|jpg|png)$/,
+                use: ['file-loader']
+            },
+            {
+                test: /\.vue$/,
+                use: ['vue-loader']
+            },
         ]
     },
     plugins: [
@@ -48,5 +72,12 @@ module.exports = {
                 { from: "src/html", to: "" },
                 { from: "src/favicon.ico", to: "" },
             ],
-        }),]
+        }),
+        new VueLoaderPlugin(),
+    ],
+    resolve: {
+        alias: {
+            'vue$': 'vue/dist/vue.esm.js' // 'vue/dist/vue.common.js' for webpack 1
+        }
+    }
 };
