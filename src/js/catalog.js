@@ -1,6 +1,6 @@
 import Vue from "vue";
 import App from "../App.vue"
-
+import store from './store'
 
 import "./../css/style.scss"
 
@@ -10,6 +10,7 @@ new Vue({
     components: {
         App,
     },
+    store,
     data: {
 
     },
