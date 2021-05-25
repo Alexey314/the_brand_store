@@ -1,63 +1,155 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
 import ProductsDataloader from "../products_data_loader";
+import { CATALOG_VIEW } from 'constants';
 
 Vue.use(Vuex)
 
 // Ссылка без имени файла
 const baseUrl = window.location.href.replace(/\/[^\/]+$/,"/");
+const cartUrl = baseUrl + 'cart';
 
 // Отвечает за загрузку товаров из базы на сервере
 const productsDataloader = new ProductsDataloader(baseUrl + "data/products.json");
 
 export default new Vuex.Store({
     state: {
+        appView: CATALOG_VIEW,
         catalogItems: {
             loadedCount: 0,
-            allCount: 0,
+            canLoadMore: 1,
+            fetchActive: 0,
             itemsData: [],
         },
         cartItems: [],
     },
     mutations: {
         setCatalogItems (state, catalogItemsDataArray) {
-            state.catalogItems.itemsData = catalogItemsDataArray;
-            // console.log('setCatalogItems', catalogItemsDataArray);
+            state.catalogItems.itemsData.push(...catalogItemsDataArray);
+            state.catalogItems.loadedCount += catalogItemsDataArray.length;
+            state.catalogItems.canLoadMore = catalogItemsDataArray.length > 0;
+            state.catalogItems.fetchActive = 0;
         },
-        addToCart (state, id) {
-            const cartItemIdx = state.cartItems.findIndex(val => val.id === id);
-            if (cartItemIdx !== -1){
-                const cartItem = state.cartItems[cartItemIdx];
-                ++cartItem.count;
-                Vue.set(state.cartItems, cartItemIdx, cartItem);
-            } else {
-                const catalogItem = state.catalogItems.itemsData.find(val => val.id === id);
-                catalogItem.count = 1;
-                state.cartItems.push(catalogItem);
-            }
-            // console.log('storage mutation addToCart', id, state.cartItems);
+        setCartItems (state, cartItemsDataArray) {
+            state.cartItems = cartItemsDataArray;
         },
         removeFromCart (state, id) {
             const cartItemIdx = state.cartItems.findIndex(val => val.id === id);
             if (cartItemIdx !== -1){
                 state.cartItems.splice(cartItemIdx,1);
             }
+        },
+        setAppView(state, view) {
+            state.appView = view;
+        },
+        setFetchCatalogItemsActive(state){
+            state.catalogItems.fetchActive = 1;
         }
     },
     getters: {
         getLoadedCatalogItemsCount: state => state.catalogItems.loadedCount,
+        canLoadMoreCatalogItems: state => state.catalogItems.canLoadMore,
         getAllCatalogItemsCount: state => state.catalogItems.allCount,
         getCatalogItemsData: state => state.catalogItems.itemsData,
         getCartItemsDataArray: state => state.cartItems,
         getCartItemData: state => id => state.cartItems.find(val => val.id === id),
+        appView: state => state.appView,
+        cartItemCount: state => {
+            return state.cartItems.reduce((acc,val)=>acc+Number(val.quantity), 0);
+        },
+        cartTotal: state => {
+            return state.cartItems.reduce((acc,val)=>{
+                return acc+Number(val.price)*val.quantity;
+            }, 0).toFixed(2);
+        },
     },
     actions: {
         fetchCatalogItems({ commit, state }, {startItemIndex,itemsCount} ){
             // console.log('fetchCatalogItems', startItemIndex, itemsCount);
             // Запускаем асинхронную загрузку начального кол-ва карточек товаров
-            productsDataloader.fetchData((catalogItemsDataArray)=>{
-                commit('setCatalogItems', catalogItemsDataArray)
-            }, startItemIndex, itemsCount);
-        }
+            if (!state.catalogItems.fetchActive){
+                commit('setFetchCatalogItemsActive');
+                productsDataloader.fetchData((catalogItemsDataArray)=>{
+                    commit('setCatalogItems', catalogItemsDataArray);
+                }, startItemIndex, itemsCount);
+            }
+        },
+        fetchCartItems({ commit, state }){
+            fetch(cartUrl)
+                .then((response) => {
+                    //console.log(response);
+                    return response.json();
+                })
+                .then((response) => {
+                    commit('setCartItems', response);
+                });
+        },
+        addToCart ({ commit, state }, id) {
+            fetch(cartUrl, {
+                    method: 'POST', // или 'PUT'
+                    body: JSON.stringify({ id: id, action: "add" }),
+                    headers: {
+                        'Content-Type': 'application/json'
+                    }
+                })
+                .then((response)=>{
+                    //console.log(response);
+                    return response.json();
+                })
+                .then((response)=>{
+                    commit('setCartItems', response);
+                })
+                .catch(response=>
+                {
+                    console.error("item NOT added to cart");
+                });
+            // console.log('storage mutation addToCart', id, state.cartItems);
+        },
+        removeFromCart ({ commit, state }, id) {
+            fetch(cartUrl, {
+                method: 'POST', // или 'PUT'
+                body: JSON.stringify({ id: id, action: "destroy" }),
+                headers: {
+                    'Content-Type': 'application/json'
+                }
+            })
+                .then((response)=>{
+                    //console.log(response);
+                    return response.json();
+                })
+                .then((response)=>{
+                    commit('setCartItems', response);
+                })
+                .catch(response=>
+                {
+                    console.error("item NOT destroyed in cart");
+                });
+            // console.log('storage mutation addToCart', id, state.cartItems);
+        },
+        setCartItemQuantity ({ commit, state }, {id, qty}) {
+            fetch(cartUrl, {
+                method: 'POST', // или 'PUT'
+                body: JSON.stringify({
+                    id: id,
+                    action: "quantity",
+                    qty: qty
+                }),
+                headers: {
+                    'Content-Type': 'application/json'
+                }
+            })
+                .then((response)=>{
+                    //console.log(response);
+                    return response.json();
+                })
+                .then((response)=>{
+                    commit('setCartItems', response);
+                })
+                .catch(response=>
+                {
+                    console.error("item NOT changed in cart");
+                });
+            // console.log('storage mutation addToCart', id, state.cartItems);
+        },
     },
 })

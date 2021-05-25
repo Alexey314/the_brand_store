@@ -20,7 +20,7 @@
       <form action="#" class="cart-product__details-param">
         <label class="">
           Quantity:
-          <input type="number" :value=getItemData.count min="1"
+          <input type="number" ref="qty" @change="changeQty" :value=getItemData.quantity min="1"
                  class="cart-product__details-quantity-input">
         </label>
       </form>
@@ -32,7 +32,10 @@
 export default {
   methods:{
     removeItem(){
-      this.$store.commit('removeFromCart', this.$vnode.key);
+      this.$store.dispatch('removeFromCart', this.$vnode.key);
+    },
+    changeQty(){
+      this.$store.dispatch('setCartItemQuantity', {id: this.$vnode.key, qty: Number(this.$refs['qty'].value) });
     }
   },
   computed: {

@@ -1,7 +1,7 @@
 <template>
-  <div  :class=[$style.flex]>
-<!--    <h1>Catalog:</h1>-->
+  <div  :class="[$style.flex]">
     <CatalogItem  v-for="item in itemsData" :data="item" :key="item.id"/>
+    <div ref="scroll-check"></div>
   </div>
 
 </template>
@@ -21,12 +21,30 @@ export default {
   computed: {
     itemsData() {
       return this.$store.getters.getCatalogItemsData;
+    },
+    canLoadMoreItems() {
+      return this.$store.getters.canLoadMoreCatalogItems;
+    }
+  },
+  methods:{
+    needShowMoreProducts(){
+      const scrollCheckTop = this.$refs['scroll-check'].getBoundingClientRect().top;
+      //console.log(scrollCheckTop, window.innerHeight);
+      return scrollCheckTop <= window.innerHeight;
+    },
+    fetchMoreItems(count){
+      this.$store.dispatch('fetchCatalogItems', {
+        startItemIndex: this.$store.getters.getLoadedCatalogItemsCount,
+        itemsCount: count})
     }
   },
   created() {
-    this.$store.dispatch('fetchCatalogItems', {
-      startItemIndex: this.$store.getters.getLoadedCatalogItemsCount,
-      itemsCount: 3});
+    this.fetchMoreItems(10);
+    document.addEventListener('scroll', ()=>{
+      if ( this.canLoadMoreItems && this.needShowMoreProducts() ){
+        this.fetchMoreItems(10);
+      }
+    });
   }
 }
 </script>
